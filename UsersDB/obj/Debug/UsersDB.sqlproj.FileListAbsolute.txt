@@ -1,0 +1,17 @@
+C:\Users\maxim\Desktop\Recipe-sev\UsersDB\bin\Debug\UsersDB.dacpac
+C:\Users\maxim\Desktop\Recipe-sev\UsersDB\bin\Debug\UsersDB.dll
+C:\Users\maxim\Desktop\Recipe-sev\UsersDB\bin\Debug\UsersDB.pdb
+C:\Users\maxim\Desktop\Recipe-sev\UsersDB\obj\Debug\UsersDB.sqlprojAssemblyReference.cache
+C:\Users\maxim\Desktop\Recipe-sev\UsersDB\obj\Debug\UsersDB.dll
+C:\Users\maxim\Desktop\Recipe-sev\UsersDB\obj\Debug\UsersDB.pdb
+C:\Users\maxim\Desktop\Restaurant\UsersDB\bin\Debug\UsersDB.dacpac
+C:\Users\maxim\Desktop\Restaurant\UsersDB\bin\Debug\UsersDB.dll
+C:\Users\maxim\Desktop\Restaurant\UsersDB\bin\Debug\UsersDB.pdb
+C:\Users\maxim\Desktop\Restaurant\UsersDB\obj\Debug\UsersDB.sqlprojAssemblyReference.cache
+C:\Users\maxim\Desktop\Restaurant\UsersDB\obj\Debug\UsersDB.dll
+C:\Users\maxim\Desktop\Restaurant\UsersDB\obj\Debug\UsersDB.pdb
+C:\Users\maxim\Desktop\RestaurantsMenu\UsersDB\bin\Debug\UsersDB.dacpac
+C:\Users\maxim\Desktop\RestaurantsMenu\UsersDB\bin\Debug\UsersDB.dll
+C:\Users\maxim\Desktop\RestaurantsMenu\UsersDB\bin\Debug\UsersDB.pdb
+C:\Users\maxim\Desktop\RestaurantsMenu\UsersDB\obj\Debug\UsersDB.dll
+C:\Users\maxim\Desktop\RestaurantsMenu\UsersDB\obj\Debug\UsersDB.pdb

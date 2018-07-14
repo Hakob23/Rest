@@ -1,0 +1,38 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       [dbo].[Burgers]
+       [dbo].[Drinks]
+       [dbo].[HotMeals]
+       [dbo].[Pizzas]
+       [dbo].[Salads]
+       [dbo].[Soups]
+       [dbo].[AlcoholDrinks]
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       The column [dbo].[Burgers].[Content] is being dropped, data loss could occur.
+       The column [dbo].[HotMeals].[Content] is being dropped, data loss could occur.
+       The column [dbo].[Pizzas].[Content] is being dropped, data loss could occur.
+       The column [dbo].[Salads].[Content] is being dropped, data loss could occur.
+       The column [dbo].[Soups].[Content] is being dropped, data loss could occur.
+
+** User actions
+     Table rebuild
+       [dbo].[Burgers] (Table)
+       [dbo].[Drinks] (Table)
+       [dbo].[HotMeals] (Table)
+       [dbo].[Pizzas] (Table)
+       [dbo].[Salads] (Table)
+       [dbo].[Soups] (Table)
+       [dbo].[AlcoholDrinks] (Table)
+
+** Supporting actions
+
+The column [dbo].[Burgers].[Content] is being dropped, data loss could occur.
+The column [dbo].[HotMeals].[Content] is being dropped, data loss could occur.
+The column [dbo].[Pizzas].[Content] is being dropped, data loss could occur.
+The column [dbo].[Salads].[Content] is being dropped, data loss could occur.
+The column [dbo].[Soups].[Content] is being dropped, data loss could occur.
+

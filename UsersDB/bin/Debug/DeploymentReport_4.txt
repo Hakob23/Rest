@@ -1,0 +1,26 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       The type for column IsEmailVerifyed in table [dbo].[Users] is currently  VARCHAR (50) NOT NULL but is being changed to 
+         BIT NOT NULL. Data loss could occur.
+
+** User actions
+     Alter
+       [dbo].[Users] (Table)
+     Create
+       [dbo].[uspCreateUser] (Procedure)
+       [dbo].[uspDeleteUser] (Procedure)
+       [dbo].[uspGetAllUsers] (Procedure)
+       [dbo].[uspGetUserById] (Procedure)
+       [dbo].[uspGetUserByUsername] (Procedure)
+       [dbo].[uspUpdateUser] (Procedure)
+
+** Supporting actions
+
+The type for column IsEmailVerifyed in table [dbo].[Users] is currently  VARCHAR (50) NOT NULL but is being changed to  BIT NOT NULL. Data loss could occur.
+

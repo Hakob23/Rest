@@ -1,0 +1,10 @@
+C:\Users\maxim\Desktop\Restaurant\Restaurants\bin\Debug\RestaurantsDB.dacpac
+C:\Users\maxim\Desktop\Restaurant\Restaurants\bin\Debug\Restaurants.dll
+C:\Users\maxim\Desktop\Restaurant\Restaurants\bin\Debug\Restaurants.pdb
+C:\Users\maxim\Desktop\Restaurant\Restaurants\obj\Debug\Restaurants.dll
+C:\Users\maxim\Desktop\Restaurant\Restaurants\obj\Debug\Restaurants.pdb
+C:\Users\maxim\Desktop\RestaurantsMenu\Restaurants\bin\Debug\RestaurantsDB.dacpac
+C:\Users\maxim\Desktop\RestaurantsMenu\Restaurants\bin\Debug\Restaurants.dll
+C:\Users\maxim\Desktop\RestaurantsMenu\Restaurants\bin\Debug\Restaurants.pdb
+C:\Users\maxim\Desktop\RestaurantsMenu\Restaurants\obj\Debug\Restaurants.dll
+C:\Users\maxim\Desktop\RestaurantsMenu\Restaurants\obj\Debug\Restaurants.pdb

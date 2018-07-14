@@ -1,0 +1,8 @@
+C:\Users\maxim\Desktop\RestaurantsMenu\DataAccessLayer\bin\Debug\netcoreapp2.1\DataAccessLayer.deps.json
+C:\Users\maxim\Desktop\RestaurantsMenu\DataAccessLayer\bin\Debug\netcoreapp2.1\DataAccessLayer.dll
+C:\Users\maxim\Desktop\RestaurantsMenu\DataAccessLayer\obj\Debug\netcoreapp2.1\DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\maxim\Desktop\RestaurantsMenu\DataAccessLayer\obj\Debug\netcoreapp2.1\DataAccessLayer.AssemblyInfoInputs.cache
+C:\Users\maxim\Desktop\RestaurantsMenu\DataAccessLayer\obj\Debug\netcoreapp2.1\DataAccessLayer.AssemblyInfo.cs
+C:\Users\maxim\Desktop\RestaurantsMenu\DataAccessLayer\bin\Debug\netcoreapp2.1\DataAccessLayer.pdb
+C:\Users\maxim\Desktop\RestaurantsMenu\DataAccessLayer\obj\Debug\netcoreapp2.1\DataAccessLayer.dll
+C:\Users\maxim\Desktop\RestaurantsMenu\DataAccessLayer\obj\Debug\netcoreapp2.1\DataAccessLayer.pdb

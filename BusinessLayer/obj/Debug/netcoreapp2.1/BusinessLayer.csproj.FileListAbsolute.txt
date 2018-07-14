@@ -1,0 +1,12 @@
+C:\Users\maxim\Desktop\RestaurantsMenu\BusinessLayer\bin\Debug\netcoreapp2.1\BusinessLayer.deps.json
+C:\Users\maxim\Desktop\RestaurantsMenu\BusinessLayer\bin\Debug\netcoreapp2.1\BusinessLayer.dll
+C:\Users\maxim\Desktop\RestaurantsMenu\BusinessLayer\bin\Debug\netcoreapp2.1\BusinessLayer.pdb
+C:\Users\maxim\Desktop\RestaurantsMenu\BusinessLayer\bin\Debug\netcoreapp2.1\DataAccessLayer.dll
+C:\Users\maxim\Desktop\RestaurantsMenu\BusinessLayer\bin\Debug\netcoreapp2.1\DataAccessLayer.pdb
+C:\Users\maxim\Desktop\RestaurantsMenu\BusinessLayer\obj\Debug\netcoreapp2.1\BusinessLayer.csprojAssemblyReference.cache
+C:\Users\maxim\Desktop\RestaurantsMenu\BusinessLayer\obj\Debug\netcoreapp2.1\BusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\maxim\Desktop\RestaurantsMenu\BusinessLayer\obj\Debug\netcoreapp2.1\BusinessLayer.AssemblyInfoInputs.cache
+C:\Users\maxim\Desktop\RestaurantsMenu\BusinessLayer\obj\Debug\netcoreapp2.1\BusinessLayer.AssemblyInfo.cs
+C:\Users\maxim\Desktop\RestaurantsMenu\BusinessLayer\obj\Debug\netcoreapp2.1\BusinessLayer.csproj.CopyComplete
+C:\Users\maxim\Desktop\RestaurantsMenu\BusinessLayer\obj\Debug\netcoreapp2.1\BusinessLayer.dll
+C:\Users\maxim\Desktop\RestaurantsMenu\BusinessLayer\obj\Debug\netcoreapp2.1\BusinessLayer.pdb

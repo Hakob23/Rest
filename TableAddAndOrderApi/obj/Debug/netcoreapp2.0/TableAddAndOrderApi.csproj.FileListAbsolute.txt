@@ -1,0 +1,11 @@
+C:\Users\maxim\Desktop\RestaurantsMenu\TableAddAndOrderApi\bin\Debug\netcoreapp2.0\TableAddAndOrderApi.deps.json
+C:\Users\maxim\Desktop\RestaurantsMenu\TableAddAndOrderApi\bin\Debug\netcoreapp2.0\TableAddAndOrderApi.runtimeconfig.json
+C:\Users\maxim\Desktop\RestaurantsMenu\TableAddAndOrderApi\bin\Debug\netcoreapp2.0\TableAddAndOrderApi.runtimeconfig.dev.json
+C:\Users\maxim\Desktop\RestaurantsMenu\TableAddAndOrderApi\bin\Debug\netcoreapp2.0\TableAddAndOrderApi.dll
+C:\Users\maxim\Desktop\RestaurantsMenu\TableAddAndOrderApi\obj\Debug\netcoreapp2.0\TableAddAndOrderApi.csproj.CoreCompileInputs.cache
+C:\Users\maxim\Desktop\RestaurantsMenu\TableAddAndOrderApi\obj\Debug\netcoreapp2.0\TableAddAndOrderApi.AssemblyInfoInputs.cache
+C:\Users\maxim\Desktop\RestaurantsMenu\TableAddAndOrderApi\obj\Debug\netcoreapp2.0\TableAddAndOrderApi.AssemblyInfo.cs
+C:\Users\maxim\Desktop\RestaurantsMenu\TableAddAndOrderApi\obj\Debug\netcoreapp2.0\TableAddAndOrderApi.csprojAssemblyReference.cache
+C:\Users\maxim\Desktop\RestaurantsMenu\TableAddAndOrderApi\bin\Debug\netcoreapp2.0\TableAddAndOrderApi.pdb
+C:\Users\maxim\Desktop\RestaurantsMenu\TableAddAndOrderApi\obj\Debug\netcoreapp2.0\TableAddAndOrderApi.dll
+C:\Users\maxim\Desktop\RestaurantsMenu\TableAddAndOrderApi\obj\Debug\netcoreapp2.0\TableAddAndOrderApi.pdb
