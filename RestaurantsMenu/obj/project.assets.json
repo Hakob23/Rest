@@ -13179,11 +13179,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\maxim\\Desktop\\RestaurantsMenu\\RestaurantsMenu\\RestaurantsMenu.csproj",
+      "projectUniqueName": "C:\\Users\\maxim\\Desktop\\Rest\\RestaurantsMenu\\RestaurantsMenu.csproj",
       "projectName": "RestaurantsMenu",
-      "projectPath": "C:\\Users\\maxim\\Desktop\\RestaurantsMenu\\RestaurantsMenu\\RestaurantsMenu.csproj",
+      "projectPath": "C:\\Users\\maxim\\Desktop\\Rest\\RestaurantsMenu\\RestaurantsMenu.csproj",
       "packagesPath": "C:\\Users\\maxim\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\maxim\\Desktop\\RestaurantsMenu\\RestaurantsMenu\\obj\\",
+      "outputPath": "C:\\Users\\maxim\\Desktop\\Rest\\RestaurantsMenu\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -13202,8 +13202,8 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "C:\\Users\\maxim\\Desktop\\RestaurantsMenu\\BusinessLayer\\BusinessLayer.csproj": {
-              "projectPath": "C:\\Users\\maxim\\Desktop\\RestaurantsMenu\\BusinessLayer\\BusinessLayer.csproj"
+            "C:\\Users\\maxim\\Desktop\\Rest\\BusinessLayer\\BusinessLayer.csproj": {
+              "projectPath": "C:\\Users\\maxim\\Desktop\\Rest\\BusinessLayer\\BusinessLayer.csproj"
             }
           }
         }

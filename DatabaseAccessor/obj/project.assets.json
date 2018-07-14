@@ -12726,11 +12726,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\maxim\\Desktop\\RestaurantsMenu\\DatabaseAccessor\\DatabaseAccessor.csproj",
+      "projectUniqueName": "C:\\Users\\maxim\\Desktop\\Rest\\DatabaseAccessor\\DatabaseAccessor.csproj",
       "projectName": "DatabaseAccessor",
-      "projectPath": "C:\\Users\\maxim\\Desktop\\RestaurantsMenu\\DatabaseAccessor\\DatabaseAccessor.csproj",
+      "projectPath": "C:\\Users\\maxim\\Desktop\\Rest\\DatabaseAccessor\\DatabaseAccessor.csproj",
       "packagesPath": "C:\\Users\\maxim\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\maxim\\Desktop\\RestaurantsMenu\\DatabaseAccessor\\obj\\",
+      "outputPath": "C:\\Users\\maxim\\Desktop\\Rest\\DatabaseAccessor\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

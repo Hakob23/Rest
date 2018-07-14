@@ -13223,11 +13223,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\maxim\\Desktop\\RestaurantsMenu\\TableAddAndOrderApi\\TableAddAndOrderApi.csproj",
+      "projectUniqueName": "C:\\Users\\maxim\\Desktop\\Rest\\TableAddAndOrderApi\\TableAddAndOrderApi.csproj",
       "projectName": "TableAddAndOrderApi",
-      "projectPath": "C:\\Users\\maxim\\Desktop\\RestaurantsMenu\\TableAddAndOrderApi\\TableAddAndOrderApi.csproj",
+      "projectPath": "C:\\Users\\maxim\\Desktop\\Rest\\TableAddAndOrderApi\\TableAddAndOrderApi.csproj",
       "packagesPath": "C:\\Users\\maxim\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\maxim\\Desktop\\RestaurantsMenu\\TableAddAndOrderApi\\obj\\",
+      "outputPath": "C:\\Users\\maxim\\Desktop\\Rest\\TableAddAndOrderApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

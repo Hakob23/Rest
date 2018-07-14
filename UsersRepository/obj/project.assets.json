@@ -12744,11 +12744,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\maxim\\Desktop\\RestaurantsMenu\\UsersRepository\\UsersRepository.csproj",
+      "projectUniqueName": "C:\\Users\\maxim\\Desktop\\Rest\\UsersRepository\\UsersRepository.csproj",
       "projectName": "UsersRepository",
-      "projectPath": "C:\\Users\\maxim\\Desktop\\RestaurantsMenu\\UsersRepository\\UsersRepository.csproj",
+      "projectPath": "C:\\Users\\maxim\\Desktop\\Rest\\UsersRepository\\UsersRepository.csproj",
       "packagesPath": "C:\\Users\\maxim\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\maxim\\Desktop\\RestaurantsMenu\\UsersRepository\\obj\\",
+      "outputPath": "C:\\Users\\maxim\\Desktop\\Rest\\UsersRepository\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -12767,8 +12767,8 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "C:\\Users\\maxim\\Desktop\\RestaurantsMenu\\DatabaseAccessor\\DatabaseAccessor.csproj": {
-              "projectPath": "C:\\Users\\maxim\\Desktop\\RestaurantsMenu\\DatabaseAccessor\\DatabaseAccessor.csproj"
+            "C:\\Users\\maxim\\Desktop\\Rest\\DatabaseAccessor\\DatabaseAccessor.csproj": {
+              "projectPath": "C:\\Users\\maxim\\Desktop\\Rest\\DatabaseAccessor\\DatabaseAccessor.csproj"
             }
           }
         }

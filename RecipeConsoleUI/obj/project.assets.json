@@ -12496,11 +12496,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\maxim\\Desktop\\RestaurantsMenu\\RecipeConsoleUI\\RecipeConsoleUI.csproj",
+      "projectUniqueName": "C:\\Users\\maxim\\Desktop\\Rest\\RecipeConsoleUI\\RecipeConsoleUI.csproj",
       "projectName": "RecipeConsoleUI",
-      "projectPath": "C:\\Users\\maxim\\Desktop\\RestaurantsMenu\\RecipeConsoleUI\\RecipeConsoleUI.csproj",
+      "projectPath": "C:\\Users\\maxim\\Desktop\\Rest\\RecipeConsoleUI\\RecipeConsoleUI.csproj",
       "packagesPath": "C:\\Users\\maxim\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\maxim\\Desktop\\RestaurantsMenu\\RecipeConsoleUI\\obj\\",
+      "outputPath": "C:\\Users\\maxim\\Desktop\\Rest\\RecipeConsoleUI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
