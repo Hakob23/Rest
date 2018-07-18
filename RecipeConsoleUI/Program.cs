@@ -20,17 +20,10 @@ namespace RecipeConsoleUI
 
             if(input == "register")
             {
-                var user = new user();
-                Console.WriteLine("Username");
-                user.UserName = Console.ReadLine();
-                Console.WriteLine("Email");
-                user.Email = Console.ReadLine();
-                Console.WriteLine("Phone");
-                user.Phone = Console.ReadLine();
-                Console.WriteLine("Password");
-                user.Password = Console.ReadLine();
-                user.Role = "user";
-                client.RegisterUser(user);
+                var table = new table();
+                table.restaurant = "asg";
+                table.tableID = 1234;
+                client.addd(table);
             }
             else
             {

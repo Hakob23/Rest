@@ -3,3 +3,8 @@ C:\Users\maxim\Desktop\RestaurantsMenu\RestaurantsTables\bin\Debug\RestaurantsTa
 C:\Users\maxim\Desktop\RestaurantsMenu\RestaurantsTables\bin\Debug\RestaurantsTables.pdb
 C:\Users\maxim\Desktop\RestaurantsMenu\RestaurantsTables\obj\Debug\RestaurantsTables.dll
 C:\Users\maxim\Desktop\RestaurantsMenu\RestaurantsTables\obj\Debug\RestaurantsTables.pdb
+C:\Users\maxim\Desktop\Rest\RestaurantsTables\bin\Debug\RestaurantsTables.dacpac
+C:\Users\maxim\Desktop\Rest\RestaurantsTables\bin\Debug\RestaurantsTables.dll
+C:\Users\maxim\Desktop\Rest\RestaurantsTables\bin\Debug\RestaurantsTables.pdb
+C:\Users\maxim\Desktop\Rest\RestaurantsTables\obj\Debug\RestaurantsTables.dll
+C:\Users\maxim\Desktop\Rest\RestaurantsTables\obj\Debug\RestaurantsTables.pdb

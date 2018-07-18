@@ -21,11 +21,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RestaurantsMenu", "Restaura
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccessLayer", "DataAccessLayer\DataAccessLayer.csproj", "{08D004BF-28F4-407E-B46C-87AC123CD8E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLayer", "BusinessLayer\BusinessLayer.csproj", "{A7C3F5E7-FE97-499D-BF41-5BC44AB87C1B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessLayer", "BusinessLayer\BusinessLayer.csproj", "{A7C3F5E7-FE97-499D-BF41-5BC44AB87C1B}"
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "RestaurantsTables", "RestaurantsTables\RestaurantsTables.sqlproj", "{DE83AA7E-22CD-4BFF-88E6-5E64D7D9A83D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TableAddAndOrderApi", "TableAddAndOrderApi\TableAddAndOrderApi.csproj", "{BE7922CA-B35A-4818-95C7-0298B81B80A5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TablesAddAndOrderApi", "TablesAddAndOrderApi\TablesAddAndOrderApi.csproj", "{B46AB58B-CF8B-465E-A36D-CE2CF565562C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KushtPor", "KushtPor\KushtPor.csproj", "{1AB78B53-D6B6-4637-9EFD-5F5AB88602F1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -83,10 +85,14 @@ Global
 		{DE83AA7E-22CD-4BFF-88E6-5E64D7D9A83D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DE83AA7E-22CD-4BFF-88E6-5E64D7D9A83D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DE83AA7E-22CD-4BFF-88E6-5E64D7D9A83D}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{BE7922CA-B35A-4818-95C7-0298B81B80A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BE7922CA-B35A-4818-95C7-0298B81B80A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BE7922CA-B35A-4818-95C7-0298B81B80A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BE7922CA-B35A-4818-95C7-0298B81B80A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B46AB58B-CF8B-465E-A36D-CE2CF565562C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B46AB58B-CF8B-465E-A36D-CE2CF565562C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B46AB58B-CF8B-465E-A36D-CE2CF565562C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B46AB58B-CF8B-465E-A36D-CE2CF565562C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1AB78B53-D6B6-4637-9EFD-5F5AB88602F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AB78B53-D6B6-4637-9EFD-5F5AB88602F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AB78B53-D6B6-4637-9EFD-5F5AB88602F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AB78B53-D6B6-4637-9EFD-5F5AB88602F1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

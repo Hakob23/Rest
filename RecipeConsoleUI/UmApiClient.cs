@@ -8,7 +8,7 @@ using System.Text;
 
 namespace RecipeConsoleUI
 {
-    /// <summary>
+    /// <summary>s
     /// Client for consuming User Management API
     /// </summary>
     public class UmApiClient
@@ -29,7 +29,7 @@ namespace RecipeConsoleUI
         public UmApiClient()
         {
             this.httpClient = new HttpClient();
-            this.httpClient.BaseAddress = new Uri("http://localhost:5002");
+            this.httpClient.BaseAddress = new Uri("http://localhost:5004");
             this.httpClient.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("application/json"));
         }
@@ -48,6 +48,17 @@ namespace RecipeConsoleUI
 
             return response;
         }
+
+        public HttpResponseMessage addd(table tb)
+        {
+            var json = JsonConvert.SerializeObject(tb);
+
+            var response = this.httpClient.PostAsync("api/tables",
+                new StringContent(json, Encoding.UTF8, "application/json")).Result;
+
+            return response;
+        }
+
 
         public void LogIn(string username,string password)
         {
