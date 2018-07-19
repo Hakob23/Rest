@@ -31,3 +31,14 @@ C:\Users\maxim\Desktop\Rest\RecipeConsoleUI\obj\Debug\netcoreapp2.0\RecipeConsol
 C:\Users\maxim\Desktop\Rest\RecipeConsoleUI\obj\Debug\netcoreapp2.0\RecipeConsoleUI.AssemblyInfo.cs
 C:\Users\maxim\Desktop\Rest\RecipeConsoleUI\obj\Debug\netcoreapp2.0\RecipeConsoleUI.dll
 C:\Users\maxim\Desktop\Rest\RecipeConsoleUI\obj\Debug\netcoreapp2.0\RecipeConsoleUI.pdb
+C:\Users\ARTHUR\Source\Repos\Restaurant\Rest\RecipeConsoleUI\bin\Debug\netcoreapp2.0\RecipeConsoleUI.deps.json
+C:\Users\ARTHUR\Source\Repos\Restaurant\Rest\RecipeConsoleUI\bin\Debug\netcoreapp2.0\RecipeConsoleUI.runtimeconfig.json
+C:\Users\ARTHUR\Source\Repos\Restaurant\Rest\RecipeConsoleUI\bin\Debug\netcoreapp2.0\RecipeConsoleUI.runtimeconfig.dev.json
+C:\Users\ARTHUR\Source\Repos\Restaurant\Rest\RecipeConsoleUI\bin\Debug\netcoreapp2.0\RecipeConsoleUI.dll
+C:\Users\ARTHUR\Source\Repos\Restaurant\Rest\RecipeConsoleUI\bin\Debug\netcoreapp2.0\RecipeConsoleUI.pdb
+C:\Users\ARTHUR\Source\Repos\Restaurant\Rest\RecipeConsoleUI\obj\Debug\netcoreapp2.0\RecipeConsoleUI.csprojAssemblyReference.cache
+C:\Users\ARTHUR\Source\Repos\Restaurant\Rest\RecipeConsoleUI\obj\Debug\netcoreapp2.0\RecipeConsoleUI.csproj.CoreCompileInputs.cache
+C:\Users\ARTHUR\Source\Repos\Restaurant\Rest\RecipeConsoleUI\obj\Debug\netcoreapp2.0\RecipeConsoleUI.AssemblyInfoInputs.cache
+C:\Users\ARTHUR\Source\Repos\Restaurant\Rest\RecipeConsoleUI\obj\Debug\netcoreapp2.0\RecipeConsoleUI.AssemblyInfo.cs
+C:\Users\ARTHUR\Source\Repos\Restaurant\Rest\RecipeConsoleUI\obj\Debug\netcoreapp2.0\RecipeConsoleUI.dll
+C:\Users\ARTHUR\Source\Repos\Restaurant\Rest\RecipeConsoleUI\obj\Debug\netcoreapp2.0\RecipeConsoleUI.pdb

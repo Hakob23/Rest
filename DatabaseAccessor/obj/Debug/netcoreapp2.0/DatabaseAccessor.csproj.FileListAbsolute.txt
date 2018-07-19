@@ -25,3 +25,12 @@ C:\Users\maxim\Desktop\Rest\DatabaseAccessor\obj\Debug\netcoreapp2.0\DatabaseAcc
 C:\Users\maxim\Desktop\Rest\DatabaseAccessor\obj\Debug\netcoreapp2.0\DatabaseAccessor.AssemblyInfo.cs
 C:\Users\maxim\Desktop\Rest\DatabaseAccessor\obj\Debug\netcoreapp2.0\DatabaseAccessor.dll
 C:\Users\maxim\Desktop\Rest\DatabaseAccessor\obj\Debug\netcoreapp2.0\DatabaseAccessor.pdb
+C:\Users\ARTHUR\Source\Repos\Restaurant\Rest\DatabaseAccessor\bin\Debug\netcoreapp2.0\DatabaseAccessor.deps.json
+C:\Users\ARTHUR\Source\Repos\Restaurant\Rest\DatabaseAccessor\bin\Debug\netcoreapp2.0\DatabaseAccessor.dll
+C:\Users\ARTHUR\Source\Repos\Restaurant\Rest\DatabaseAccessor\bin\Debug\netcoreapp2.0\DatabaseAccessor.pdb
+C:\Users\ARTHUR\Source\Repos\Restaurant\Rest\DatabaseAccessor\obj\Debug\netcoreapp2.0\DatabaseAccessor.csprojAssemblyReference.cache
+C:\Users\ARTHUR\Source\Repos\Restaurant\Rest\DatabaseAccessor\obj\Debug\netcoreapp2.0\DatabaseAccessor.csproj.CoreCompileInputs.cache
+C:\Users\ARTHUR\Source\Repos\Restaurant\Rest\DatabaseAccessor\obj\Debug\netcoreapp2.0\DatabaseAccessor.AssemblyInfoInputs.cache
+C:\Users\ARTHUR\Source\Repos\Restaurant\Rest\DatabaseAccessor\obj\Debug\netcoreapp2.0\DatabaseAccessor.AssemblyInfo.cs
+C:\Users\ARTHUR\Source\Repos\Restaurant\Rest\DatabaseAccessor\obj\Debug\netcoreapp2.0\DatabaseAccessor.dll
+C:\Users\ARTHUR\Source\Repos\Restaurant\Rest\DatabaseAccessor\obj\Debug\netcoreapp2.0\DatabaseAccessor.pdb

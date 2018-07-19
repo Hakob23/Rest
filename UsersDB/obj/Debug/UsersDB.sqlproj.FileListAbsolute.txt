@@ -15,3 +15,12 @@ C:\Users\maxim\Desktop\RestaurantsMenu\UsersDB\bin\Debug\UsersDB.dll
 C:\Users\maxim\Desktop\RestaurantsMenu\UsersDB\bin\Debug\UsersDB.pdb
 C:\Users\maxim\Desktop\RestaurantsMenu\UsersDB\obj\Debug\UsersDB.dll
 C:\Users\maxim\Desktop\RestaurantsMenu\UsersDB\obj\Debug\UsersDB.pdb
+C:\Users\ARTHUR\Source\Repos\Restaurant\Rest\UsersDB\bin\Debug\UsersDB.dacpac
+C:\Users\ARTHUR\Source\Repos\Restaurant\Rest\UsersDB\bin\Debug\UsersDB.dll
+C:\Users\ARTHUR\Source\Repos\Restaurant\Rest\UsersDB\bin\Debug\UsersDB.pdb
+C:\Users\ARTHUR\Source\Repos\Restaurant\Rest\UsersDB\obj\Debug\Model.xml
+C:\Users\ARTHUR\Source\Repos\Restaurant\Rest\UsersDB\obj\Debug\refactor.xml
+C:\Users\ARTHUR\Source\Repos\Restaurant\Rest\UsersDB\obj\Debug\postdeploy.sql
+C:\Users\ARTHUR\Source\Repos\Restaurant\Rest\UsersDB\obj\Debug\predeploy.sql
+C:\Users\ARTHUR\Source\Repos\Restaurant\Rest\UsersDB\obj\Debug\UsersDB.dll
+C:\Users\ARTHUR\Source\Repos\Restaurant\Rest\UsersDB\obj\Debug\UsersDB.pdb
