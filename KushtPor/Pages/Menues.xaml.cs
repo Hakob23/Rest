@@ -20,9 +20,18 @@ namespace KushtPor.Pages
     /// </summary>
     public partial class Menues : Page
     {
+        string userName;
+        string accesToken;
+
         public Menues()
         {
             InitializeComponent();
+        }
+
+        public Menues(string userName,string accesToken)
+        {
+            this.userName = userName;
+            this.accesToken = accesToken;
         }
     }
 }
