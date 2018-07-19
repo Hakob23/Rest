@@ -16,23 +16,18 @@ using System.Windows.Shapes;
 namespace KushtPor.Pages
 {
     /// <summary>
-    /// Interaction logic for Login.xaml
+    /// Interaction logic for SignIn.xaml
     /// </summary>
-    public partial class Login : Page
+    public partial class SignIn : Page
     {
-        public Login()
+        public SignIn()
         {
             InitializeComponent();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new Pages.SignIn());
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-
+            this.NavigationService.Navigate(new Pages.Login());
         }
     }
 }

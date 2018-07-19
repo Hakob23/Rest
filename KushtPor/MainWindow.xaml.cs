@@ -1,5 +1,4 @@
-﻿using KushtPor.ViewModel;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
@@ -11,11 +10,15 @@ namespace KushtPor
     /// </summary>
     public partial class MainWindow : Window
     {
+        //private static WindowViewModel wvm;
+
         public MainWindow()
         {
             InitializeComponent();
-
-            this.DataContext = new WindowViewModel(this);
+            MainFrame.Navigate(new Pages.Login());
+            //wvm = new WindowViewModel(this);
+            //this.DataContext = wvm;
         }
+
     }
 }
