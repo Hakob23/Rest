@@ -3,7 +3,7 @@
     [UserName]   NVARCHAR (50) NOT NULL,
     [Email]      VARCHAR (100) NULL,
     [Password]   VARCHAR (100) NOT NULL,
-    [Phone]      VARCHAR (50)  NOT NULL,
+    [Phone]      VARCHAR (50)  NULL,
     [IsEmailVerifyed] BIT NULL, 
     [ActivationCode] UNIQUEIDENTIFIER NULL, 
     [Role] VARCHAR(50) NULL, 

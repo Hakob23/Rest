@@ -266,7 +266,14 @@ namespace DatabaseAccess
             // setting result object properties
             foreach(var property in properties)
             {
-                property.SetValue(result, reader[property.Name]);
+                if (reader[property.Name] is DBNull)
+                {
+                    property.SetValue(result, null);
+                }
+                else
+                {
+                    property.SetValue(result, reader[property.Name]);
+                }
             }
 
             // returning result
