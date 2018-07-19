@@ -24,5 +24,10 @@ namespace KushtPor.Pages
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new Pages.SignIn());
+        }
     }
 }

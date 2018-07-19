@@ -16,3 +16,12 @@ C:\Users\maxim\Desktop\Rest\DataAccessLayer\obj\Debug\netcoreapp2.0\DataAccessLa
 C:\Users\maxim\Desktop\Rest\DataAccessLayer\obj\Debug\netcoreapp2.0\DataAccessLayer.AssemblyInfo.cs
 C:\Users\maxim\Desktop\Rest\DataAccessLayer\obj\Debug\netcoreapp2.0\DataAccessLayer.dll
 C:\Users\maxim\Desktop\Rest\DataAccessLayer\obj\Debug\netcoreapp2.0\DataAccessLayer.pdb
+C:\Users\ARTHUR\Source\Repos\Restaurant\Rest\DataAccessLayer\bin\Debug\netcoreapp2.0\DataAccessLayer.deps.json
+C:\Users\ARTHUR\Source\Repos\Restaurant\Rest\DataAccessLayer\bin\Debug\netcoreapp2.0\DataAccessLayer.dll
+C:\Users\ARTHUR\Source\Repos\Restaurant\Rest\DataAccessLayer\bin\Debug\netcoreapp2.0\DataAccessLayer.pdb
+C:\Users\ARTHUR\Source\Repos\Restaurant\Rest\DataAccessLayer\obj\Debug\netcoreapp2.0\DataAccessLayer.csprojAssemblyReference.cache
+C:\Users\ARTHUR\Source\Repos\Restaurant\Rest\DataAccessLayer\obj\Debug\netcoreapp2.0\DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\ARTHUR\Source\Repos\Restaurant\Rest\DataAccessLayer\obj\Debug\netcoreapp2.0\DataAccessLayer.AssemblyInfoInputs.cache
+C:\Users\ARTHUR\Source\Repos\Restaurant\Rest\DataAccessLayer\obj\Debug\netcoreapp2.0\DataAccessLayer.AssemblyInfo.cs
+C:\Users\ARTHUR\Source\Repos\Restaurant\Rest\DataAccessLayer\obj\Debug\netcoreapp2.0\DataAccessLayer.dll
+C:\Users\ARTHUR\Source\Repos\Restaurant\Rest\DataAccessLayer\obj\Debug\netcoreapp2.0\DataAccessLayer.pdb

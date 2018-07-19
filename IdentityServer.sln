@@ -27,6 +27,8 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "RestaurantsTables", "Restau
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TablesAddAndOrderApi", "TablesAddAndOrderApi\TablesAddAndOrderApi.csproj", "{B46AB58B-CF8B-465E-A36D-CE2CF565562C}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RestaurantsAddAndOrder", "..\..\RestaurantsAddAndOrder\RestaurantsAddAndOrder.csproj", "{5F16227A-B86D-4AA8-9F08-16A5EA6E5D5B}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KushtPor", "KushtPor\KushtPor.csproj", "{1AB78B53-D6B6-4637-9EFD-5F5AB88602F1}"
 EndProject
 Global
@@ -89,6 +91,10 @@ Global
 		{B46AB58B-CF8B-465E-A36D-CE2CF565562C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B46AB58B-CF8B-465E-A36D-CE2CF565562C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B46AB58B-CF8B-465E-A36D-CE2CF565562C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F16227A-B86D-4AA8-9F08-16A5EA6E5D5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F16227A-B86D-4AA8-9F08-16A5EA6E5D5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F16227A-B86D-4AA8-9F08-16A5EA6E5D5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F16227A-B86D-4AA8-9F08-16A5EA6E5D5B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1AB78B53-D6B6-4637-9EFD-5F5AB88602F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1AB78B53-D6B6-4637-9EFD-5F5AB88602F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1AB78B53-D6B6-4637-9EFD-5F5AB88602F1}.Release|Any CPU.ActiveCfg = Release|Any CPU

@@ -20,19 +20,32 @@ namespace KushtPor.Pages
     /// </summary>
     public partial class Login : Page
     {
+        private User user;
+        private ApiClient apiClient;
+        
         public Login()
         {
             InitializeComponent();
+            user = new User();
+            apiClient = new ApiClient();
         }
 
+        
+        
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.NavigationService.Navigate(new Pages.SignIn());
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void Button_Next(object sender, RoutedEventArgs e)
         {
+            //user.UserName = this.UserName.Text;
+            //user.Email = this.EmailName.Text;
+            //user.Password = this.PassName.Text;
+            //user.Phone = "1111111";
+            //var httpResponse = apiClient.RegisterUser(user);
 
+            this.NavigationService.Navigate(new Pages.Verify());
         }
     }
 }
