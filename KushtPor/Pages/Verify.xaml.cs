@@ -1,8 +1,6 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -32,7 +30,10 @@ namespace KushtPor.Pages
 
             var response = httpClient.GetAsync(verifLink).Result;
 
-            this.NavigationService.Navigate(new Pages.SignIn());
+            if (response.IsSuccessStatusCode)
+            {
+                this.NavigationService.Navigate(new Pages.SignIn());
+            }
         }
     }
 }
