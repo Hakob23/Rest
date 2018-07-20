@@ -1,17 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using Newtonsoft.Json;
+using System;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace KushtPor.Pages
 {
@@ -27,6 +20,18 @@ namespace KushtPor.Pages
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            var httpClient = new HttpClient();
+            httpClient.BaseAddress = new Uri("http://localhost:5002");
+            httpClient.DefaultRequestHeaders.Accept.Add(
+                new MediaTypeWithQualityHeaderValue("application/json"));
+
+            //var json = JsonConvert.SerializeObject(this.Code.Text);
+
+            // Post async json object
+            var verifLink = $"api/verify/{this.Code.Text}";
+
+            var response = httpClient.GetAsync(verifLink).Result;
+
             this.NavigationService.Navigate(new Pages.SignIn());
         }
     }
