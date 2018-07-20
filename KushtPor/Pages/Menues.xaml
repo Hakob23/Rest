@@ -3,48 +3,33 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:KushtPor.Pages"
+      xmlns:local="clr-namespace:KushtPor"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Menues"
       MinHeight="500"
       MinWidth="800">
 
-    <Border Background="{StaticResource WordBlueBrush}">
-
+<Border Background="{StaticResource WordBlueBrush}">
         <Grid>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+
             <!-- Blue background image -->
             <Grid.Background>
                 <ImageBrush TileMode="Tile" ViewportUnits="Absolute" Viewport="0 0 500 500" ImageSource="/Images/Backgraunds/emoji-background.png" />
             </Grid.Background>
 
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="250"></ColumnDefinition>
-                <ColumnDefinition Width="*"></ColumnDefinition>
-            </Grid.ColumnDefinitions>
 
-            <Border Grid.Column="0" Background="{StaticResource BackgroundLightBrush}">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="auto"></RowDefinition>
-                        <RowDefinition Height="*"></RowDefinition>
-                    </Grid.RowDefinitions>
-
-                    <Grid Height="50" Background="{StaticResource WordBlueBrush}">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"></ColumnDefinition>
-                            <ColumnDefinition Width="*"></ColumnDefinition>
-                        </Grid.ColumnDefinitions>
-
-                        <Button Grid.Column="0" Style="{StaticResource IconButton}" ></Button>
-                        <Button Grid.Column="1" Style="{StaticResource IconButton}"></Button>
-                    </Grid>
-                </Grid>
-                
-            </Border>
-            
+            <!-- Side Menu -->
+            <local:SideMenuControl>
+                <local:MenuListItomControl VerticalAlignment="Top"></local:MenuListItomControl>
+            </local:SideMenuControl>
             
         </Grid>
-        
-    </Border>
+</Border>
 </Page>

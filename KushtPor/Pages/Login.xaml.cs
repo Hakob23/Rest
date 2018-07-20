@@ -45,7 +45,8 @@ namespace KushtPor.Pages
             //user.Phone = "1111111";
             //var httpResponse = apiClient.RegisterUser(user);
 
-            this.NavigationService.Navigate(new Pages.Verify());
+            //this.NavigationService.Navigate(new Pages.Verify());
+            this.NavigationService.Navigate(new Pages.Menues());
         }
     }
 }
