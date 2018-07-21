@@ -11,7 +11,7 @@
         <Grid>
             <!-- Blue background image -->
             <Grid.Background>
-                <ImageBrush TileMode="Tile" ViewportUnits="Absolute" Viewport="0 0 500 500" ImageSource="/Images/Backgraunds/emoji-background.png" />
+                <ImageBrush TileMode="Tile" ViewportUnits="Absolute" Viewport="0 0 500 500" ImageSource="/Images/Backgraunds/meals.jpg" />
             </Grid.Background>
 
             <!-- Main content scroll -->
@@ -37,23 +37,23 @@
                                    Foreground="{StaticResource WordBlueBrush}" />
 
                             <!-- Sign up subtext-->
-                            <TextBlock Text="Welcome to Maxims KushtPor" 
+                            <TextBlock Text="Welcome to Our KushtPor" 
                                        FontSize="{StaticResource FontSizeRegular}"
                                        Foreground="{StaticResource ForegroundDarkBrush}"
                                        Margin="0 0 0 20"
                                        />
 
                             <!-- Username -->
-                            <TextBox Tag="Username" />
+                            <TextBox x:Name="UserName" Tag="Username" />
                             
                             <!-- Email -->
-                            <TextBox Tag="Email" />
+                            <TextBox x:Name="EmailName" Tag="Email" />
 
                             <!-- Password -->
-                            <TextBox Tag="Password" Margin="0 0 0 30" />
+                            <TextBox x:Name="PassName" Tag="Password" Margin="0 0 0 30" />
 
                             <!-- Next button -->
-                            <Button Content="Next" HorizontalAlignment="Center" Click="Button_Click_1" />
+                            <Button Content="Next" HorizontalAlignment="Center" Click="Button_Next" />
 
                         </StackPanel>
 

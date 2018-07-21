@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace RegistrationApi.Controllers
 {
-    [Produces("application/json")]
+    //[Produces("application/json")]
     [Route("api/verify")]
     public class VerifyController : Controller
     {

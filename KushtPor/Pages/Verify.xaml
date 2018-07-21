@@ -8,7 +8,53 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Verify">
 
-    <Grid>
-        
-    </Grid>
+    <Border Background="{StaticResource WordBlueBrush}">
+        <Grid >
+            <!-- Blue background image -->
+            <Grid.Background>
+                <ImageBrush TileMode="Tile" ViewportUnits="Absolute" Viewport="0 0 500 500" ImageSource="/Images/Backgraunds/emoji-background.png" />
+            </Grid.Background>
+
+            <StackPanel
+                    Height="350"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    TextBlock.TextAlignment="Center">
+                <Border
+                     Height="350"
+                     Background="{StaticResource ForegroundLightBrush}" 
+                     CornerRadius="5"
+                     Padding="15 50 15 15"
+                     Width="330"
+                     Margin="50 0 50 0">
+                
+                
+                <StackPanel> 
+
+                    <TextBlock     Text="Your Mail Is Send" 
+                                   Background="{StaticResource BackgroundLightBrush}"
+                                   FontSize="{StaticResource FontSizeLarge}" 
+                                   FontFamily="{StaticResource LatoThin}"
+                                   Foreground="{StaticResource WordBlueBrush}"
+                                   Margin="0,0,0,40"
+                                   Padding="0,10"/>
+                    <!-- Code -->
+                    <TextBox x:Name="Code" Tag="Code" />
+                
+                    <!-- Sign In button -->
+                
+                    <Button
+                        Content="Sign In" 
+                        HorizontalAlignment="Center" 
+                        Click="Button_Click"
+                        Margin="0,50,0,0"/>
+                </StackPanel>
+
+                </Border>
+            </StackPanel>
+            
+            
+            
+        </Grid>
+    </Border>
 </Page>

@@ -1,5 +1,5 @@
 ﻿CREATE PROCEDURE [dbo].[GetTables]
-	@Restaurant nvarchar(50)
+	@restaurant nvarchar(50)
 AS
-	SELECT TableID from dbo.RestTablesID where RestaurantName = @Restaurant
+	SELECT * from dbo.RestTablesID where RestaurantName = @restaurant
 RETURN 0
