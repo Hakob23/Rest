@@ -36,10 +36,13 @@
                                    FontSize="{StaticResource FontSizeLarge}" 
                                    FontFamily="{StaticResource LatoThin}"
                                    Foreground="{StaticResource WordBlueBrush}"
-                                   Margin="0,0,0,80"
+                                   Margin="0,0,0,40"
                                    Padding="0,10"/>
-                    
+                    <!-- Code -->
+                    <TextBox x:Name="Code" Tag="Code" />
+                
                     <!-- Sign In button -->
+                
                     <Button
                         Content="Sign In" 
                         HorizontalAlignment="Center" 

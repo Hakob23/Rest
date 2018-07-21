@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
+using System.IO;
 
 namespace RestaurantsAddAndOrder
 {
@@ -18,12 +13,30 @@ namespace RestaurantsAddAndOrder
             Configuration = configuration;
         }
 
-        public IConfiguration Configuration { get; }
+        private IConfiguration Configuration = new ConfigurationBuilder()
+                                                 .SetBasePath(Directory.GetCurrentDirectory())
+                                                 .AddJsonFile("appsettings.json").Build();
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
+            services.AddMvcCore()
+                 .AddAuthorization()
+                 .AddJsonFormatters();
+
+            services.AddAuthentication("Bearer")
+                .AddIdentityServerAuthentication(options =>
+                {
+                    options.Authority = "http://localhost:5000";
+                    options.RequireHttpsMetadata = false;
+
+                    options.ApiName = "TableOrderApi";
+                });
+
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("Restaurant", policy => policy.RequireClaim("role", "restaurant"));
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -33,7 +46,7 @@ namespace RestaurantsAddAndOrder
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.UseAuthentication();
             app.UseMvc();
         }
     }

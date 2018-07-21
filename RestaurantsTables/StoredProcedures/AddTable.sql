@@ -1,6 +1,4 @@
 ﻿CREATE PROCEDURE [dbo].[AddTable]
-	@restaurant nvarchar(50),
-	@tableid int
+	@restaurant nvarchar(50)
 AS
-	insert into dbo.RestTablesID values (@restaurant, @tableid)
-RETURN 0
+	insert into dbo.RestTablesID(RestaurantName) values (@restaurant)

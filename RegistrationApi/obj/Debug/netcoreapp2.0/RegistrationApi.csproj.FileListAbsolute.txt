@@ -40,3 +40,17 @@ C:\Users\ARTHUR\Source\Repos\Restaurant\Rest\RegistrationApi\obj\Debug\netcoreap
 C:\Users\ARTHUR\Source\Repos\Restaurant\Rest\RegistrationApi\obj\Debug\netcoreapp2.0\RegistrationApi.csproj.CopyComplete
 C:\Users\ARTHUR\Source\Repos\Restaurant\Rest\RegistrationApi\obj\Debug\netcoreapp2.0\RegistrationApi.dll
 C:\Users\ARTHUR\Source\Repos\Restaurant\Rest\RegistrationApi\obj\Debug\netcoreapp2.0\RegistrationApi.pdb
+C:\Users\maxim\Desktop\Rest\RegistrationApi\bin\Debug\netcoreapp2.0\RegistrationApi.deps.json
+C:\Users\maxim\Desktop\Rest\RegistrationApi\bin\Debug\netcoreapp2.0\RegistrationApi.runtimeconfig.json
+C:\Users\maxim\Desktop\Rest\RegistrationApi\bin\Debug\netcoreapp2.0\RegistrationApi.runtimeconfig.dev.json
+C:\Users\maxim\Desktop\Rest\RegistrationApi\bin\Debug\netcoreapp2.0\RegistrationApi.dll
+C:\Users\maxim\Desktop\Rest\RegistrationApi\bin\Debug\netcoreapp2.0\RegistrationApi.pdb
+C:\Users\maxim\Desktop\Rest\RegistrationApi\bin\Debug\netcoreapp2.0\DatabaseAccessor.dll
+C:\Users\maxim\Desktop\Rest\RegistrationApi\bin\Debug\netcoreapp2.0\DatabaseAccessor.pdb
+C:\Users\maxim\Desktop\Rest\RegistrationApi\obj\Debug\netcoreapp2.0\RegistrationApi.csprojAssemblyReference.cache
+C:\Users\maxim\Desktop\Rest\RegistrationApi\obj\Debug\netcoreapp2.0\RegistrationApi.csproj.CoreCompileInputs.cache
+C:\Users\maxim\Desktop\Rest\RegistrationApi\obj\Debug\netcoreapp2.0\RegistrationApi.AssemblyInfoInputs.cache
+C:\Users\maxim\Desktop\Rest\RegistrationApi\obj\Debug\netcoreapp2.0\RegistrationApi.AssemblyInfo.cs
+C:\Users\maxim\Desktop\Rest\RegistrationApi\obj\Debug\netcoreapp2.0\RegistrationApi.csproj.CopyComplete
+C:\Users\maxim\Desktop\Rest\RegistrationApi\obj\Debug\netcoreapp2.0\RegistrationApi.dll
+C:\Users\maxim\Desktop\Rest\RegistrationApi\obj\Debug\netcoreapp2.0\RegistrationApi.pdb
