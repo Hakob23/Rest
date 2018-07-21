@@ -28,9 +28,5 @@ C:\Users\maxim\Desktop\Rest\UsersDB\bin\Debug\UsersDB.dacpac
 C:\Users\maxim\Desktop\Rest\UsersDB\bin\Debug\UsersDB.dll
 C:\Users\maxim\Desktop\Rest\UsersDB\bin\Debug\UsersDB.pdb
 C:\Users\maxim\Desktop\Rest\UsersDB\obj\Debug\UsersDB.sqlprojAssemblyReference.cache
-C:\Users\maxim\Desktop\Rest\UsersDB\obj\Debug\Model.xml
-C:\Users\maxim\Desktop\Rest\UsersDB\obj\Debug\refactor.xml
-C:\Users\maxim\Desktop\Rest\UsersDB\obj\Debug\postdeploy.sql
-C:\Users\maxim\Desktop\Rest\UsersDB\obj\Debug\predeploy.sql
 C:\Users\maxim\Desktop\Rest\UsersDB\obj\Debug\UsersDB.dll
 C:\Users\maxim\Desktop\Rest\UsersDB\obj\Debug\UsersDB.pdb

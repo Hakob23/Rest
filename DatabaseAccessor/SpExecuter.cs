@@ -11,7 +11,7 @@ namespace DatabaseAccess
     /// Class for accessing data from database executing procedures.
     /// Works only with MS SQL server. 
     /// </summary>
-    public class SpExecuter
+    public class SpExecuter : ISpExecuter
     {
         /// <summary>
         /// SQL server connection string
@@ -27,6 +27,11 @@ namespace DatabaseAccess
         /// Gets connection string
         /// </summary>
         public string ConnectionString => this._connString;
+
+        /// <summary>
+        /// Creates new instance of <see cref="SpExecuter"/>
+        /// </summary>
+        public SpExecuter() { }
 
         /// <summary>
         /// Creates new instance of <see cref="DatabaseAccess.SpExecuter"/> with the given connection string.
@@ -47,7 +52,7 @@ namespace DatabaseAccess
         /// <param name="dataSource">Data Source</param>
         /// <param name="initialCatalog">Initial catalog</param>
         /// <param name="integratedSecurity">Integrated Security</param>
-        public SpExecuter(string dataSource,string initialCatalog,bool integratedSecurity)
+        public SpExecuter(string dataSource, string initialCatalog, bool integratedSecurity)
         {
             this._connString = new SqlConnectionStringBuilder
             {
@@ -60,13 +65,24 @@ namespace DatabaseAccess
         }
 
         /// <summary>
+        /// Creates new stored procedure executer.
+        /// </summary>
+        /// <param name="cnnString">Connection string</param>
+        /// <returns>Stored procedure executer.</returns>
+        public ISpExecuter Create(string cnnString)
+        {
+            return new SpExecuter(cnnString);
+        }
+
+        /// <summary>
         /// Executes store procedure which return data is enumerable.
         /// </summary>
         /// <typeparam name="TResult">Type of Result.</typeparam>
         /// <param name="procedureName">Proceduer name</param>
         /// <param name="parameters">Procedure parametes</param>
         /// <returns>Enumerable of rows</returns>
-        public IEnumerable<TResult> ExecuteSp<TResult>(string procedureName,IEnumerable<KeyValuePair<string,object>> parameters = null)
+        public IEnumerable<TResult> ExecuteSp<TResult>(string procedureName, IEnumerable<KeyValuePair<string, object>> parameters = null)
+            where TResult : class
         {
             // returning result
             return (IEnumerable<TResult>)this.Execute<TResult>(new StoredProcedure
@@ -77,7 +93,15 @@ namespace DatabaseAccess
             });
         }
 
-        public TResult ExecuteEntitySp<TResult>(string procedureName,IEnumerable<KeyValuePair<string,object>> parameters = null)
+        /// <summary>
+        /// Executes stored procedure which return data is one row.
+        /// </summary>
+        /// <typeparam name="TResult">Type of resutlt</typeparam>
+        /// <param name="procedureName">Stored procedure name.</param>
+        /// <param name="parameters">Stored proceduer parameters</param>
+        /// <returns>Result which is one row in SQL table.</returns>
+        public TResult ExecuteEntitySp<TResult>(string procedureName, IEnumerable<KeyValuePair<string, object>> parameters = null)
+            where TResult : class
         {
             // returning result
             return (TResult)this.Execute<TResult>(new StoredProcedure
@@ -96,10 +120,10 @@ namespace DatabaseAccess
         /// <param name="parameters">Parameters</param>
         /// <returns>Enumerable of rows</returns>
         public Task<IEnumerable<TResult>> ExecuteSpAsync<TResult>(string procedureName,
-                    IEnumerable<KeyValuePair<string,object>> parameters = null)
+                    IEnumerable<KeyValuePair<string, object>> parameters = null) where TResult : class
         {
-            var task =  new Task<IEnumerable<TResult>>(() =>
-                    this.ExecuteSp<TResult>(procedureName, parameters));
+            var task = new Task<IEnumerable<TResult>>(() =>
+                   this.ExecuteSp<TResult>(procedureName, parameters));
 
             task.Start();
 
@@ -113,7 +137,8 @@ namespace DatabaseAccess
         /// <param name="procedureName">Procedure name</param>
         /// <param name="parameters">Procedure Parameters</param>
         /// <returns>Scalar result</returns>
-        public TResult ExecuteScalarSp<TResult>(string procedureName,IEnumerable<KeyValuePair<string,object>> parameters = null)
+        public TResult ExecuteScalarSp<TResult>(string procedureName, IEnumerable<KeyValuePair<string, object>> parameters = null)
+            where TResult : class
         {
             // returning result
             return (TResult)this.Execute<TResult>(new StoredProcedure
@@ -130,7 +155,7 @@ namespace DatabaseAccess
         /// <param name="procedureName">Procedure name</param>
         /// <param name="parameters">Procedure parameters</param>
         /// <returns>Amount of affected rows</returns>
-        public int ExecuteSpNonQuery(string procedureName,IEnumerable<KeyValuePair<string,object>> parameters = null)
+        public int ExecuteSpNonQuery(string procedureName, IEnumerable<KeyValuePair<string, object>> parameters = null)
         {
             // returning amount of affected rows
             return (int)this.Execute<object>(new StoredProcedure
@@ -147,10 +172,10 @@ namespace DatabaseAccess
         /// <typeparam name="TResult">Type of result</typeparam>
         /// <param name="storedProcedure">Stored procedure</param>
         /// <returns>Result of stored procedure execution</returns>
-        private object Execute<TResult>(StoredProcedure storedProcedure)
+        private object Execute<TResult>(StoredProcedure storedProcedure) where TResult : class
         {
             // checking argument
-            if(string.IsNullOrEmpty(storedProcedure.Name))
+            if (string.IsNullOrEmpty(storedProcedure.Name))
             {
                 throw new ArgumentException("Procedure name");
             }
@@ -165,7 +190,7 @@ namespace DatabaseAccess
                 sqlConnection.Open();
 
                 // executing stored procedures depending on their type
-                if(storedProcedure.StoredProcedureReturnData == StoredProcedureReturnData.Enumerable)
+                if (storedProcedure.StoredProcedureReturnData == StoredProcedureReturnData.Enumerable)
                 {
                     // list of results
                     var list = new List<TResult>();
@@ -173,7 +198,7 @@ namespace DatabaseAccess
                     // executing reader and retrieving data
                     using (var reader = sqlCommand.ExecuteReader())
                     {
-                        while(reader.Read())
+                        while (reader.Read())
                         {
                             list.Add(this.RetrieveEnumerableFromReader<TResult>(reader));
                         }
@@ -182,14 +207,15 @@ namespace DatabaseAccess
                     // returning list of results
                     return list;
                 }
-                else if(storedProcedure.StoredProcedureReturnData == StoredProcedureReturnData.OneRow)
+                else if (storedProcedure.StoredProcedureReturnData == StoredProcedureReturnData.OneRow)
                 {
                     using (var reader = sqlCommand.ExecuteReader())
                     {
+                        reader.Read();
                         return this.RetrieveEnumerableFromReader<TResult>(reader);
                     }
                 }
-                else if(storedProcedure.StoredProcedureReturnData == StoredProcedureReturnData.Scalar)
+                else if (storedProcedure.StoredProcedureReturnData == StoredProcedureReturnData.Scalar)
                 {
                     // returning scalar result
                     return sqlCommand.ExecuteScalar();
@@ -208,8 +234,8 @@ namespace DatabaseAccess
         /// <param name="sqlConnetion">Sql Connection</param>
         /// <param name="storedProcedure">Stored procedure</param>
         /// <returns>Constructed command</returns>
-        private SqlCommand ConstructCommand(SqlConnection sqlConnetion,StoredProcedure storedProcedure)
-        {            
+        private SqlCommand ConstructCommand(SqlConnection sqlConnetion, StoredProcedure storedProcedure)
+        {
             // constructing command
             var sqlCommand = new SqlCommand
             {
@@ -219,12 +245,12 @@ namespace DatabaseAccess
             };
 
             // if there are parameters then we need to add them to the command
-            if(storedProcedure.Parameters != null)
+            if (storedProcedure.Parameters != null)
             {
-                foreach(var parameter in storedProcedure.Parameters)
+                foreach (var parameter in storedProcedure.Parameters)
                 {
                     sqlCommand.Parameters.AddWithValue(parameter.Key, parameter.Value);
-                }                    
+                }
             }
 
             // returning constructed command
@@ -237,13 +263,16 @@ namespace DatabaseAccess
         /// <typeparam name="TResult">Type of result</typeparam>
         /// <param name="reader">Reader</param>
         /// <returns>Result</returns>
-        private TResult RetrieveEnumerableFromReader<TResult>(SqlDataReader reader)
+        private TResult RetrieveEnumerableFromReader<TResult>(SqlDataReader reader) where TResult : class
         {
             // checking argument
-            if(reader == null)
+            if (reader == null)
             {
                 throw new ArgumentNullException("Reader");
             }
+
+            if (!reader.HasRows)
+                return null;
 
             // creating result instance
             var result = Activator.CreateInstance<TResult>();
@@ -253,7 +282,7 @@ namespace DatabaseAccess
             var resultType = result.GetType();
 
             // getting properties
-            if(!this._cachedProperties.ContainsKey(resultType))
+            if (!this._cachedProperties.ContainsKey(resultType))
             {
                 properties = resultType.GetProperties();
                 this._cachedProperties.Add(resultType, properties);
@@ -264,15 +293,38 @@ namespace DatabaseAccess
             }
 
             // setting result object properties
-            foreach(var property in properties)
+            foreach (var property in properties)
             {
-                if (reader[property.Name] is DBNull)
+                // getting property type
+                var propertyType = property.PropertyType;
+
+                if (!propertyType.IsPrimitive && propertyType != typeof(string) && propertyType != typeof(DateTime))
                 {
-                    property.SetValue(result, null);
+                    // getting properties of complex property
+                    var propProperties = propertyType.GetProperties();
+
+                    // getting property object
+                    var propObject = Activator.CreateInstance(propertyType);
+
+                    // loop over the properties of complex property
+                    foreach (var propProperty in propProperties)
+                    {
+                        propProperty.SetValue(propObject, reader[propProperty.Name]);
+                    }
+
+                    property.SetValue(result, propObject);
                 }
+                // setting primitive property value
                 else
                 {
-                    property.SetValue(result, reader[property.Name]);
+                    if (reader[property.Name] is DBNull)
+                    {
+                        property.SetValue(result, null);
+                    }
+                    else
+                    {
+                        property.SetValue(result, reader[property.Name]);
+                    }
                 }
             }
 
