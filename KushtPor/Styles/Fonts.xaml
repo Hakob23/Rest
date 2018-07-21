@@ -27,6 +27,6 @@
     <system:Double x:Key="FontSizeLarge">30</system:Double>
 
     <system:String x:Key="FontAwesomeMenuIcon">&#xa3c6;</system:String>
-    <system:String x:Key="FontAwesomeTableIcon">&#xf0ce;</system:String>
+    <system:String x:Key="FontAwesomeTableIcon">&#xa4ce;</system:String>
     
 </ResourceDictionary>

@@ -32,9 +32,15 @@
                     </Grid>
 
                     <ScrollViewer Grid.Row="1">
-                        <ListView >
-                            
-                        </ListView>
+                        <StackPanel>
+                            <Button Content="AlcoholDrinks"></Button>
+                            <Button Content="Burgers"></Button>
+                            <Button Content="Drinks"></Button>
+                            <Button Content="HotMeals"></Button>
+                            <Button Content="Pizzas"></Button>
+                            <Button Content="Salads"></Button>
+                            <Button Content="Soups"></Button>
+                        </StackPanel>
                     </ScrollViewer>
                 </Grid>
             </Border>
