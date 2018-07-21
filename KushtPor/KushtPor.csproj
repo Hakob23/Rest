@@ -91,9 +91,23 @@
     </ApplicationDefinition>
     <Compile Include="Clients\LoginClient.cs" />
     <Compile Include="Clients\RegistrationClient.cs" />
+    <Compile Include="Control\MenuControl.xaml.cs">
+      <DependentUpon>MenuControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\MenuListItomControl.xaml.cs">
+      <DependentUpon>MenuListItomControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\SideMenuControl.xaml.cs">
+      <DependentUpon>SideMenuControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Menu.cs" />
     <Compile Include="Models\User.cs" />
+    <Compile Include="Models\ViewModel.cs" />
     <Compile Include="Pages\Menues.xaml.cs">
       <DependentUpon>Menues.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Register.xaml.cs">
+      <DependentUpon>Register.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\SignIn.xaml.cs">
       <DependentUpon>SignIn.xaml</DependentUpon>
@@ -102,6 +116,18 @@
       <DependentUpon>Verify.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\WindowResizer.cs" />
+    <Page Include="Control\MenuControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\MenuListItomControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\SideMenuControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -114,13 +140,13 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Pages\Register.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Pages\Menues.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Register.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Pages\SignIn.xaml">
       <SubType>Designer</SubType>
@@ -152,9 +178,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Pages\Register.xaml.cs">
-      <DependentUpon>Register.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -190,6 +213,7 @@
     <Resource Include="Fonts\Lato-SemiboldItalic.ttf" />
     <Resource Include="Fonts\Lato-Thin.ttf" />
     <Resource Include="Fonts\Lato-ThinItalic.ttf" />
+    <Resource Include="Fonts\fontawesome-webfont.ttf" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

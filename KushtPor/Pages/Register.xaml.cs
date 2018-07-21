@@ -34,6 +34,7 @@ namespace KushtPor.Pages
             var httpResponse = apiClient.RegisterUser(user);
 
             this.NavigationService.Navigate(new Pages.Verify());
+            //this.NavigationService.Navigate(new Pages.Menues());
         }
     }
 }
