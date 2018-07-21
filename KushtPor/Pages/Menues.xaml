@@ -29,7 +29,11 @@
             <local:SideMenuControl>
                 <local:MenuListItomControl VerticalAlignment="Top"></local:MenuListItomControl>
             </local:SideMenuControl>
-            
+
+            <local:MenuControl Grid.Column="1">
+                
+            </local:MenuControl>
         </Grid>
+        
 </Border>
 </Page>
