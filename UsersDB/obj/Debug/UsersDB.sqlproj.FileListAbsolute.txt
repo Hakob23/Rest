@@ -30,3 +30,4 @@ C:\Users\maxim\Desktop\Rest\UsersDB\bin\Debug\UsersDB.pdb
 C:\Users\maxim\Desktop\Rest\UsersDB\obj\Debug\UsersDB.sqlprojAssemblyReference.cache
 C:\Users\maxim\Desktop\Rest\UsersDB\obj\Debug\UsersDB.dll
 C:\Users\maxim\Desktop\Rest\UsersDB\obj\Debug\UsersDB.pdb
+C:\Users\ARTHUR\Source\Repos\Restaurant\Rest\UsersDB\obj\Debug\UsersDB.sqlprojAssemblyReference.cache

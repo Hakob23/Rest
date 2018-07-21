@@ -21,7 +21,7 @@
 
             <!-- Blue background image -->
             <Grid.Background>
-                <ImageBrush TileMode="Tile" ViewportUnits="Absolute" Viewport="0 0 500 500" ImageSource="/Images/Backgraunds/emoji-background.png" />
+                <ImageBrush TileMode="Tile" ViewportUnits="Absolute" Viewport="0 0 500 500" ImageSource="/Images/Backgraunds/meals.jpg" />
             </Grid.Background>
 
 
