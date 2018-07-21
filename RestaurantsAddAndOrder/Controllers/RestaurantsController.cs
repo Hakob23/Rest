@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Linq;
 using DatabaseAccess;
 using Microsoft.AspNetCore.Mvc;
 using RestaurantsAddAndOrder.Models;
@@ -32,7 +34,7 @@ namespace RestaurantsAddAndOrder.Controllers
                  "AddTable",
                  new[]
                  {
-                    new KeyValuePair<string,object>("restaurant", restaurantName)
+                    new KeyValuePair<string, object>("restaurant", restaurantName)
                  });
 
         }
@@ -44,8 +46,7 @@ namespace RestaurantsAddAndOrder.Controllers
                 "DeleteTable",
                 new[]
                 {
-                    new KeyValuePair<string,object>("restaurant", rest.RestaurantName),
-                    new KeyValuePair<string, object>("Id", rest.TableID)
+                    new KeyValuePair<string, object>("Id", rest.Id)
                 });
         }
 
@@ -56,9 +57,8 @@ namespace RestaurantsAddAndOrder.Controllers
                "GetTables",
                new[]
                 {
-                    new KeyValuePair<string,object>("restaurant", restaurantName)
+                    new KeyValuePair<string, object>("restaurant", restaurantName)
                 });
-            
             if (result == null)
             {
                 return new StatusCodeResult(404);
@@ -73,7 +73,7 @@ namespace RestaurantsAddAndOrder.Controllers
                "GetRestaurantbyTableId",
                new[]
                 {
-                    new KeyValuePair<string,object>("tableId", tableId)
+                    new KeyValuePair<string, object>("tableId", tableId)
                 });
 
             if (result == null)
