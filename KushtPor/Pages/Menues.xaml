@@ -23,7 +23,7 @@
             </Grid.ColumnDefinitions>
 
             <!-- Side Menu -->
-            <local:SideMenuControl>
+            <local:SideMenuControl Grid.Column="0" x:Name="menu">
                 <local:MenuListItomControl VerticalAlignment="Top"></local:MenuListItomControl>
             </local:SideMenuControl>
 

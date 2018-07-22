@@ -33,13 +33,13 @@
 
                     <ScrollViewer Grid.Row="1">
                         <StackPanel>
-                            <Button Content="AlcoholDrinks"></Button>
-                            <Button Content="Burgers"></Button>
-                            <Button Content="Drinks"></Button>
-                            <Button Content="HotMeals"></Button>
-                            <Button Content="Pizzas"></Button>
-                            <Button Content="Salads"></Button>
-                            <Button Content="Soups"></Button>
+                            <Button x:Name="AlcoholDrinks" Content="AlcoholDrinks" Click="AlcoholDrinks_Click"></Button>
+                            <Button x:Name="Burgers" Content="Burgers" Click="Burgers_Click"></Button>
+                            <Button x:Name="Drinks" Content="Drinks" Click="Drinks_Click"></Button>
+                            <Button x:Name="HotMeals" Content="HotMeals" Click="HotMeals_Click"></Button>
+                            <Button x:Name="Pizzas" Content="Pizzas" Click="Pizzas_Click"></Button>
+                            <Button x:Name="Salads" Content="Salads" Click="Salads_Click"></Button>
+                            <Button x:Name="Soups" Content="Soups" Click="Soups_Click"></Button>
                         </StackPanel>
                     </ScrollViewer>
                 </Grid>
