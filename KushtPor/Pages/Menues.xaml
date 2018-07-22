@@ -30,9 +30,7 @@
                 
             </local:SideMenuControl>
 
-            <local:MenuControl Grid.Column="1">
-                
-            </local:MenuControl>
+            <Frame Grid.Column="1" x:Name="secondFrame"  />
         </Grid>
         
 </Border>
