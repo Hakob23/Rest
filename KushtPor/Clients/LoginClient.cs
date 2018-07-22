@@ -21,19 +21,27 @@ namespace KushtPor.Clients
             var disco = DiscoveryClient.GetAsync("http://localhost:5000").Result;
 
             // getting token client with client id and secret
-            var tokenClient = new TokenClient(
+            try
+            {
+                var tokenClient = new TokenClient(
                 disco.TokenEndpoint,
                 "ro.client",
                 "secret");
 
-            // token response for username and password
-            var tokenResponse = tokenClient.RequestResourceOwnerPasswordAsync(
-                username, password).Result;
+                // token response for username and password
+                var tokenResponse = tokenClient.RequestResourceOwnerPasswordAsync(
+                    username, password).Result;
 
-            // acces token
-            this._accessToken = tokenResponse.AccessToken;
+                // acces token
+                this._accessToken = tokenResponse.AccessToken;
 
-            return this._accessToken;
+                return this._accessToken;
+            }
+            catch
+            {
+                return "error";
+            }
+            
 
             //this.httpClient.SetBearerToken(this._accessToken);
         }

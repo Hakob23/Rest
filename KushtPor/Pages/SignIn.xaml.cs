@@ -32,9 +32,11 @@ namespace KushtPor.Pages
         {
             // getting accesstoken
             var accesstoken = client.LogIn(this.UserName.Text, this.Pass.Text);
-
-            // navigate to menues page
-            //this.NavigationService.Navigate(new Pages.Menues(accesstoken, this.UserName.Text));
+            if (accesstoken != null)
+            {
+                // navigate to menues page
+                this.NavigationService.Navigate(new Pages.Menues(accesstoken, this.UserName.Text));
+            }
         }
     }
 }
