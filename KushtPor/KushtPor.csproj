@@ -103,14 +103,35 @@
     <Compile Include="Models\Menu.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\ViewModel.cs" />
+    <Compile Include="Pages\AlcoholDrinks.xaml.cs">
+      <DependentUpon>AlcoholDrinks.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Burgers.xaml.cs">
+      <DependentUpon>Burgers.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Drinks.xaml.cs">
+      <DependentUpon>Drinks.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\HotMeals.xaml.cs">
+      <DependentUpon>HotMeals.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Menues.xaml.cs">
       <DependentUpon>Menues.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Pizzas.xaml.cs">
+      <DependentUpon>Pizzas.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Register.xaml.cs">
       <DependentUpon>Register.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Salads.xaml.cs">
+      <DependentUpon>Salads.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\SignIn.xaml.cs">
       <DependentUpon>SignIn.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Soups.xaml.cs">
+      <DependentUpon>Soups.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Verify.xaml.cs">
       <DependentUpon>Verify.xaml</DependentUpon>
@@ -140,17 +161,45 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\AlcoholDrinks.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Burgers.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Drinks.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\HotMeals.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Pages\Menues.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\Pizzas.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Pages\Register.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Salads.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Pages\SignIn.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Soups.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Pages\Verify.xaml">
       <SubType>Designer</SubType>

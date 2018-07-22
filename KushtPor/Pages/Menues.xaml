@@ -26,8 +26,8 @@
 
 
             <!-- Side Menu -->
-            <local:SideMenuControl>
-                <local:MenuListItomControl VerticalAlignment="Top"></local:MenuListItomControl>
+            <local:SideMenuControl >
+                
             </local:SideMenuControl>
 
             <local:MenuControl Grid.Column="1">

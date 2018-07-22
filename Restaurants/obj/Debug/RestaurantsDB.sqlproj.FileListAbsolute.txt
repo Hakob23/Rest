@@ -20,3 +20,7 @@ C:\Users\maxim\Desktop\Rest\Restaurants\obj\Debug\RestaurantsDB.sqlprojAssemblyR
 C:\Users\maxim\Desktop\Rest\Restaurants\obj\Debug\Restaurants.dll
 C:\Users\maxim\Desktop\Rest\Restaurants\obj\Debug\Restaurants.pdb
 C:\Users\ARTHUR\Source\Repos\Restaurant\Rest\Restaurants\obj\Debug\RestaurantsDB.sqlprojAssemblyReference.cache
+C:\Users\ARTHUR\Source\Repos\Restaurant\Rest\Restaurants\obj\Debug\Model.xml
+C:\Users\ARTHUR\Source\Repos\Restaurant\Rest\Restaurants\obj\Debug\refactor.xml
+C:\Users\ARTHUR\Source\Repos\Restaurant\Rest\Restaurants\obj\Debug\postdeploy.sql
+C:\Users\ARTHUR\Source\Repos\Restaurant\Rest\Restaurants\obj\Debug\predeploy.sql
