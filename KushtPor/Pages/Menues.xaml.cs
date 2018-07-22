@@ -30,49 +30,49 @@ namespace KushtPor.Pages
 
         }
 
-        //public Menues(string userName,string accesToken)
-        //{
-        //    this.userName = userName;
-        //    this.accesToken = accesToken;
+        public Menues(string userName, string accesToken)
+        {
+            this.userName = userName;
+            this.accesToken = accesToken;
 
-        //    InitializeComponent();
-        //    this.menu.OnNavigateParentReady += MyControl_OnNavigateParentReady;
-        //    //secondFrame.Navigate(new Pages.Login());
-        //}
+            InitializeComponent();
+            this.menu.OnNavigateParentReady += MyControl_OnNavigateParentReady;
+            //secondFrame.Navigate(new Pages.Login());
+        }
 
-        //private void MyControl_OnNavigateParentReady(string name)
-        //{
-        //    switch (name)
-        //    {
-        //        case "AlcoholDrinks":
-        //            secondFrame.Navigate(new Pages.AlcoholDrinks(accesToken, userName));
-        //            break;
+        private void MyControl_OnNavigateParentReady(string name)
+        {
+            switch (name)
+            {
+                case "AlcoholDrinks":
+                    secondFrame.Navigate(new Pages.AlcoholDrinks(accesToken, userName));
+                    break;
 
-        //        case "Burgers":
-        //            secondFrame.Navigate(new Pages.Burgers(accesToken, userName));
-        //            break;
+                case "Burgers":
+                    secondFrame.Navigate(new Pages.Burgers(accesToken, userName));
+                    break;
 
-        //        case "Drinks":
-        //            secondFrame.Navigate(new Pages.Drinks(accesToken, userName));
-        //            break;
+                case "Drinks":
+                    secondFrame.Navigate(new Pages.Drinks(accesToken, userName));
+                    break;
 
-        //        case "HotMeals":
-        //            secondFrame.Navigate(new Pages.HotMeals(accesToken, userName));
-        //            break;
+                case "HotMeals":
+                    secondFrame.Navigate(new Pages.HotMeals(accesToken, userName));
+                    break;
 
-        //        case "Pizzas":
-        //            secondFrame.Navigate(new Pages.Pizzas(accesToken, userName));
-        //            break;
+                case "Pizzas":
+                    secondFrame.Navigate(new Pages.Pizzas(accesToken, userName));
+                    break;
 
-        //        case "Salads":
-        //            secondFrame.Navigate(new Pages.Salads(accesToken, userName));
-        //            break;
+                case "Salads":
+                    secondFrame.Navigate(new Pages.Salads(accesToken, userName));
+                    break;
 
-        //        case "Soups":
-        //            secondFrame.Navigate(new Pages.Soups(accesToken, userName));
-        //            break;
-        //    }
-            
+                case "Soups":
+                    secondFrame.Navigate(new Pages.Soups(accesToken, userName));
+                    break;
+            }
+
         }
     }
 }
