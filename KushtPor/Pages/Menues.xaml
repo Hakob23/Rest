@@ -10,28 +10,28 @@
       MinHeight="500"
       MinWidth="800">
 
-<Border Background="{StaticResource WordBlueBrush}">
+    <Border Background="{StaticResource WordBlueBrush}">
         <Grid>
+            <!-- Blue background image -->
+            <Grid.Background>
+                <ImageBrush TileMode="Tile" ViewportUnits="Absolute" Viewport="0 0 500 500" ImageSource="/Images/Backgraunds/meals.jpg" />
+            </Grid.Background>
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="300" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-
-            <!-- Blue background image -->
-            <Grid.Background>
-                <ImageBrush TileMode="Tile" ViewportUnits="Absolute" Viewport="0 0 500 500" ImageSource="/Images/Backgraunds/meals.jpg" />
-            </Grid.Background>
-
-
             <!-- Side Menu -->
-            <local:SideMenuControl >
-                
+            <local:SideMenuControl Grid.Column="0" x:Name="menu">
+                <local:MenuListItomControl VerticalAlignment="Top"></local:MenuListItomControl>
             </local:SideMenuControl>
 
             <Frame Grid.Column="1" x:Name="secondFrame"  />
+
+
         </Grid>
-        
-</Border>
+
+    </Border>
+
 </Page>
