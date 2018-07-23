@@ -35,7 +35,7 @@ namespace KushtPor.Pages
             if (accesstoken != null)
             {
                 // navigate to menues page
-                this.NavigationService.Navigate(new Pages.Menues(accesstoken, this.UserName.Text));
+                this.NavigationService.Navigate(new Menues(accesstoken, this.UserName.Text));
             }
         }
     }

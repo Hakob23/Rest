@@ -10,25 +10,25 @@
     <UserControl.Template>
         <ControlTemplate TargetType="UserControl">
             <Border Background="{StaticResource BackgroundLightBrush}">
-                
+
                 <!-- Content -->
                 <Grid>
-                    
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="auto"></RowDefinition>
-                            <RowDefinition Height="*"></RowDefinition>
-                        </Grid.RowDefinitions>
 
-                        <Grid Height="50" Background="{StaticResource WordBlueBrush}">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"></ColumnDefinition>
-                                <ColumnDefinition Width="*"></ColumnDefinition>
-                            </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
 
-                        
-                            <Button Grid.Column="0" Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomeMenuIcon}"></Button>
-                            <Button Grid.Column="1" Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomeTableIcon}"></Button>
-                        
+                    <Grid Height="50" Background="{StaticResource WordBlueBrush}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+
+                        <Button Grid.Column="0" Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomeMenuIcon}"></Button>
+                        <Button Grid.Column="1" Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomeTableIcon}"></Button>
+
                     </Grid>
 
                     <ScrollViewer Grid.Row="1">

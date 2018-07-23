@@ -12,7 +12,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using static Java.Util.ResourceBundle;
 
 namespace KushtPor.Pages
 {
@@ -24,22 +23,24 @@ namespace KushtPor.Pages
         string userName;
         string accesToken;
 
+
         public Menues()
         {
             InitializeComponent();
+
         }
 
-        public Menues(string userName,string accesToken)
+        public Menues(string accesToken, string userName)
         {
             this.userName = userName;
             this.accesToken = accesToken;
 
             InitializeComponent();
-            this.menu.OnNavigateParentReady += myControl_OnNavigateParentReady;
+            this.menu.OnNavigateParentReady += MyControl_OnNavigateParentReady;
             //secondFrame.Navigate(new Pages.Login());
         }
 
-        private void myControl_OnNavigateParentReady(string name)
+        private void MyControl_OnNavigateParentReady(string name)
         {
             switch (name)
             {
@@ -71,7 +72,7 @@ namespace KushtPor.Pages
                     secondFrame.Navigate(new Pages.Soups(accesToken, userName));
                     break;
             }
-            
+
         }
     }
 }
