@@ -29,7 +29,7 @@ namespace KushtPor.Pages
             user = new User();
             user.UserName = this.UserName.Text;
             user.Email = this.EmailName.Text;
-            user.Password = this.PassName.Text;
+            user.Password = this.PassName.Password;
             user.Role = "restaurant";
             var httpResponse = apiClient.RegisterUser(user);
 

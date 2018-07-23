@@ -19,5 +19,37 @@
     <Compile Include="$(MSBuildThisFileDirectory)MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\LoginPage.xaml.cs">
+      <DependentUpon>LoginPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\LoginViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Pages\LoginPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)Fonts\fontawesome-webfont.ttf" />
+    <None Include="$(MSBuildThisFileDirectory)Fonts\Lato-Black.ttf" />
+    <None Include="$(MSBuildThisFileDirectory)Fonts\Lato-BlackItalic.ttf" />
+    <None Include="$(MSBuildThisFileDirectory)Fonts\Lato-Bold.ttf" />
+    <None Include="$(MSBuildThisFileDirectory)Fonts\Lato-BoldItalic.ttf" />
+    <None Include="$(MSBuildThisFileDirectory)Fonts\Lato-Hairline.ttf" />
+    <None Include="$(MSBuildThisFileDirectory)Fonts\Lato-HairlineItalic.ttf" />
+    <None Include="$(MSBuildThisFileDirectory)Fonts\Lato-Heavy.ttf" />
+    <None Include="$(MSBuildThisFileDirectory)Fonts\Lato-HeavyItalic.ttf" />
+    <None Include="$(MSBuildThisFileDirectory)Fonts\Lato-Italic.ttf" />
+    <None Include="$(MSBuildThisFileDirectory)Fonts\Lato-Light.ttf" />
+    <None Include="$(MSBuildThisFileDirectory)Fonts\Lato-LightItalic.ttf" />
+    <None Include="$(MSBuildThisFileDirectory)Fonts\Lato-Medium.ttf" />
+    <None Include="$(MSBuildThisFileDirectory)Fonts\Lato-MediumItalic.ttf" />
+    <None Include="$(MSBuildThisFileDirectory)Fonts\Lato-Regular.ttf" />
+    <None Include="$(MSBuildThisFileDirectory)Fonts\Lato-Semibold.ttf" />
+    <None Include="$(MSBuildThisFileDirectory)Fonts\Lato-SemiboldItalic.ttf" />
+    <None Include="$(MSBuildThisFileDirectory)Fonts\Lato-Thin.ttf" />
+    <None Include="$(MSBuildThisFileDirectory)Fonts\Lato-ThinItalic.ttf" />
   </ItemGroup>
 </Project>

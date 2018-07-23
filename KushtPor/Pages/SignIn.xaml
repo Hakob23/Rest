@@ -47,7 +47,7 @@
                             <TextBox x:Name="UserName" Tag="Username" />
 
                             <!-- Password -->
-                            <TextBox x:Name="Pass" Tag="Password" Margin="0 0 0 30" />
+                            <PasswordBox x:Name="PassName" Tag="Password" Margin="0 0 0 30" />
 
                             <!-- Next button -->
                             <Button Content="Sign In" HorizontalAlignment="Center" Click="Button_Click_1"/>

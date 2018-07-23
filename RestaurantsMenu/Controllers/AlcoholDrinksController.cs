@@ -45,7 +45,7 @@ namespace RestaurantsMenu.Controllers
         }
 
         // GET api/<controller>?restaurantName=max&id=4
-        [HttpGet("{restaurantName, id}")]
+        [HttpGet("{restaurantName/id}")]
         [Authorize(Policy = "Restaurant")]
         public AlcoholDrink Get(string restaurantName, int id)
         {

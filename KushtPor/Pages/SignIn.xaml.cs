@@ -31,7 +31,7 @@ namespace KushtPor.Pages
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             // getting accesstoken
-            var accesstoken = client.LogIn(this.UserName.Text, this.Pass.Text);
+            var accesstoken = client.LogIn(this.UserName.Text, this.PassName.Password);
             if (accesstoken != null)
             {
                 // navigate to menues page
