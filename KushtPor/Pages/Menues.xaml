@@ -24,7 +24,7 @@
 
             <!-- Side Menu -->
             <local:SideMenuControl Grid.Column="0" x:Name="menu">
-                <local:MenuListItomControl VerticalAlignment="Top"></local:MenuListItomControl>
+               
             </local:SideMenuControl>
 
             <Frame Grid.Column="1" x:Name="secondFrame"  />

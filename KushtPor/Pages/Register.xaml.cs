@@ -26,15 +26,15 @@ namespace KushtPor.Pages
 
         private void Button_Next(object sender, RoutedEventArgs e)
         {
-            //user = new User();
-            //user.UserName = this.UserName.Text;
-            //user.Email = this.EmailName.Text;
-            //user.Password = this.PassName.Text;
-            //user.Role = "restaurant";
-            //var httpResponse = apiClient.RegisterUser(user);
+            user = new User();
+            user.UserName = this.UserName.Text;
+            user.Email = this.EmailName.Text;
+            user.Password = this.PassName.Text;
+            user.Role = "restaurant";
+            var httpResponse = apiClient.RegisterUser(user);
 
-            //this.NavigationService.Navigate(new Pages.Verify());
-            this.NavigationService.Navigate(new Pages.Menues());
+            this.NavigationService.Navigate(new Pages.Verify());
+            //this.NavigationService.Navigate(new Pages.Menues());
         }
     }
 }

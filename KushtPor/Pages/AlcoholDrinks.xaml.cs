@@ -26,6 +26,7 @@ namespace KushtPor.Pages
         string accessToken;
         public int count;
         HttpClient client;
+        Grid MyGrid;
 
         public AlcoholDrinks(string accessToken, string name)
         {
@@ -35,41 +36,73 @@ namespace KushtPor.Pages
             CreateAlcoholDrinksMenu();
         }
 
-        private async void CreateAlcoholDrinksMenu()
+        private  void CreateAlcoholDrinksMenu()
         {
             client = new HttpClient();
             client.BaseAddress = new Uri("http://localhost:5001/");
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("application/json"));
-            client.DefaultRequestHeaders.Authorization =
-                                new AuthenticationHeaderValue("Bearer", this.accessToken);
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", this.accessToken);
 
-            var response = await client.GetAsync($"api/alcoholdrinks/{this.userName}");
+            var response = client.GetAsync($"api/alcoholdrinks/{this.userName}").Result;
 
             List<AlcoholDrink> products = new List<AlcoholDrink>();
 
             if (response.IsSuccessStatusCode)
             {
-                products = await response.Content.ReadAsAsync<List<AlcoholDrink>>();
+                products = response.Content.ReadAsAsync<List<AlcoholDrink>>().Result;
             }
+
+
+            MyGrid = new Grid();
+                     
+
+
+            ColumnDefinition gridCol1 = new ColumnDefinition();
+
+           
+
+            ColumnDefinition gridCol3 = new ColumnDefinition();
+
+            gridCol1.Width = new GridLength(250);
+            gridCol3.Width = new GridLength(250);
+
+            
+
+            MyGrid.ColumnDefinitions.Add(gridCol1);
+
+            
+
+            MyGrid.ColumnDefinitions.Add(gridCol3);
+
 
             this.count = products.Count;
 
+
             for (int i = 0; i < count; i++)
             {
-                RowDefinition gridRow1 = new RowDefinition();
-
-                gridRow1.Height = new GridLength(45);
-
-                this.MyGrid.RowDefinitions.Add(gridRow1);
+                RowDefinition gridRow = new RowDefinition();
+                gridRow.Height = new GridLength(200);
+                this.MyGrid.RowDefinitions.Add(gridRow);
             }
+
+            int rowCount1 = 0;
+            int rowCount2 = 0;
 
             for (int i = 0; i < count; i++)
             {
                 StackPanel stackPanel = new StackPanel
                 {
                     Orientation = Orientation.Vertical,
+                    HorizontalAlignment = HorizontalAlignment.Center
+                };
+
+                Image image = new Image
+                {
+                    Width = 100,
+                    Height = 100,
+                    Source = new BitmapImage(new Uri(@"C:\Users\ARTHUR\Desktop\avatar.gif"))
                 };
 
                 TextBlock nameBlock = new TextBlock
@@ -104,9 +137,9 @@ namespace KushtPor.Pages
                 stackPanel.Children.Add(alcoholBlock);
                 stackPanel.Children.Add(volumeBlock);
                 stackPanel.Children.Add(priceBlock);
+                stackPanel.Children.Add(image);
 
-                int rowCount1 = 0;
-                int rowCount2 = 0;
+
 
                 if (i % 2 == 0)
                 {
@@ -116,11 +149,14 @@ namespace KushtPor.Pages
                 }
                 else
                 {
-                    Grid.SetColumn(stackPanel, 2);
+                    Grid.SetColumn(stackPanel, 1);
                     Grid.SetRow(stackPanel, rowCount2);
                     ++rowCount2;
                 }
+                MyGrid.Children.Add(stackPanel);
             }
+
+            this.Content = MyGrid;
         }
     }
 }

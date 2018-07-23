@@ -30,7 +30,7 @@ namespace KushtPor.Pages
 
         }
 
-        public Menues(string userName, string accesToken)
+        public Menues(string accesToken, string userName)
         {
             this.userName = userName;
             this.accesToken = accesToken;

@@ -23,7 +23,7 @@ namespace UsersRepository
         {
             var cnnStringBuilder = new SqlConnectionStringBuilder
             {
-                DataSource = ".",
+                DataSource = @"ARTHUR-PC\SQLEXPRESS",
                 InitialCatalog = "UsersDB",
                 IntegratedSecurity = true
             };
