@@ -25,7 +25,6 @@ namespace RestaurantsMenu.Controllers
 
         // GET api/<controller>/5
         [HttpGet]
-        [Authorize(Policy = "Restaurant")]
         public IActionResult Get(string restaurantName)
         {
             var result = this.productsRepository.Get<Salad>(restaurantName);

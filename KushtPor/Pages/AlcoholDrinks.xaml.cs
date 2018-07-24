@@ -102,7 +102,7 @@ namespace KushtPor.Pages
                 {
                     Width = 100,
                     Height = 100,
-                    Source = new BitmapImage(new Uri(@"C:\Users\ARTHUR\Desktop\avatar.gif"))
+                    Source = new BitmapImage(new Uri(@"C:\Users\maxim\Desktop\avatar.gif"))
                 };
 
                 TextBlock nameBlock = new TextBlock

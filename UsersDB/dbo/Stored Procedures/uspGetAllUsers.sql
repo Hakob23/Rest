@@ -1,6 +1,6 @@
 ﻿
 CREATE PROCEDURE [dbo].[uspGetAllUsers]
 AS
-	SELECT Username,Email,Phone
+	SELECT UserName,Email,Phone
 			from dbo.Users
 RETURN 0

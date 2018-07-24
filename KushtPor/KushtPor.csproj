@@ -94,6 +94,7 @@
     </ApplicationDefinition>
     <Compile Include="Clients\LoginClient.cs" />
     <Compile Include="Clients\RegistrationClient.cs" />
+    <Compile Include="Commands\CommandHandler.cs" />
     <Compile Include="Control\MenuControl.xaml.cs">
       <DependentUpon>MenuControl.xaml</DependentUpon>
     </Compile>
@@ -141,6 +142,7 @@
     <Compile Include="Pages\Verify.xaml.cs">
       <DependentUpon>Verify.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\RegistrationViewModel.cs" />
     <Compile Include="Windows\WindowResizer.cs" />
     <Page Include="Control\MenuControl.xaml">
       <SubType>Designer</SubType>

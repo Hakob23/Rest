@@ -10,11 +10,18 @@ using Xamarin.Forms.Xaml;
 
 namespace KushtPorMobile.Pages
 {
+    /// <summary>
+    /// Login view
+    /// </summary>
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class LoginPage : ContentPage
 	{
+        // login view model instance
         public LoginViewModel lvm;
 
+        /// <summary>
+        /// Login page constructor
+        /// </summary>
         public LoginPage ()
 		{
             InitializeComponent();
@@ -24,20 +31,21 @@ namespace KushtPorMobile.Pages
                 DisplayAlert("Title", username, "OK");
             });
 
+            // creating login view model instance
             lvm = new LoginViewModel();
+
+            // set navigation
+            lvm.Navigation = this.Navigation;
 
             this.BindingContext = lvm;
 
+            // change focus if input completed
             username.Completed += (object sender, EventArgs e) =>
-            {
-                email.Focus();
-            };
-
-            email.Completed += (object sender, EventArgs e) =>
             {
                 password.Focus();
             };
 
+            // change docus if input completed
             password.Completed += (object sender, EventArgs e) =>
             {
                 lvm.SubmitCommand.Execute(null);

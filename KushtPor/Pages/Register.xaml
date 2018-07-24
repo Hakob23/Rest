@@ -44,16 +44,16 @@
                                        />
 
                             <!-- Username -->
-                            <TextBox x:Name="UserName" Tag="Username" />
+                            <TextBox x:Name="UserName" Text="{Binding username, Mode=TwoWay}" Tag="Username" />
                             
                             <!-- Email -->
-                            <TextBox x:Name="EmailName" Tag="Email" />
+                            <TextBox x:Name="EmailName" Text="{Binding email}" Tag="Email" />
 
                             <!-- Password -->
-                            <PasswordBox x:Name="PassName" Tag="Password" Margin="0 0 0 30" />
+                            <PasswordBox x:Name="PassName" PasswordChanged="Button_PasswordChanged" Tag="Password"  Margin="0 0 0 30" />
 
                             <!-- Next button -->
-                            <Button Content="Next" HorizontalAlignment="Center" Click="Button_Next" />
+                            <Button Content="Next" Click="Button_Next" HorizontalAlignment="Center"  />
 
                         </StackPanel>
 

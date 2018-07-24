@@ -13,7 +13,3 @@ C:\Users\ARTHUR\Source\Repos\Restaurant\Rest\RestaurantsTables\bin\Debug\Restaur
 C:\Users\ARTHUR\Source\Repos\Restaurant\Rest\RestaurantsTables\bin\Debug\RestaurantsTables.pdb
 C:\Users\ARTHUR\Source\Repos\Restaurant\Rest\RestaurantsTables\obj\Debug\RestaurantsTables.dll
 C:\Users\ARTHUR\Source\Repos\Restaurant\Rest\RestaurantsTables\obj\Debug\RestaurantsTables.pdb
-C:\Users\maxim\Desktop\Rest\RestaurantsTables\obj\Debug\Model.xml
-C:\Users\maxim\Desktop\Rest\RestaurantsTables\obj\Debug\refactor.xml
-C:\Users\maxim\Desktop\Rest\RestaurantsTables\obj\Debug\postdeploy.sql
-C:\Users\maxim\Desktop\Rest\RestaurantsTables\obj\Debug\predeploy.sql

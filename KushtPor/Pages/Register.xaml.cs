@@ -1,4 +1,5 @@
 ﻿using KushtPor.Clients;
+using KushtPor.ViewModels;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -9,13 +10,17 @@ namespace KushtPor.Pages
     /// </summary>
     public partial class Login : Page
     {
+        
         // user for register
         private User user;
         private RegistrationClient apiClient;
-        
+        private RegistrationViewModel regVM;
+
         public Login()
         {
             InitializeComponent();
+            regVM = new RegistrationViewModel(this.NavigationService);
+            this.DataContext = regVM;
             apiClient = new RegistrationClient();
         }
         
@@ -35,6 +40,16 @@ namespace KushtPor.Pages
 
             this.NavigationService.Navigate(new Pages.Verify());
             //this.NavigationService.Navigate(new Pages.Menues());
+        }
+
+        private void Button_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            // converting sender to Password box
+            var passwordBox = (PasswordBox)sender;
+
+            // setting to view model fields
+           this.regVM.Password = passwordBox.Password;
+
         }
     }
 }

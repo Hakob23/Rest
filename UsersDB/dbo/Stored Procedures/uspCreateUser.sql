@@ -10,7 +10,7 @@ CREATE PROCEDURE [dbo].[uspCreateUser]
 	@ActivationCode uniqueidentifier = null,
 	@Role varchar(50)
 AS
-	if not exists (select Username from dbo.Users where Username = @username)
+	if not exists (select UserName from dbo.Users where UserName = @userName)
 	if not exists (select Email from dbo.Users where Email = @email)
 	insert into dbo.Users
 		values (@username,@email,@password,@phone,@IsEmailVerifyed,@ActivationCode,@Role)

@@ -1,11 +1,8 @@
 ﻿using System;
 
-namespace RecipeConsoleUI
+namespace KushtPorMobile.Models
 {
-    /// <summary>
-    /// Database UsersDB user
-    /// </summary>
-    public class user
+    public class User
     {
         /// <summary>
         /// Gets or sets username
@@ -16,7 +13,7 @@ namespace RecipeConsoleUI
         /// gets ro sets email
         /// </summary>
         public string Email { get; set; }
-        
+
         /// <summary>
         /// Gets or sets password
         /// </summary>
@@ -26,7 +23,7 @@ namespace RecipeConsoleUI
         /// Gets or sets Phone number
         /// </summary>
         public string Phone { get; set; }
-        
+
         /// <summary>
         /// Get or sets Is email verifyed
         /// </summary>
@@ -36,7 +33,7 @@ namespace RecipeConsoleUI
         /// Gets or sets Activation Code
         /// </summary>
         public Guid ActivationCode { get; set; }
-        
+
         /// <summary>
         /// Gets or sets Role
         /// </summary>

@@ -19,7 +19,6 @@ namespace RestaurantsMenu.Controllers
         // GET
         [HttpGet]
         //[Authorize]
-        [Authorize(Policy = "Restaurant")]
         public IActionResult Get()
         {
             var result = this.productsRepository.GetAll<AlcoholDrink>();
@@ -32,7 +31,6 @@ namespace RestaurantsMenu.Controllers
 
         // GET api/<controller>/5
         [HttpGet("{restaurantName}")]
-        [Authorize(Policy = "Restaurant")]
         public IActionResult Get(string restaurantName)
         {
             var result = this.productsRepository.Get<AlcoholDrink>(restaurantName);
