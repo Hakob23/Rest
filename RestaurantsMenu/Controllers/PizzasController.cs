@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace RestaurantsMenu.Controllers
 {
-    [Route("api/pizzas")]
+    [Route("api/[controller]")]
     [Produces("application/json")]
     public class PizzasController : Controller
     {
@@ -24,7 +24,7 @@ namespace RestaurantsMenu.Controllers
         }
 
         // GET api/<controller>/5
-        [HttpGet]
+        [HttpGet("{restaurantName}")]
         public IActionResult Get(string restaurantName)
         {
             var result = this.productsRepository.Get<Pizza>(restaurantName);
@@ -36,7 +36,7 @@ namespace RestaurantsMenu.Controllers
         }
 
         // GET api/<controller>?restaurantName=max&id=4
-        [HttpGet]
+        [HttpGet("{restaurantName}/{id}")]
         [Authorize(Policy = "Restaurant")]
         public IActionResult Get(string restaurantName, int id)
         {

@@ -24,7 +24,7 @@ namespace RestaurantsMenu.Controllers
         }
 
         // GET api/<controller>/5
-        [HttpGet]
+        [HttpGet("{restaurantName}")]
         public IActionResult Get(string restaurantName)
         {
             var result = this.productsRepository.Get<Soup>(restaurantName);
@@ -36,7 +36,7 @@ namespace RestaurantsMenu.Controllers
         }
 
         // GET api/<controller>?restaurantName=max&id=4
-        [HttpGet]
+        [HttpGet("{restaurantName}/{id}")]
         [Authorize(Policy = "Restaurant")]
         public IActionResult Get(string restaurantName, int id)
         {

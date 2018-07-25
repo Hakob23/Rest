@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KushtPor.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,12 +21,14 @@ namespace KushtPor.Pages
     /// </summary>
     public partial class Pizzas : Page
     {
-        string userName;
-        string accesToken;
+        private PizzaViewModel pvm;
 
         public Pizzas(string accessToken, string name)
         {
             InitializeComponent();
+            pvm = new PizzaViewModel(name, accessToken);
+            List.ItemsSource = pvm.Pizzas;
+            this.DataContext = pvm;
         }
     }
 }
