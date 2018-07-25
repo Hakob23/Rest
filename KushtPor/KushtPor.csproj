@@ -95,6 +95,7 @@
     <Compile Include="Clients\LoginClient.cs" />
     <Compile Include="Clients\RegistrationClient.cs" />
     <Compile Include="Commands\CommandHandler.cs" />
+    <Compile Include="Commands\RelayCommand.cs" />
     <Compile Include="Control\MenuControl.xaml.cs">
       <DependentUpon>MenuControl.xaml</DependentUpon>
     </Compile>
