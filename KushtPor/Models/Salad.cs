@@ -6,26 +6,25 @@ using System.Threading.Tasks;
 
 namespace KushtPor
 {
-
-    public class Burger
+   public  class Salad
     {
         /// <summary>
-        /// Burger Id
+        /// Salad Id
         /// </summary>
         public int Id { get; set; }
 
         /// <summary>
-        /// Burger Name
+        /// Salad Name
         /// </summary>
         public string Name { get; set; }
 
         /// <summary>
-        /// Burger Price
+        /// Salad Price
         /// </summary>
         public double Price { get; set; }
 
         /// <summary>
-        /// Burger Content
+        /// Salad Content
         /// </summary>
         public string Content { get; set; }
 

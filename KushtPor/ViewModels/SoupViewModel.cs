@@ -7,13 +7,13 @@ using System.Net.Http.Headers;
 namespace KushtPor.ViewModels
 {
     /// <summary>
-    /// Pizzas view model
+    /// Soup View model
     /// </summary>
-    class PizzaViewModel : ViewModel
+    class SoupViewModel : ViewModel
     {
         // List from where gets data
-        public ObservableCollection<Pizza> Pizzas { get; set; }
-        
+        public ObservableCollection<Soup> Soups { get; set; }
+
         // access Token
         public string accessToken;
 
@@ -23,51 +23,40 @@ namespace KushtPor.ViewModels
         // http client
         private HttpClient client;
 
-        ///// <summary>
-        ///// Pizza Id
-        ///// </summary>
+        /// <summary>
+        /// Soup Id
+        /// </summary>
         public int Id { get; set; }
 
-        ///// <summary>
-        ///// Pizza Name
-        ///// </summary>
+        /// <summary>
+        /// Soup Name
+        /// </summary>
         public string Name { get; set; }
 
-        ///// <summary>
-        ///// Pizza Price
-        ///// </summary>
+        /// <summary>
+        /// Soup Price
+        /// </summary>
         public double Price { get; set; }
 
         ///// <summary>
-        ///// Pizzas Content
+        ///// Soup Content
         ///// </summary>
         public string Content { get; set; }
 
-        ///// <summary>
-        ///// Pizzas Diametr
-        ///// </summary>
-        public int Diametr { get; set; }
-
         /// <summary>
-        /// Pizza Add Name
+        /// Soup Add Name
         /// </summary>
         public string AddName { get; set; }
 
         /// <summary>
-        /// Pizza Add Price
+        /// Soup Add Price
         /// </summary>
         public double AddPrice { get; set; }
 
         /// <summary>
-        /// Pizzas Add Content
+        /// Soup Add Content
         /// </summary>
         public string AddContent { get; set; }
-
-        /// <summary>
-        /// Pizzas Add Diametr
-        /// </summary>
-        public int AddDiametr { get; set; }
-
 
 
         /// <summary>
@@ -81,21 +70,21 @@ namespace KushtPor.ViewModels
         public RelayCommand Add { get; set; }
 
         /// <summary>
-        /// Pizza view model constructor
+        /// Soup view model constructor
         /// </summary>
         /// <param name="username">username</param>
         /// <param name="accessToken">accessToken</param>
-        public PizzaViewModel(string username, string accessToken)
+        public SoupViewModel(string username, string accessToken)
         {
             // accessToken
             this.accessToken = accessToken;
-            
+
             // username
             this.username = username;
 
             // create http client instance
             client = new HttpClient();
-            
+
             // initialize base address
             client.BaseAddress = new Uri("http://localhost:5001/");
             client.DefaultRequestHeaders.Accept.Clear();
@@ -104,45 +93,34 @@ namespace KushtPor.ViewModels
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", this.accessToken);
 
             // get response
-            var response = client.GetAsync($"api/pizzas/{username}").Result;
-            
+            var response = client.GetAsync($"api/soups/{username}").Result;
+
             // if success
             if (response.IsSuccessStatusCode)
             {
-               // init Piizas
-               Pizzas = response.Content.ReadAsAsync<ObservableCollection<Pizza>>().Result;
+                // init Soup
+                Soups = response.Content.ReadAsAsync<ObservableCollection<Soup>>().Result;
             }
 
-            Delete = new RelayCommand(() => DeletePizzaAsync(), o => true);
-            Add = new RelayCommand(() => AddPizzaAsync(), o => true);
+            Add = new RelayCommand(() => AddSoupAsync(), o => true);
         }
 
-        public async System.Threading.Tasks.Task AddPizzaAsync()
+        public async System.Threading.Tasks.Task AddSoupAsync()
         {
-            var pizza = new Pizza();
-            pizza.Name = AddName;
-            pizza.Price = AddPrice;
-            pizza.Content = AddContent;
-            pizza.Diametr = AddDiametr;
-            pizza.Restaurant = username;
+            var soup = new Soup
+            {
+                Name = AddName,
+                Price = AddPrice,
+                Content = AddContent,
+                Restaurant = username
+            };
 
-            var response = await client.PostAsJsonAsync($"api/pizzas", pizza);
+            var response = await client.PostAsJsonAsync($"api/soups", soup);
 
             if (response.IsSuccessStatusCode)
             {
-                Pizzas.Add(pizza);
+                Soups.Add(soup);
             }
-        }
-
-        public async System.Threading.Tasks.Task DeletePizzaAsync()
-        {
-            var pizza = new Pizza();
-            pizza.Id = Id;
-            pizza.Price = Price;
-            pizza.Name = Name;
-            pizza.Diametr = Diametr;
-
-            var response = await client.DeleteAsync($"api/pizzas/{Id}");
         }
     }
 }

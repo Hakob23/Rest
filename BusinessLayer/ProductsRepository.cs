@@ -272,44 +272,44 @@ namespace BusinessLayer
                 case "AlcoholDrink":
                     {
                         var mapper2 = new ReflectionBasedMapper<AlcoholDrinkDAL, T>();
-                        deleted = dal.UpdateProduct(mapper2.MapBack(product));
+                        deleted = dal.DeleteProduct(mapper2.MapBack(product));
                         break;
                     }
 
                 case "Burger":
                     {
                         var mapper2 = new ReflectionBasedMapper<BurgerDAL, T>();
-                        deleted = dal.UpdateProduct(mapper2.MapBack(product));
+                        deleted = dal.DeleteProduct(mapper2.MapBack(product));
                         break;
                     }
                 case "Drink":
                     {
                         var mapper2 = new ReflectionBasedMapper<DrinkDAL, T>();
-                        deleted = dal.UpdateProduct(mapper2.MapBack(product));
+                        deleted = dal.DeleteProduct(mapper2.MapBack(product));
                         break;
                     }
                 case "HotMeal":
                     {
                         var mapper2 = new ReflectionBasedMapper<HotMealDAL, T>();
-                        deleted = dal.UpdateProduct(mapper2.MapBack(product));
+                        deleted = dal.DeleteProduct(mapper2.MapBack(product));
                         break;
                     }
                 case "Pizza":
                     {
                         var mapper2 = new ReflectionBasedMapper<PizzaDAL, T>();
-                        deleted = dal.UpdateProduct(mapper2.MapBack(product));
+                        deleted = dal.DeleteProduct(mapper2.MapBack(product));
                         break;
                     }
                 case "Salad":
                     {
                         var mapper2 = new ReflectionBasedMapper<SaladDAL, T>();
-                        deleted = dal.UpdateProduct(mapper2.MapBack(product));
+                        deleted = dal.DeleteProduct(mapper2.MapBack(product));
                         break;
                     }
                 case "Soup":
                     {
                         var mapper2 = new ReflectionBasedMapper<SoupDAL, T>();
-                        deleted = dal.UpdateProduct(mapper2.MapBack(product));
+                        deleted = dal.DeleteProduct(mapper2.MapBack(product));
                         break;
                     }
             }
