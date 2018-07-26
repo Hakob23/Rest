@@ -51,7 +51,7 @@ namespace RestaurantsMenu.Controllers
         // POST api/<controller>
         [HttpPost]
         [Authorize(Policy = "Restaurant")]
-        public IActionResult Post([FromBody]Product value)
+        public IActionResult Post([FromBody]Soup value)
         {
             var result = this.productsRepository.CreateProduct(value);
             if (result == false)

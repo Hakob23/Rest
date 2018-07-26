@@ -8,7 +8,61 @@
       d:DesignHeight="450" d:DesignWidth="1000"
       Title="Soups">
 
-    <Grid>
-        
+    <Page.Resources>
+        <DataTemplate x:Key="BurgersTamplate">
+            <StackPanel>
+
+                <TextBlock Visibility="Collapsed" Text="{Binding Id}" 
+                                   FontSize="{StaticResource FontSizeLarge}" 
+                                   FontFamily="{StaticResource LatoRegular}"
+                                   Foreground="{StaticResource WordBlueBrush}" />
+
+                <Label Content="Name"></Label>
+                <TextBlock Text="{Binding Name}" 
+                                   FontSize="{StaticResource FontSizeLarge}" 
+                                   FontFamily="{StaticResource LatoRegular}"
+                                   Foreground="{StaticResource WordBlueBrush}" />
+
+                <Label Content="Price"></Label>
+                <TextBlock Text="{Binding Price}" 
+                                   FontSize="{StaticResource FontSizeLarge}" 
+                                   FontFamily="{StaticResource LatoRegular}"
+                                   Foreground="{StaticResource WordBlueBrush}" />
+
+                <Label Content="Content"></Label>
+                <TextBlock Text="{Binding Content}" 
+                                   FontSize="{StaticResource FontSizeLarge}" 
+                                   FontFamily="{StaticResource LatoRegular}"
+                                   Foreground="{StaticResource WordBlueBrush}" />
+
+                <Button Command="{Binding Delete}" Content="Delete" />
+
+            </StackPanel>
+        </DataTemplate>
+    </Page.Resources>
+
+    <Grid ShowGridLines="True">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <ListView Grid.Row="0" x:Name="List" ScrollViewer.HorizontalScrollBarVisibility="Hidden">
+            <ListView.View >
+                <GridView>
+                    <GridViewColumn Width="700" CellTemplate="{StaticResource BurgersTamplate}">
+
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <StackPanel Grid.Row="1" Margin="15" Orientation="Horizontal" Background="Transparent">
+            <TextBox Text="{Binding AddName, Mode=TwoWay}"  x:Name="Name" Tag="Name" />
+            <TextBox Text="{Binding AddPrice, Mode=TwoWay}" x:Name="Price" Tag="Price" Margin="20,0,0,0" />
+            <TextBox Text="{Binding AddContent, Mode=TwoWay}" x:Name="Content" Tag="Content" Margin="20,0,0,0" />
+            <Button Command="{Binding Add}" Content="Add" Padding="20 15" Margin="20,0,0,0"/>
+        </StackPanel>
     </Grid>
+
+
 </Page>

@@ -1,17 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using KushtPor.ViewModels;
 using System.Windows.Controls;
-using System.Windows.Data;
 using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+
 
 namespace KushtPor.Pages
 {
@@ -20,12 +10,15 @@ namespace KushtPor.Pages
     /// </summary>
     public partial class Drinks : Page
     {
-        string userName;
-        string accesToken;
+        private DrinkViewModel dvm;
 
         public Drinks(string accessToken, string name)
         {
             InitializeComponent();
+            dvm = new DrinkViewModel(name, accessToken);
+            List.ItemsSource = dvm.Drinks;
+            this.DataContext = dvm;
+
         }
     }
 }

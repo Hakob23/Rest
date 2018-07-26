@@ -6,14 +6,11 @@ using System.Net.Http.Headers;
 
 namespace KushtPor.ViewModels
 {
-    /// <summary>
-    /// Pizzas view model
-    /// </summary>
-    class PizzaViewModel : ViewModel
+    class HotMealViewModel : ViewModel
     {
         // List from where gets data
-        public ObservableCollection<Pizza> Pizzas { get; set; }
-        
+        public ObservableCollection<HotMeal> Meals { get; set; }
+
         // access Token
         public string accessToken;
 
@@ -24,51 +21,39 @@ namespace KushtPor.ViewModels
         private HttpClient client;
 
         ///// <summary>
-        ///// Pizza Id
+        ///// HotMeal Id
         ///// </summary>
         public int Id { get; set; }
 
         ///// <summary>
-        ///// Pizza Name
+        ///// HotMeal Name
         ///// </summary>
         public string Name { get; set; }
 
         ///// <summary>
-        ///// Pizza Price
+        ///// HotMeal Price
         ///// </summary>
         public double Price { get; set; }
 
         ///// <summary>
-        ///// Pizzas Content
+        ///// HotMeal Content
         ///// </summary>
         public string Content { get; set; }
 
-        ///// <summary>
-        ///// Pizzas Diametr
-        ///// </summary>
-        public int Diametr { get; set; }
-
         /// <summary>
-        /// Pizza Add Name
+        /// HotMeal Add Name
         /// </summary>
         public string AddName { get; set; }
 
         /// <summary>
-        /// Pizza Add Price
+        /// HotMeal Add Price
         /// </summary>
         public double AddPrice { get; set; }
 
         /// <summary>
-        /// Pizzas Add Content
+        /// HotMeal Add Content
         /// </summary>
         public string AddContent { get; set; }
-
-        /// <summary>
-        /// Pizzas Add Diametr
-        /// </summary>
-        public int AddDiametr { get; set; }
-
-
 
         /// <summary>
         /// Delete button command
@@ -81,21 +66,21 @@ namespace KushtPor.ViewModels
         public RelayCommand Add { get; set; }
 
         /// <summary>
-        /// Pizza view model constructor
+        /// HotMeal view model constructor
         /// </summary>
         /// <param name="username">username</param>
         /// <param name="accessToken">accessToken</param>
-        public PizzaViewModel(string username, string accessToken)
+        public HotMealViewModel(string username, string accessToken)
         {
             // accessToken
             this.accessToken = accessToken;
-            
+
             // username
             this.username = username;
 
             // create http client instance
             client = new HttpClient();
-            
+
             // initialize base address
             client.BaseAddress = new Uri("http://localhost:5001/");
             client.DefaultRequestHeaders.Accept.Clear();
@@ -104,45 +89,34 @@ namespace KushtPor.ViewModels
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", this.accessToken);
 
             // get response
-            var response = client.GetAsync($"api/pizzas/{username}").Result;
-            
+            var response = client.GetAsync($"api/hotmeals/{username}").Result;
+
             // if success
             if (response.IsSuccessStatusCode)
             {
-               // init Piizas
-               Pizzas = response.Content.ReadAsAsync<ObservableCollection<Pizza>>().Result;
+                // init Hot Meals
+               Meals = response.Content.ReadAsAsync<ObservableCollection<HotMeal>>().Result;
             }
 
-            Delete = new RelayCommand(() => DeletePizzaAsync(), o => true);
-            Add = new RelayCommand(() => AddPizzaAsync(), o => true);
+            Add = new RelayCommand(() => AddHotMealAsync(), o => true);
         }
 
-        public async System.Threading.Tasks.Task AddPizzaAsync()
+        public async System.Threading.Tasks.Task AddHotMealAsync()
         {
-            var pizza = new Pizza();
-            pizza.Name = AddName;
-            pizza.Price = AddPrice;
-            pizza.Content = AddContent;
-            pizza.Diametr = AddDiametr;
-            pizza.Restaurant = username;
+            var meals = new HotMeal
+            {
+                Name = AddName,
+                Price = AddPrice,
+                Content = AddContent,
+                Restaurant = username
+            };
 
-            var response = await client.PostAsJsonAsync($"api/pizzas", pizza);
+            var response = await client.PostAsJsonAsync($"api/hotmeals", meals);
 
             if (response.IsSuccessStatusCode)
             {
-                Pizzas.Add(pizza);
+                Meals.Add(meals);
             }
-        }
-
-        public async System.Threading.Tasks.Task DeletePizzaAsync()
-        {
-            var pizza = new Pizza();
-            pizza.Id = Id;
-            pizza.Price = Price;
-            pizza.Name = Name;
-            pizza.Diametr = Diametr;
-
-            var response = await client.DeleteAsync($"api/pizzas/{Id}");
         }
     }
 }

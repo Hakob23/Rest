@@ -107,8 +107,12 @@
     </Compile>
     <Compile Include="Models\AlcoholDrink.cs" />
     <Compile Include="Models\Burger.cs" />
+    <Compile Include="Models\Drink.cs" />
+    <Compile Include="Models\HotMeal.cs" />
     <Compile Include="Models\Menu.cs" />
     <Compile Include="Models\Pizza.cs" />
+    <Compile Include="Models\Salad.cs" />
+    <Compile Include="Models\Soup.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\ViewModel.cs" />
     <Compile Include="Pages\AlcoholDrinks.xaml.cs">
@@ -144,9 +148,14 @@
     <Compile Include="Pages\Verify.xaml.cs">
       <DependentUpon>Verify.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModels\PizzaPublicInfo.cs" />
+    <Compile Include="ViewModels\AlcoholDrinkViewModel.cs" />
+    <Compile Include="ViewModels\BurgerViewModel.cs" />
+    <Compile Include="ViewModels\DrinkViewModel.cs" />
+    <Compile Include="ViewModels\HotMealViewModel.cs" />
     <Compile Include="ViewModels\PizzaViewModel.cs" />
     <Compile Include="ViewModels\RegistrationViewModel.cs" />
+    <Compile Include="ViewModels\SaladViewModel.cs" />
+    <Compile Include="ViewModels\SoupViewModel.cs" />
     <Compile Include="Windows\WindowResizer.cs" />
     <Page Include="Control\MenuControl.xaml">
       <SubType>Designer</SubType>
