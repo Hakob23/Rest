@@ -1,24 +1,21 @@
 ﻿using KushtPor.Commands;
-using Newtonsoft.Json;
+using KushtPorForUsers.Models;
 using System;
 using System.Collections.ObjectModel;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Text;
 using System.Threading.Tasks;
 
-namespace KushtPor.ViewModels
+namespace KushtPorForUsers.ViewModels
 {
     /// <summary>
-    /// Salad View model
+    /// Pizzas view model
     /// </summary>
-    class SaladViewModel
+    class PizzaViewModel
     {
-        public Salad SaladDeleteItem { get; set; }
-
         // List from where gets data
-        public ObservableCollection<Salad> Salads { get; set; }
-
+        public ObservableCollection<Pizza> Pizzas { get; set; }
+        
         // access Token
         public string accessToken;
 
@@ -28,45 +25,51 @@ namespace KushtPor.ViewModels
         // http client
         private HttpClient client;
 
-        /// <summary>
-        /// Salad Id
-        /// </summary>
+        ///// <summary>
+        ///// Pizza Id
+        ///// </summary>
         public int Id { get; set; }
 
-        /// <summary>
-        /// Salad Name
-        /// </summary>
+        ///// <summary>
+        ///// Pizza Name
+        ///// </summary>
         public string Name { get; set; }
 
-        /// <summary>
-        /// Salad Price
-        /// </summary>
+        ///// <summary>
+        ///// Pizza Price
+        ///// </summary>
         public double Price { get; set; }
 
         ///// <summary>
-        ///// Salad Content
+        ///// Pizzas Content
         ///// </summary>
         public string Content { get; set; }
 
-        /// <summary>
-        /// Salad Id
-        /// </summary>
-        public int AddID { get; set; }
+        ///// <summary>
+        ///// Pizzas Diametr
+        ///// </summary>
+        public int Diametr { get; set; }
 
         /// <summary>
-        /// Salad Add Name
+        /// Pizza Add Name
         /// </summary>
         public string AddName { get; set; }
 
         /// <summary>
-        /// Salad Add Price
+        /// Pizza Add Price
         /// </summary>
         public double AddPrice { get; set; }
 
         /// <summary>
-        /// Salad Add Content
+        /// Pizzas Add Content
         /// </summary>
         public string AddContent { get; set; }
+
+        /// <summary>
+        /// Pizzas Add Diametr
+        /// </summary>
+        public int AddDiametr { get; set; }
+
 
 
         /// <summary>
@@ -80,21 +83,21 @@ namespace KushtPor.ViewModels
         public RelayCommand Add { get; set; }
 
         /// <summary>
-        /// Salad view model constructor
+        /// Pizza view model constructor
         /// </summary>
         /// <param name="username">username</param>
         /// <param name="accessToken">accessToken</param>
-        public SaladViewModel(string username, string accessToken)
+        public PizzaViewModel(string username, string accessToken)
         {
             // accessToken
             this.accessToken = accessToken;
-
+            
             // username
             this.username = username;
 
             // create http client instance
             client = new HttpClient();
-
+            
             // initialize base address
             client.BaseAddress = new Uri("http://localhost:5001/");
             client.DefaultRequestHeaders.Accept.Clear();
@@ -103,45 +106,45 @@ namespace KushtPor.ViewModels
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", this.accessToken);
 
             // get response
-            var response = client.GetAsync($"api/salads/{username}").Result;
-
+            var response = client.GetAsync($"api/pizzas/{username}").Result;
+            
             // if success
             if (response.IsSuccessStatusCode)
             {
-                // init Salads
-                Salads = response.Content.ReadAsAsync<ObservableCollection<Salad>>().Result;
+               // init Piizas
+               Pizzas = response.Content.ReadAsAsync<ObservableCollection<Pizza>>().Result;
             }
 
-            Add = new RelayCommand(() =>  AddSaladAsync() , o => true);
-            Delete = new RelayCommand(() => DeleteSaladAsync(), o => true);
-
-
+            Delete = new RelayCommand(() => DeletePizzaAsync(), o => true);
+            Add = new RelayCommand(() => AddPizzaAsync(), o => true);
         }
 
-        public async Task AddSaladAsync()
+        public async Task AddPizzaAsync()
         {
-            var salad = new Salad
-            {
-                Name = AddName,
-                Price = AddPrice,
-                Content = AddContent,
-                Restaurant = username
-            };
+            var pizza = new Pizza();
+            pizza.Name = AddName;
+            pizza.Price = AddPrice;
+            pizza.Content = AddContent;
+            pizza.Diametr = AddDiametr;
+            pizza.Restaurant = username;
 
-            var response = await client.PostAsJsonAsync($"api/salads", salad);
+            var response = await client.PostAsJsonAsync($"api/pizzas", pizza);
 
             if (response.IsSuccessStatusCode)
             {
-                Salads.Add(salad);
+                Pizzas.Add(pizza);
             }
         }
 
-        public void DeleteSaladAsync()
+        public async System.Threading.Tasks.Task DeletePizzaAsync()
         {
-            var request = new HttpRequestMessage(HttpMethod.Delete, $"api/salads");
-            request.Content = new StringContent(JsonConvert.SerializeObject(SaladDeleteItem), Encoding.UTF8, "application/json");
-            var response = this.client.SendAsync(request).Result;
-            Salads.Remove(this.SaladDeleteItem);
+            var pizza = new Pizza();
+            pizza.Id = Id;
+            pizza.Price = Price;
+            pizza.Name = Name;
+            pizza.Diametr = Diametr;
+
+            var response = await client.DeleteAsync($"api/pizzas/{Id}");
         }
     }
 }

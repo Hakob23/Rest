@@ -1,27 +1,26 @@
-﻿namespace KushtPor
+﻿namespace KushtPorForUsers.Models
 {
-
-    public class Burger
+    public class Drink
     {
         /// <summary>
-        /// Burger Id
+        /// Drinks Id
         /// </summary>
         public int Id { get; set; }
 
         /// <summary>
-        /// Burger Name
+        /// Driks Name
         /// </summary>
         public string Name { get; set; }
 
         /// <summary>
-        /// Burger Price
+        /// Driks Price
         /// </summary>
         public double Price { get; set; }
 
         /// <summary>
-        /// Burger Content
+        /// Driks Volume
         /// </summary>
-        public string Content { get; set; }
+        public double Volume { get; set; }
 
         /// <summary>
         /// Restaurants Name

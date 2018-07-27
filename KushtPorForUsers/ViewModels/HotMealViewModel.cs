@@ -1,23 +1,16 @@
 ﻿using KushtPor.Commands;
-using Newtonsoft.Json;
+using KushtPorForUsers.Models;
 using System;
 using System.Collections.ObjectModel;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace KushtPor.ViewModels
+namespace KushtPorForUsers.ViewModels
 {
-    /// <summary>
-    /// Salad View model
-    /// </summary>
-    class SaladViewModel
+    class HotMealViewModel 
     {
-        public Salad SaladDeleteItem { get; set; }
-
         // List from where gets data
-        public ObservableCollection<Salad> Salads { get; set; }
+        public ObservableCollection<HotMeal> Meals { get; set; }
 
         // access Token
         public string accessToken;
@@ -28,46 +21,40 @@ namespace KushtPor.ViewModels
         // http client
         private HttpClient client;
 
-        /// <summary>
-        /// Salad Id
-        /// </summary>
+        ///// <summary>
+        ///// HotMeal Id
+        ///// </summary>
         public int Id { get; set; }
 
-        /// <summary>
-        /// Salad Name
-        /// </summary>
+        ///// <summary>
+        ///// HotMeal Name
+        ///// </summary>
         public string Name { get; set; }
 
-        /// <summary>
-        /// Salad Price
-        /// </summary>
+        ///// <summary>
+        ///// HotMeal Price
+        ///// </summary>
         public double Price { get; set; }
 
         ///// <summary>
-        ///// Salad Content
+        ///// HotMeal Content
         ///// </summary>
         public string Content { get; set; }
 
         /// <summary>
-        /// Salad Id
-        /// </summary>
-        public int AddID { get; set; }
-
-        /// <summary>
-        /// Salad Add Name
+        /// HotMeal Add Name
         /// </summary>
         public string AddName { get; set; }
 
         /// <summary>
-        /// Salad Add Price
+        /// HotMeal Add Price
         /// </summary>
         public double AddPrice { get; set; }
 
         /// <summary>
-        /// Salad Add Content
+        /// HotMeal Add Content
         /// </summary>
         public string AddContent { get; set; }
-
 
         /// <summary>
         /// Delete button command
@@ -80,11 +67,11 @@ namespace KushtPor.ViewModels
         public RelayCommand Add { get; set; }
 
         /// <summary>
-        /// Salad view model constructor
+        /// HotMeal view model constructor
         /// </summary>
         /// <param name="username">username</param>
         /// <param name="accessToken">accessToken</param>
-        public SaladViewModel(string username, string accessToken)
+        public HotMealViewModel(string username, string accessToken)
         {
             // accessToken
             this.accessToken = accessToken;
@@ -103,24 +90,21 @@ namespace KushtPor.ViewModels
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", this.accessToken);
 
             // get response
-            var response = client.GetAsync($"api/salads/{username}").Result;
+            var response = client.GetAsync($"api/hotmeals/{username}").Result;
 
             // if success
             if (response.IsSuccessStatusCode)
             {
-                // init Salads
-                Salads = response.Content.ReadAsAsync<ObservableCollection<Salad>>().Result;
+                // init Hot Meals
+               Meals = response.Content.ReadAsAsync<ObservableCollection<HotMeal>>().Result;
             }
 
-            Add = new RelayCommand(() =>  AddSaladAsync() , o => true);
-            Delete = new RelayCommand(() => DeleteSaladAsync(), o => true);
-
-
+            Add = new RelayCommand(() => AddHotMealAsync(), o => true);
         }
 
-        public async Task AddSaladAsync()
+        public async System.Threading.Tasks.Task AddHotMealAsync()
         {
-            var salad = new Salad
+            var meals = new HotMeal
             {
                 Name = AddName,
                 Price = AddPrice,
@@ -128,20 +112,12 @@ namespace KushtPor.ViewModels
                 Restaurant = username
             };
 
-            var response = await client.PostAsJsonAsync($"api/salads", salad);
+            var response = await client.PostAsJsonAsync($"api/hotmeals", meals);
 
             if (response.IsSuccessStatusCode)
             {
-                Salads.Add(salad);
+                Meals.Add(meals);
             }
-        }
-
-        public void DeleteSaladAsync()
-        {
-            var request = new HttpRequestMessage(HttpMethod.Delete, $"api/salads");
-            request.Content = new StringContent(JsonConvert.SerializeObject(SaladDeleteItem), Encoding.UTF8, "application/json");
-            var response = this.client.SendAsync(request).Result;
-            Salads.Remove(this.SaladDeleteItem);
         }
     }
 }

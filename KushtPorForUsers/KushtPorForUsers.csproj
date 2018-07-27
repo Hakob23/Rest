@@ -77,7 +77,32 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Commands\CommandHandler.cs" />
+    <Compile Include="Commands\DeleteCommand.cs" />
+    <Compile Include="Commands\RelayCommand.cs" />
+    <Compile Include="Control\SideMenuControl.xaml.cs">
+      <DependentUpon>SideMenuControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AlcoholDrink.cs" />
+    <Compile Include="Model\Burger.cs" />
+    <Compile Include="Model\Drink.cs" />
+    <Compile Include="Model\HotMeal.cs" />
+    <Compile Include="Model\Pizza.cs" />
+    <Compile Include="Model\Salad.cs" />
+    <Compile Include="Model\Soup.cs" />
+    <Compile Include="ViewModels\AlcoholDrinkViewModel.cs" />
+    <Compile Include="ViewModels\BurgerViewModel.cs" />
+    <Compile Include="ViewModels\DrinkViewModel.cs" />
+    <Compile Include="ViewModels\HotMealViewModel.cs" />
+    <Compile Include="ViewModels\PizzaViewModel.cs" />
+    <Compile Include="ViewModels\RegistrationViewModel.cs" />
+    <Compile Include="ViewModels\SaladViewModel.cs" />
+    <Compile Include="ViewModels\SoupViewModel.cs" />
     <Compile Include="Windows\WindowResizer.cs" />
+    <Page Include="Control\SideMenuControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

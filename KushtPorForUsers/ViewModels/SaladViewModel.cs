@@ -1,21 +1,18 @@
 ﻿using KushtPor.Commands;
-using Newtonsoft.Json;
+using KushtPorForUsers.Models;
 using System;
 using System.Collections.ObjectModel;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Text;
 using System.Threading.Tasks;
 
-namespace KushtPor.ViewModels
+namespace KushtPorForUsers.ViewModels
 {
     /// <summary>
     /// Salad View model
     /// </summary>
     class SaladViewModel
     {
-        public Salad SaladDeleteItem { get; set; }
-
         // List from where gets data
         public ObservableCollection<Salad> Salads { get; set; }
 
@@ -113,7 +110,7 @@ namespace KushtPor.ViewModels
             }
 
             Add = new RelayCommand(() =>  AddSaladAsync() , o => true);
-            Delete = new RelayCommand(() => DeleteSaladAsync(), o => true);
+            Delete = new RelayCommand(() => DeleteSalad(), o => true);
 
 
         }
@@ -136,12 +133,9 @@ namespace KushtPor.ViewModels
             }
         }
 
-        public void DeleteSaladAsync()
+        public void DeleteSalad()
         {
-            var request = new HttpRequestMessage(HttpMethod.Delete, $"api/salads");
-            request.Content = new StringContent(JsonConvert.SerializeObject(SaladDeleteItem), Encoding.UTF8, "application/json");
-            var response = this.client.SendAsync(request).Result;
-            Salads.Remove(this.SaladDeleteItem);
+            
         }
     }
 }

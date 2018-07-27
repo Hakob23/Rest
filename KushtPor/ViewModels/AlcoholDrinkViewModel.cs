@@ -11,6 +11,8 @@ namespace KushtPor.ViewModels
     /// </summary>
     class AlcoholDrinkViewModel 
     {
+        public AlcoholDrink Drink { get; set; }
+
         // List from where gets data
         public ObservableCollection<AlcoholDrink> Alcohols { get; set; }
 
@@ -115,10 +117,12 @@ namespace KushtPor.ViewModels
             }
 
             Add = new RelayCommand(() => AddAlcoholAsync(), o => true);
+            Delete = new RelayCommand(() => DeleteAlcohol(), o => true);
         }
 
         public async System.Threading.Tasks.Task AddAlcoholAsync()
         {
+           
             var alcohol = new AlcoholDrink
             {
                 Name = AddName,
@@ -136,14 +140,18 @@ namespace KushtPor.ViewModels
             }
         }
 
-        //public void DeleteAlcohol()
-        //{
-        //    var pizza = new Pizza();
-        //    pizza.Id = Id;
-        //    pizza.Price = Price;
-        //    pizza.Name = Name;
-        //    pizza.Diametr = Diametr;
-        //}
+        public void DeleteAlcohol()
+        {
+            var alcohol = new AlcoholDrink
+            {
+                Alcohol = Alcohol,
+                Name = Name,
+                Price = Price,
+                Restaurant = username,
+                Volume = Volume,
+                Id = Id
+            };
+        }
 
 
     }

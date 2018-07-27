@@ -1,4 +1,4 @@
-﻿namespace KushtPor
+﻿namespace KushtPorForUsers.Models
 {
 
     public class Burger

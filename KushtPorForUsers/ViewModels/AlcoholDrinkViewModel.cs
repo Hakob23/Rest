@@ -1,23 +1,19 @@
 ﻿using KushtPor.Commands;
-using Newtonsoft.Json;
+using KushtPorForUsers.Models;
 using System;
 using System.Collections.ObjectModel;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace KushtPor.ViewModels
+namespace KushtPorForUsers.ViewModels
 {
     /// <summary>
-    /// Salad View model
+    /// Alcohols view model
     /// </summary>
-    class SaladViewModel
+    class AlcoholDrinkViewModel 
     {
-        public Salad SaladDeleteItem { get; set; }
-
         // List from where gets data
-        public ObservableCollection<Salad> Salads { get; set; }
+        public ObservableCollection<AlcoholDrink> Alcohols { get; set; }
 
         // access Token
         public string accessToken;
@@ -29,45 +25,52 @@ namespace KushtPor.ViewModels
         private HttpClient client;
 
         /// <summary>
-        /// Salad Id
+        /// Alcohol Id
         /// </summary>
         public int Id { get; set; }
 
         /// <summary>
-        /// Salad Name
+        /// Alcohol Name
         /// </summary>
         public string Name { get; set; }
 
         /// <summary>
-        /// Salad Price
+        /// Alcohol Price
         /// </summary>
         public double Price { get; set; }
 
-        ///// <summary>
-        ///// Salad Content
-        ///// </summary>
-        public string Content { get; set; }
-
         /// <summary>
-        /// Salad Id
+        /// Driks Alcohol Procents
         /// </summary>
-        public int AddID { get; set; }
+        public double Alcohol { get; set; }
 
         /// <summary>
-        /// Salad Add Name
+        /// Driks Volume
+        /// </summary>
+        public double Volume { get; set; }
+
+
+
+        /// <summary>
+        /// Alcohol Add Name
         /// </summary>
         public string AddName { get; set; }
 
         /// <summary>
-        /// Salad Add Price
+        /// Alcohol Add Price
         /// </summary>
         public double AddPrice { get; set; }
 
         /// <summary>
-        /// Salad Add Content
+        /// Add Driks Alcohol Procents;
         /// </summary>
-        public string AddContent { get; set; }
+        public double AddAlcohol { get; set; }
 
+
+        /// <summary>
+        /// Add Driks Volume
+        /// </summary>
+        public double AddVolume { get; set; }
 
         /// <summary>
         /// Delete button command
@@ -80,11 +83,11 @@ namespace KushtPor.ViewModels
         public RelayCommand Add { get; set; }
 
         /// <summary>
-        /// Salad view model constructor
+        /// AlcoholDrink view model constructor
         /// </summary>
         /// <param name="username">username</param>
         /// <param name="accessToken">accessToken</param>
-        public SaladViewModel(string username, string accessToken)
+        public AlcoholDrinkViewModel(string username, string accessToken)
         {
             // accessToken
             this.accessToken = accessToken;
@@ -103,45 +106,46 @@ namespace KushtPor.ViewModels
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", this.accessToken);
 
             // get response
-            var response = client.GetAsync($"api/salads/{username}").Result;
+            var response = client.GetAsync($"api/alcoholdrinks/{username}").Result;
 
             // if success
             if (response.IsSuccessStatusCode)
             {
-                // init Salads
-                Salads = response.Content.ReadAsAsync<ObservableCollection<Salad>>().Result;
+                // init Alchohol Drinks
+                Alcohols = response.Content.ReadAsAsync<ObservableCollection<AlcoholDrink>>().Result;
             }
 
-            Add = new RelayCommand(() =>  AddSaladAsync() , o => true);
-            Delete = new RelayCommand(() => DeleteSaladAsync(), o => true);
-
-
+            Add = new RelayCommand(() => AddAlcoholAsync(), o => true);
         }
 
-        public async Task AddSaladAsync()
+        public async System.Threading.Tasks.Task AddAlcoholAsync()
         {
-            var salad = new Salad
+            var alcohol = new AlcoholDrink
             {
                 Name = AddName,
                 Price = AddPrice,
-                Content = AddContent,
+                Alcohol = AddAlcohol,
+                Volume = AddVolume,
                 Restaurant = username
             };
 
-            var response = await client.PostAsJsonAsync($"api/salads", salad);
+            var response = await client.PostAsJsonAsync($"api/alcoholdrinks", alcohol);
 
             if (response.IsSuccessStatusCode)
             {
-                Salads.Add(salad);
+                Alcohols.Add(alcohol);
             }
         }
 
-        public void DeleteSaladAsync()
-        {
-            var request = new HttpRequestMessage(HttpMethod.Delete, $"api/salads");
-            request.Content = new StringContent(JsonConvert.SerializeObject(SaladDeleteItem), Encoding.UTF8, "application/json");
-            var response = this.client.SendAsync(request).Result;
-            Salads.Remove(this.SaladDeleteItem);
-        }
+        //public void DeleteAlcohol()
+        //{
+        //    var pizza = new Pizza();
+        //    pizza.Id = Id;
+        //    pizza.Price = Price;
+        //    pizza.Name = Name;
+        //    pizza.Diametr = Diametr;
+        //}
+
+
     }
 }

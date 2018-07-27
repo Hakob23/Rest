@@ -52,7 +52,7 @@
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="auto"></RowDefinition>
         </Grid.RowDefinitions>
-        <ListView Grid.Row="0" x:Name="List" ScrollViewer.HorizontalScrollBarVisibility="Hidden">
+        <ListView Grid.Row="0" x:Name="List" SelectedItem="{Binding Drink,Mode=TwoWay}" ScrollViewer.HorizontalScrollBarVisibility="Hidden">
             <ListView.View >
                 <GridView>
                     <GridViewColumn Width="700" CellTemplate="{StaticResource BurgersTamplate}">

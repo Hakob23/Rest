@@ -77,7 +77,7 @@ namespace RestaurantsMenu.Controllers
         // DELETE api/<controller>/5
         [HttpDelete]
         [Authorize(Policy = "Restaurant")]
-        public IActionResult Delete([FromBody]Salad salad)
+        public IActionResult Delete([FromBody]Salad salad)  
         {
             var result = this.productsRepository.DeleteProduct(salad);
             if (result == false)
