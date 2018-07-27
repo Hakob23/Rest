@@ -1,13 +1,18 @@
 ﻿using KushtPor.Commands;
+using Newtonsoft.Json;
 using System;
 using System.Collections.ObjectModel;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace KushtPor.ViewModels
 {
     class DrinkViewModel 
     {
+        public Drink DrinkDeleteItem { get; set; }
+
         // List from where gets data
         public ObservableCollection<Drink> Drinks { get; set; }
 
@@ -103,9 +108,10 @@ namespace KushtPor.ViewModels
             }
 
             Add = new RelayCommand(() => AddDrinkAsync(), o => true);
+            Delete = new RelayCommand(() => DeleteDrinkAsync(), o => true);
         }
 
-        public async System.Threading.Tasks.Task AddDrinkAsync()
+        public async Task AddDrinkAsync()
         {
             var drink = new Drink
             {
@@ -121,6 +127,14 @@ namespace KushtPor.ViewModels
             {
                 Drinks.Add(drink);
             }
+        }
+
+        public void DeleteDrinkAsync()
+        {
+            var request = new HttpRequestMessage(HttpMethod.Delete, $"api/drinks");
+            request.Content = new StringContent(JsonConvert.SerializeObject(DrinkDeleteItem), Encoding.UTF8, "application/json");
+            var response = this.client.SendAsync(request).Result;
+            Drinks.Remove(this.DrinkDeleteItem);
         }
     }
 }

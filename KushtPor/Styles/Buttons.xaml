@@ -122,7 +122,7 @@
     <Style x:Key="TextButton" TargetType="{x:Type Button}" BasedOn="{StaticResource BaseStyle}">
 
         <Setter Property="Background" Value="Transparent" />
-        <Setter Property="Foreground" Value="{StaticResource ForegroundDarkBrush}" />
+        <Setter Property="Foreground" Value="{StaticResource ForegroundVeryDarkBrush}" />
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="FontSize" Value="{StaticResource FontSizeRegular}" />
         <Setter Property="FontFamily" Value="{StaticResource LatoRegular}" />

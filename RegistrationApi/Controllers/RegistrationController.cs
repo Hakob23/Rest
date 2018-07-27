@@ -34,7 +34,7 @@ namespace RegistrationApi.Controllers
 
         // POST api/registration
         [HttpPost]
-        public void Post([FromBody]user user)
+        public IActionResult Post([FromBody]user user)
         {
             // generating activation code
             user.ActivationCode = Guid.NewGuid();
@@ -43,7 +43,7 @@ namespace RegistrationApi.Controllers
             user.Password = Crypto.Crypto.Hash(user.Password);
 
             // adding user to database using spExecuter library
-            this.spExecuter.ExecuteSpNonQuery(
+            var result = this.spExecuter.ExecuteSpNonQuery(
                  "uspCreateUser",
                  new[]
                  {
@@ -56,8 +56,13 @@ namespace RegistrationApi.Controllers
                     new KeyValuePair<string, object>("Role",user.Role)
                  });
 
+            if (result == -1)
+            {
+                return new StatusCodeResult(404);
+            }
             // send verification link to email
             SendVerificationLinkEmail(user.Email, user.ActivationCode.ToString());
+            return new StatusCodeResult(200);
         }
         
         // PUT api/registration/5

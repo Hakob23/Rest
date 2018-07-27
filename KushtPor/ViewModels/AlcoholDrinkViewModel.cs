@@ -1,8 +1,10 @@
 ﻿using KushtPor.Commands;
+using Newtonsoft.Json;
 using System;
 using System.Collections.ObjectModel;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Text;
 
 namespace KushtPor.ViewModels
 {
@@ -11,6 +13,8 @@ namespace KushtPor.ViewModels
     /// </summary>
     class AlcoholDrinkViewModel 
     {
+        public AlcoholDrink AlcoholDrinkDeleteItem { get; set; }
+
         public AlcoholDrink Drink { get; set; }
 
         // List from where gets data
@@ -142,15 +146,10 @@ namespace KushtPor.ViewModels
 
         public void DeleteAlcohol()
         {
-            var alcohol = new AlcoholDrink
-            {
-                Alcohol = Alcohol,
-                Name = Name,
-                Price = Price,
-                Restaurant = username,
-                Volume = Volume,
-                Id = Id
-            };
+            var request = new HttpRequestMessage(HttpMethod.Delete, $"api/alcoholdrinks");
+            request.Content = new StringContent(JsonConvert.SerializeObject(AlcoholDrinkDeleteItem), Encoding.UTF8, "application/json");
+            var response = this.client.SendAsync(request).Result;
+            Alcohols.Remove(this.AlcoholDrinkDeleteItem);
         }
 
 

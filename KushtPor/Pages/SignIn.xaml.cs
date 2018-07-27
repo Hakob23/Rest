@@ -28,10 +28,10 @@ namespace KushtPor.Pages
             this.NavigationService.Navigate(new Pages.Login());
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private async void Button_Click_1(object sender, RoutedEventArgs e)
         {
             // getting accesstoken
-            var accesstoken = client.LogIn(this.UserName.Text, this.PassName.Password);
+            var accesstoken = await client.LogIn(this.UserName.Text, this.PassName.Password);
             if (accesstoken != null)
             {
                 // navigate to menues page

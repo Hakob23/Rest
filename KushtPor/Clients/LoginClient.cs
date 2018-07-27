@@ -1,4 +1,6 @@
 ﻿using IdentityModel.Client;
+using System;
+using System.Threading.Tasks;
 
 namespace KushtPor.Clients
 {
@@ -15,27 +17,17 @@ namespace KushtPor.Clients
         /// <param name="username">username</param>
         /// <param name="password">password</param>
         /// <returns></returns>
-        public string LogIn(string username, string password)
+        public async Task<string> LogIn(string username, string password)
         {
             // discovery client
-            var disco = DiscoveryClient.GetAsync("http://localhost:5000").Result;
+            var disco = await DiscoveryClient.GetAsync("http://localhost:5000");
 
             // getting token client with client id and secret
             try
             {
-                var tokenClient = new TokenClient(
-                disco.TokenEndpoint,
-                "ro.client",
-                "secret");
+                var res = await GetAccessToken(username, password, disco);
 
-                // token response for username and password
-                var tokenResponse = tokenClient.RequestResourceOwnerPasswordAsync(
-                    username, password).Result;
-                
-                // acces token
-                this._accessToken = tokenResponse.AccessToken;
-
-                return this._accessToken;
+                return res;
             }
             catch
             {
@@ -44,6 +36,22 @@ namespace KushtPor.Clients
             
 
             //this.httpClient.SetBearerToken(this._accessToken);
+        }
+
+        public async Task<string> GetAccessToken(string username, string password, DiscoveryResponse disco)
+        {
+            var tokenClient = new TokenClient(
+                disco.TokenEndpoint,
+                "ro.client",
+                "secret");
+
+            // token response for username and password
+            var tokenResponse = await tokenClient.RequestResourceOwnerPasswordAsync(
+                username, password);
+
+            // acces token
+            this._accessToken = tokenResponse.AccessToken;
+            return this._accessToken;
         }
     }
 }
