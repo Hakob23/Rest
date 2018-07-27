@@ -31,11 +31,18 @@ namespace KushtPor.Pages
         private async void Button_Click_1(object sender, RoutedEventArgs e)
         {
             // getting accesstoken
-            var accesstoken = await client.LogIn(this.UserName.Text, this.PassName.Password);
-            if (accesstoken != null)
+            var roleAndAccessToken = await client.LogIn(this.UserName.Text, this.PassName.Password);
+            if (roleAndAccessToken.token != null)
             {
-                // navigate to menues page
-                this.NavigationService.Navigate(new Menues(accesstoken, this.UserName.Text));
+                if (roleAndAccessToken.role == "restaurant")
+                {
+                    // navigate to menues page
+                    this.NavigationService.Navigate(new Menues(roleAndAccessToken.token, this.UserName.Text));
+                }
+                if (roleAndAccessToken.role == "user")
+                {
+                    this.NavigationService.Navigate(new UserSelectPage(roleAndAccessToken.token, UserName.Text));
+                }
             }
         }
     }

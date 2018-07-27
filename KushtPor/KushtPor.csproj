@@ -106,6 +106,7 @@
     <Compile Include="Models\HotMeal.cs" />
     <Compile Include="Models\Menu.cs" />
     <Compile Include="Models\Pizza.cs" />
+    <Compile Include="Models\RoleAndToken.cs" />
     <Compile Include="Models\Salad.cs" />
     <Compile Include="Models\Soup.cs" />
     <Compile Include="Models\User.cs" />
@@ -138,6 +139,9 @@
     </Compile>
     <Compile Include="Pages\Soups.xaml.cs">
       <DependentUpon>Soups.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\UserSelectPage.xaml.cs">
+      <DependentUpon>UserSelectPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Verify.xaml.cs">
       <DependentUpon>Verify.xaml</DependentUpon>
@@ -206,6 +210,10 @@
     <Page Include="Pages\Soups.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\UserSelectPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\Verify.xaml">
       <SubType>Designer</SubType>

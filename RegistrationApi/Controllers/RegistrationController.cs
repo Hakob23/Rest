@@ -32,6 +32,23 @@ namespace RegistrationApi.Controllers
 
         }
 
+        [HttpGet("{username}")]
+        public IActionResult Get(string username)
+        {
+            var result = this.spExecuter.ExecuteScalarSp<string>(
+                "uspGetRoleByUsername",
+                new[]
+                {
+                    new KeyValuePair<string, object>("UserName", username)
+                });
+
+            if (result == null)
+            {
+                return new StatusCodeResult(404);
+            }
+            return new JsonResult(result);
+        }
+
         // POST api/registration
         [HttpPost]
         public IActionResult Post([FromBody]user user)

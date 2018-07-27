@@ -13,15 +13,19 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace KushtPorForUsers.Control
+namespace KushtPor.Pages
 {
     /// <summary>
-    /// Interaction logic for SideMenuControl.xaml
+    /// Interaction logic for UserSelectPage.xaml
     /// </summary>
-    public partial class SideMenuControl : UserControl
+    public partial class UserSelectPage : Page
     {
-        public SideMenuControl()
+        string accessToken, username;
+
+        public UserSelectPage(string accessToken, string username)
         {
+            this.accessToken = accessToken;
+            this.username = username;
             InitializeComponent();
         }
     }

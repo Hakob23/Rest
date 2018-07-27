@@ -23,3 +23,4 @@ C:\Users\maxim\Desktop\Rest\Restaurants\obj\Debug\Model.xml
 C:\Users\maxim\Desktop\Rest\Restaurants\obj\Debug\refactor.xml
 C:\Users\maxim\Desktop\Rest\Restaurants\obj\Debug\postdeploy.sql
 C:\Users\maxim\Desktop\Rest\Restaurants\obj\Debug\predeploy.sql
+C:\Users\maxim\Desktop\Rest\Restaurants\obj\Debug\RestaurantsDB.sqlprojAssemblyReference.cache
