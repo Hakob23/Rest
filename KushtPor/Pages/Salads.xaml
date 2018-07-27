@@ -61,7 +61,7 @@
             <TextBox Text="{Binding AddPrice, Mode=TwoWay}" x:Name="Price" Tag="Price" Margin="20,0,0,0" />
             <TextBox Text="{Binding AddContent, Mode=TwoWay}" x:Name="Content" Tag="Content" Margin="20,0,0,0" />
             <Button Command="{Binding Add}" Content="Add" Padding="20 15" Margin="20,0,0,0"/>
-            <Button Command="{Binding Delete}" Content="Delete" Padding="20 15" Margin="100,0,0,0" />
+            <Button Command="{Binding Delete}" Content="Delete" Padding="20 15" Margin="60,0,0,0" />
             <TextBox Text="{Binding AddID, Mode=TwoWay}" x:Name="ID" Tag="ID" Margin="20,0,0,0" />
 
         </StackPanel>

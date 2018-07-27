@@ -135,7 +135,9 @@ namespace KushtPor.ViewModels
         {
             var response = client.GetAsync($"api/salads/{username}/{AddID}").Result;
 
-            Salads.Remove(response.Content.ReadAsAsync<Salad>().Result);
+            var salad = response.Content.ReadAsAsync<Salad>().Result;
+
+            Salads.Remove(salad);
 
             response = client.DeleteAsync($"api/salads/{username}/{AddID}").Result;
 
