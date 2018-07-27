@@ -9,7 +9,7 @@ namespace KushtPor.ViewModels
     /// <summary>
     /// Burger View model
     /// </summary>
-    class BurgerViewModel :ViewModel
+    class BurgerViewModel
     {
         // List from where gets data
         public ObservableCollection<Burger> Burgers { get; set; }

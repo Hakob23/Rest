@@ -3,13 +3,14 @@ using System;
 using System.Collections.ObjectModel;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Threading.Tasks;
 
 namespace KushtPor.ViewModels
 {
     /// <summary>
     /// Salad View model
     /// </summary>
-    class SaladViewModel : ViewModel
+    class SaladViewModel
     {
         // List from where gets data
         public ObservableCollection<Salad> Salads { get; set; }
@@ -107,13 +108,13 @@ namespace KushtPor.ViewModels
                 Salads = response.Content.ReadAsAsync<ObservableCollection<Salad>>().Result;
             }
 
-            Add = new RelayCommand(() => AddSaladAsync(), o => true);
+            Add = new RelayCommand(() =>  AddSaladAsync() , o => true);
             Delete = new RelayCommand(() => DeleteSalad(), o => true);
 
 
         }
 
-        public async System.Threading.Tasks.Task AddSaladAsync()
+        public async Task AddSaladAsync()
         {
             var salad = new Salad
             {
@@ -133,12 +134,7 @@ namespace KushtPor.ViewModels
 
         public void DeleteSalad()
         {
-            var response = client.GetAsync($"api/salads/{username}/{AddID}").Result;
-
-            Salads.Remove(response.Content.ReadAsAsync<Salad>().Result);
-
-            response = client.DeleteAsync($"api/salads/{username}/{AddID}").Result;
-
+            
         }
     }
 }

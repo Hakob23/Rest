@@ -9,7 +9,7 @@ namespace KushtPor.ViewModels
     /// <summary>
     /// Soup View model
     /// </summary>
-    class SoupViewModel : ViewModel
+    class SoupViewModel
     {
         // List from where gets data
         public ObservableCollection<Soup> Soups { get; set; }

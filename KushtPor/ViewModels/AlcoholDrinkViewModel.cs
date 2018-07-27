@@ -9,7 +9,7 @@ namespace KushtPor.ViewModels
     /// <summary>
     /// Alcohols view model
     /// </summary>
-    class AlcoholDrinkViewModel : ViewModel
+    class AlcoholDrinkViewModel 
     {
         // List from where gets data
         public ObservableCollection<AlcoholDrink> Alcohols { get; set; }

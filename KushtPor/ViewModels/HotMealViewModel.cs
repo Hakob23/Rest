@@ -6,7 +6,7 @@ using System.Net.Http.Headers;
 
 namespace KushtPor.ViewModels
 {
-    class HotMealViewModel : ViewModel
+    class HotMealViewModel 
     {
         // List from where gets data
         public ObservableCollection<HotMeal> Meals { get; set; }

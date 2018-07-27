@@ -23,7 +23,7 @@ namespace UsersRepository
         {
             var cnnStringBuilder = new SqlConnectionStringBuilder
             {
-                DataSource = @"ARTHUR-PC\SQLEXPRESS",
+                DataSource = @"MAXIM-PC\SQLSERVER",
                 InitialCatalog = "UsersDB",
                 IntegratedSecurity = true
             };
@@ -41,10 +41,19 @@ namespace UsersRepository
         {
             var task = new Task<User>(() =>
             {
-                return this.spExecuter.ExecuteSp<User>(
-                    "uspGetUserByUsername",
-                    new[] { new KeyValuePair<string, object>("Username", userName) })
-                    .First();
+                try
+                {
+                    var result = this.spExecuter.ExecuteSp<User>(
+                      "uspGetUserByUsername",
+                      new[] { new KeyValuePair<string, object>("Username", userName) })
+                      .First();
+
+                    return result;
+                }
+                catch
+                {
+                    return null;
+                }
             });
 
             task.Start();

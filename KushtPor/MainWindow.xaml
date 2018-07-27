@@ -13,3 +13,5 @@
         <Frame x:Name="MainFrame"  />
     </Grid>
 </Window>
+
+    

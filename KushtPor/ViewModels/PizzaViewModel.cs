@@ -3,13 +3,14 @@ using System;
 using System.Collections.ObjectModel;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Threading.Tasks;
 
 namespace KushtPor.ViewModels
 {
     /// <summary>
     /// Pizzas view model
     /// </summary>
-    class PizzaViewModel : ViewModel
+    class PizzaViewModel
     {
         // List from where gets data
         public ObservableCollection<Pizza> Pizzas { get; set; }
@@ -117,7 +118,7 @@ namespace KushtPor.ViewModels
             Add = new RelayCommand(() => AddPizzaAsync(), o => true);
         }
 
-        public async System.Threading.Tasks.Task AddPizzaAsync()
+        public async Task AddPizzaAsync()
         {
             var pizza = new Pizza();
             pizza.Name = AddName;

@@ -31,7 +31,7 @@ namespace KushtPor.Clients
                 // token response for username and password
                 var tokenResponse = tokenClient.RequestResourceOwnerPasswordAsync(
                     username, password).Result;
-
+                
                 // acces token
                 this._accessToken = tokenResponse.AccessToken;
 

@@ -95,13 +95,8 @@
     <Compile Include="Clients\LoginClient.cs" />
     <Compile Include="Clients\RegistrationClient.cs" />
     <Compile Include="Commands\CommandHandler.cs" />
+    <Compile Include="Commands\DeleteCommand.cs" />
     <Compile Include="Commands\RelayCommand.cs" />
-    <Compile Include="Control\MenuControl.xaml.cs">
-      <DependentUpon>MenuControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Control\MenuListItomControl.xaml.cs">
-      <DependentUpon>MenuListItomControl.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Control\SideMenuControl.xaml.cs">
       <DependentUpon>SideMenuControl.xaml</DependentUpon>
     </Compile>
@@ -114,7 +109,6 @@
     <Compile Include="Models\Salad.cs" />
     <Compile Include="Models\Soup.cs" />
     <Compile Include="Models\User.cs" />
-    <Compile Include="Models\ViewModel.cs" />
     <Compile Include="Pages\AlcoholDrinks.xaml.cs">
       <DependentUpon>AlcoholDrinks.xaml</DependentUpon>
     </Compile>
@@ -157,14 +151,6 @@
     <Compile Include="ViewModels\SaladViewModel.cs" />
     <Compile Include="ViewModels\SoupViewModel.cs" />
     <Compile Include="Windows\WindowResizer.cs" />
-    <Page Include="Control\MenuControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Control\MenuListItomControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Control\SideMenuControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
