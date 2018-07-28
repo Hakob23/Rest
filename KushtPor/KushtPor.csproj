@@ -100,12 +100,16 @@
     <Compile Include="Control\SideMenuControl.xaml.cs">
       <DependentUpon>SideMenuControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Control\SideMenuControlForUser.xaml.cs">
+      <DependentUpon>SideMenuControlForUser.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Models\AlcoholDrink.cs" />
     <Compile Include="Models\Burger.cs" />
     <Compile Include="Models\Drink.cs" />
     <Compile Include="Models\HotMeal.cs" />
     <Compile Include="Models\Menu.cs" />
     <Compile Include="Models\Pizza.cs" />
+    <Compile Include="Models\RestName.cs" />
     <Compile Include="Models\RestTable.cs" />
     <Compile Include="Models\RoleAndToken.cs" />
     <Compile Include="Models\Salad.cs" />
@@ -163,10 +167,15 @@
     <Compile Include="ViewModels\PizzaViewModel.cs" />
     <Compile Include="ViewModels\RegistrationViewModel.cs" />
     <Compile Include="ViewModels\SaladViewModel.cs" />
+    <Compile Include="ViewModels\SideMenuControlViewModel.cs" />
     <Compile Include="ViewModels\SoupViewModel.cs" />
     <Compile Include="ViewModels\UserSelectPageViewModel.cs" />
     <Compile Include="Windows\WindowResizer.cs" />
     <Page Include="Control\SideMenuControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\SideMenuControlForUser.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

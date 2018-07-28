@@ -32,6 +32,25 @@ namespace RegistrationApi.Controllers
 
         }
 
+        /// <summary>
+        /// Get All Restaurants
+        /// </summary>
+        /// <param name="username"></param>
+        /// <returns></returns>
+        [HttpGet]
+        public IActionResult Get()
+        {
+            var result = this.spExecuter.ExecuteSp<RestName>(
+                "uspGetAllRestaurants");
+
+            if (result == null)
+            {
+                return new StatusCodeResult(404);
+            }
+            return new JsonResult(result);
+        }
+
+
         [HttpGet("{username}")]
         public IActionResult Get(string username)
         {
