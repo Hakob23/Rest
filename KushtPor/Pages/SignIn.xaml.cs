@@ -41,7 +41,8 @@ namespace KushtPor.Pages
                 }
                 if (roleAndAccessToken.role == "user")
                 {
-                    this.NavigationService.Navigate(new UserSelectPage(roleAndAccessToken.token, UserName.Text));
+                    // navigate to users selection page
+                    this.NavigationService.Navigate(new UserSelectPage(roleAndAccessToken.token, this.UserName.Text));
                 }
             }
         }

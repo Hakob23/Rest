@@ -1,17 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using KushtPor.ViewModels;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace KushtPor.Pages
 {
@@ -20,13 +8,18 @@ namespace KushtPor.Pages
     /// </summary>
     public partial class UserSelectPage : Page
     {
-        string accessToken, username;
+        public string accessToken, username;
+
+        public UserSelectPageViewModel uspvm; 
 
         public UserSelectPage(string accessToken, string username)
         {
             this.accessToken = accessToken;
             this.username = username;
+            var nav = this.NavigationService;
             InitializeComponent();
+            uspvm = new UserSelectPageViewModel(this.NavigationService);
+            this.DataContext = uspvm;
         }
     }
 }

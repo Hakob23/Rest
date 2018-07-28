@@ -113,6 +113,9 @@
     <Compile Include="Pages\AlcoholDrinks.xaml.cs">
       <DependentUpon>AlcoholDrinks.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\AllRestaurants.xaml.cs">
+      <DependentUpon>AllRestaurants.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Burgers.xaml.cs">
       <DependentUpon>Burgers.xaml</DependentUpon>
     </Compile>
@@ -154,6 +157,7 @@
     <Compile Include="ViewModels\RegistrationViewModel.cs" />
     <Compile Include="ViewModels\SaladViewModel.cs" />
     <Compile Include="ViewModels\SoupViewModel.cs" />
+    <Compile Include="ViewModels\UserSelectPageViewModel.cs" />
     <Compile Include="Windows\WindowResizer.cs" />
     <Page Include="Control\SideMenuControl.xaml">
       <SubType>Designer</SubType>
@@ -174,6 +178,10 @@
     <Page Include="Pages\AlcoholDrinks.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\AllRestaurants.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\Burgers.xaml">
       <Generator>MSBuild:Compile</Generator>
