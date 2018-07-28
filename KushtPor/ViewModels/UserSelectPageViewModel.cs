@@ -31,7 +31,7 @@ namespace KushtPor.ViewModels
 
         public void GoToAllRestaurants()
         {
-            navigate.Navigate(new AllRestaurants());
+            //navigate.Navigate(new AllRestaurants());
         }
     }
 }

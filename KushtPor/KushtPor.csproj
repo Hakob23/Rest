@@ -106,6 +106,7 @@
     <Compile Include="Models\HotMeal.cs" />
     <Compile Include="Models\Menu.cs" />
     <Compile Include="Models\Pizza.cs" />
+    <Compile Include="Models\RestTable.cs" />
     <Compile Include="Models\RoleAndToken.cs" />
     <Compile Include="Models\Salad.cs" />
     <Compile Include="Models\Soup.cs" />
@@ -122,11 +123,17 @@
     <Compile Include="Pages\Drinks.xaml.cs">
       <DependentUpon>Drinks.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\EnterId.xaml.cs">
+      <DependentUpon>EnterId.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\HotMeals.xaml.cs">
       <DependentUpon>HotMeals.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Menues.xaml.cs">
       <DependentUpon>Menues.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MenuForOrder.xaml.cs">
+      <DependentUpon>MenuForOrder.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Pizzas.xaml.cs">
       <DependentUpon>Pizzas.xaml</DependentUpon>
@@ -191,11 +198,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Pages\EnterId.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\HotMeals.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Pages\Menues.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\MenuForOrder.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
