@@ -22,6 +22,13 @@ namespace KushtPor.Control
             this.DataContext = viewModel;
         }
 
+        public SideMenuControlForUser(string restName)
+        {
+            InitializeComponent();
+            viewModel = new SideMenuControlViewModel(restName);
+            this.DataContext = viewModel;
+        }
+
         private void AlcoholDrinks_Click(object sender, System.Windows.RoutedEventArgs e)
         {
             OnNavigateParentReady("AlcoholDrinksForUser", viewModel.Selected.UserName);

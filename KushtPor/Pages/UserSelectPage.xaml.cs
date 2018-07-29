@@ -1,7 +1,5 @@
-﻿using KushtPor.ViewModels;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Navigation;
 
 namespace KushtPor.Pages
 {
@@ -14,7 +12,7 @@ namespace KushtPor.Pages
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new AllRestaurants(username, accessToken));
+            this.NavigationService.Navigate(new AllRestaurants(username, accessToken, 0));
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)

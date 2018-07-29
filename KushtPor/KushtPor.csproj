@@ -103,6 +103,9 @@
     <Compile Include="Control\SideMenuControlForUser.xaml.cs">
       <DependentUpon>SideMenuControlForUser.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Control\SideMenuWithoutTopButtons.xaml.cs">
+      <DependentUpon>SideMenuWithoutTopButtons.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Models\AlcoholDrink.cs" />
     <Compile Include="Models\Burger.cs" />
     <Compile Include="Models\Drink.cs" />
@@ -204,6 +207,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Control\SideMenuControlForUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\SideMenuWithoutTopButtons.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
