@@ -1,16 +1,21 @@
 ﻿using KushtPor.Commands;
+using Newtonsoft.Json;
 using System;
 using System.Collections.ObjectModel;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace KushtPor.ViewModels
 {
     /// <summary>
     /// Salad View model
     /// </summary>
-    class SaladViewModel : ViewModel
+    class SaladViewModel
     {
+        public Salad SaladDeleteItem { get; set; }
+
         // List from where gets data
         public ObservableCollection<Salad> Salads { get; set; }
 
@@ -107,13 +112,13 @@ namespace KushtPor.ViewModels
                 Salads = response.Content.ReadAsAsync<ObservableCollection<Salad>>().Result;
             }
 
-            Add = new RelayCommand(() => AddSaladAsync(), o => true);
-            Delete = new RelayCommand(() => DeleteSalad(), o => true);
+            Add = new RelayCommand(() =>  AddSaladAsync() , o => true);
+            Delete = new RelayCommand(() => DeleteSaladAsync(), o => true);
 
 
         }
 
-        public async System.Threading.Tasks.Task AddSaladAsync()
+        public async Task AddSaladAsync()
         {
             var salad = new Salad
             {
@@ -131,16 +136,12 @@ namespace KushtPor.ViewModels
             }
         }
 
-        public void DeleteSalad()
+        public void DeleteSaladAsync()
         {
-            var response = client.GetAsync($"api/salads/{username}/{AddID}").Result;
-
-            var salad = response.Content.ReadAsAsync<Salad>().Result;
-
-            Salads.Remove(salad);
-
-            response = client.DeleteAsync($"api/salads/{username}/{AddID}").Result;
-
+            var request = new HttpRequestMessage(HttpMethod.Delete, $"api/salads");
+            request.Content = new StringContent(JsonConvert.SerializeObject(SaladDeleteItem), Encoding.UTF8, "application/json");
+            var response = this.client.SendAsync(request).Result;
+            Salads.Remove(this.SaladDeleteItem);
         }
     }
 }

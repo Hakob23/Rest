@@ -75,13 +75,11 @@ namespace RestaurantsMenu.Controllers
         }
 
         // DELETE api/<controller>/5
-        [HttpDelete("{restaurantName}/{id}")]
+        [HttpDelete]
         [Authorize(Policy = "Restaurant")]
-        public IActionResult Delete(string restaurantName, int id)
+        public IActionResult Delete([FromBody]Salad salad)  
         {
-            var salad = this.productsRepository.Get<Salad>(restaurantName).Where(a => a.Id == id).First();
             var result = this.productsRepository.DeleteProduct(salad);
-
             if (result == false)
             {
                 return new StatusCodeResult(202);

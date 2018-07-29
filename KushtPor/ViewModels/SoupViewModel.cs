@@ -1,16 +1,21 @@
 ﻿using KushtPor.Commands;
+using Newtonsoft.Json;
 using System;
 using System.Collections.ObjectModel;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace KushtPor.ViewModels
 {
     /// <summary>
     /// Soup View model
     /// </summary>
-    class SoupViewModel : ViewModel
+    class SoupViewModel
     {
+        public Soup SoupsDeleteItem { get; set; }
+
         // List from where gets data
         public ObservableCollection<Soup> Soups { get; set; }
 
@@ -103,9 +108,10 @@ namespace KushtPor.ViewModels
             }
 
             Add = new RelayCommand(() => AddSoupAsync(), o => true);
+            Delete = new RelayCommand(() => DeleteSoupAsync(), o => true);
         }
 
-        public async System.Threading.Tasks.Task AddSoupAsync()
+        public async Task AddSoupAsync()
         {
             var soup = new Soup
             {
@@ -121,6 +127,14 @@ namespace KushtPor.ViewModels
             {
                 Soups.Add(soup);
             }
+        }
+
+        public void DeleteSoupAsync()
+        {
+            var request = new HttpRequestMessage(HttpMethod.Delete, $"api/soups");
+            request.Content = new StringContent(JsonConvert.SerializeObject(SoupsDeleteItem), Encoding.UTF8, "application/json");
+            var response = this.client.SendAsync(request).Result;
+            Soups.Remove(this.SoupsDeleteItem);
         }
     }
 }

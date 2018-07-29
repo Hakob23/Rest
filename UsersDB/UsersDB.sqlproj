@@ -71,6 +71,8 @@
     <Build Include="dbo\Stored Procedures\uspCreateUser.sql" />
     <Build Include="dbo\Stored Procedures\uspIsEmailExists.sql" />
     <Build Include="dbo\Stored Procedures\uspUpdateIsActivated.sql" />
+    <Build Include="dbo\Stored Procedures\uspGetRoleByUsername.sql" />
+    <Build Include="dbo\Stored Procedures\uspGetAllRestaurants.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="UsersDB.refactorlog" />

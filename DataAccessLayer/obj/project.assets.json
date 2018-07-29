@@ -1447,11 +1447,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ARTHUR\\Source\\Repos\\Restaurant\\Rest\\DataAccessLayer\\DataAccessLayer.csproj",
+      "projectUniqueName": "C:\\Users\\ARTHUR\\source\\repos\\Restaurant\\Rest\\DataAccessLayer\\DataAccessLayer.csproj",
       "projectName": "DataAccessLayer",
-      "projectPath": "C:\\Users\\ARTHUR\\Source\\Repos\\Restaurant\\Rest\\DataAccessLayer\\DataAccessLayer.csproj",
+      "projectPath": "C:\\Users\\ARTHUR\\source\\repos\\Restaurant\\Rest\\DataAccessLayer\\DataAccessLayer.csproj",
       "packagesPath": "C:\\Users\\ARTHUR\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ARTHUR\\Source\\Repos\\Restaurant\\Rest\\DataAccessLayer\\obj\\",
+      "outputPath": "C:\\Users\\ARTHUR\\source\\repos\\Restaurant\\Rest\\DataAccessLayer\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ARTHUR\\AppData\\Roaming\\NuGet\\NuGet.Config",

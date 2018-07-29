@@ -1,16 +1,21 @@
 ﻿using KushtPor.Commands;
+using Newtonsoft.Json;
 using System;
 using System.Collections.ObjectModel;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace KushtPor.ViewModels
 {
     /// <summary>
     /// Burger View model
     /// </summary>
-    class BurgerViewModel :ViewModel
+    class BurgerViewModel
     {
+        public Burger BurgerDeleteItem { get; set; }
+
         // List from where gets data
         public ObservableCollection<Burger> Burgers { get; set; }
 
@@ -103,9 +108,10 @@ namespace KushtPor.ViewModels
             }
 
             Add = new RelayCommand(() => AddBurgerAsync(), o => true);
+            Delete = new RelayCommand(() => DeleteBurgerAsync(), o => true);
         }
 
-        public async System.Threading.Tasks.Task AddBurgerAsync()
+        public async Task AddBurgerAsync()
         {
             var burger = new Burger
             {
@@ -121,6 +127,14 @@ namespace KushtPor.ViewModels
             {
                 Burgers.Add(burger);
             }
+        }
+
+        public void DeleteBurgerAsync()
+        {
+            var request = new HttpRequestMessage(HttpMethod.Delete, $"api/burgers");
+            request.Content = new StringContent(JsonConvert.SerializeObject(BurgerDeleteItem), Encoding.UTF8, "application/json");
+            var response = this.client.SendAsync(request).Result;
+            Burgers.Remove(this.BurgerDeleteItem);
         }
     }
 }

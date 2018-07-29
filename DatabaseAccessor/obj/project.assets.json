@@ -12725,11 +12725,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ARTHUR\\Source\\Repos\\Restaurant\\Rest\\DatabaseAccessor\\DatabaseAccessor.csproj",
+      "projectUniqueName": "C:\\Users\\ARTHUR\\source\\repos\\Restaurant\\Rest\\DatabaseAccessor\\DatabaseAccessor.csproj",
       "projectName": "DatabaseAccessor",
-      "projectPath": "C:\\Users\\ARTHUR\\Source\\Repos\\Restaurant\\Rest\\DatabaseAccessor\\DatabaseAccessor.csproj",
+      "projectPath": "C:\\Users\\ARTHUR\\source\\repos\\Restaurant\\Rest\\DatabaseAccessor\\DatabaseAccessor.csproj",
       "packagesPath": "C:\\Users\\ARTHUR\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ARTHUR\\Source\\Repos\\Restaurant\\Rest\\DatabaseAccessor\\obj\\",
+      "outputPath": "C:\\Users\\ARTHUR\\source\\repos\\Restaurant\\Rest\\DatabaseAccessor\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ARTHUR\\AppData\\Roaming\\NuGet\\NuGet.Config",

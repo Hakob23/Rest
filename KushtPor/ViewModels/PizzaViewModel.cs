@@ -1,16 +1,21 @@
 ﻿using KushtPor.Commands;
+using Newtonsoft.Json;
 using System;
 using System.Collections.ObjectModel;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace KushtPor.ViewModels
 {
     /// <summary>
     /// Pizzas view model
     /// </summary>
-    class PizzaViewModel : ViewModel
+    class PizzaViewModel
     {
+        public Pizza PizzasDeleteItem { get; set; }
+
         // List from where gets data
         public ObservableCollection<Pizza> Pizzas { get; set; }
         
@@ -117,7 +122,7 @@ namespace KushtPor.ViewModels
             Add = new RelayCommand(() => AddPizzaAsync(), o => true);
         }
 
-        public async System.Threading.Tasks.Task AddPizzaAsync()
+        public async Task AddPizzaAsync()
         {
             var pizza = new Pizza();
             pizza.Name = AddName;
@@ -134,15 +139,12 @@ namespace KushtPor.ViewModels
             }
         }
 
-        public async System.Threading.Tasks.Task DeletePizzaAsync()
+        public void DeletePizzaAsync()
         {
-            var pizza = new Pizza();
-            pizza.Id = Id;
-            pizza.Price = Price;
-            pizza.Name = Name;
-            pizza.Diametr = Diametr;
-
-            var response = await client.DeleteAsync($"api/pizzas/{Id}");
+            var request = new HttpRequestMessage(HttpMethod.Delete, $"api/pizzas");
+            request.Content = new StringContent(JsonConvert.SerializeObject(PizzasDeleteItem), Encoding.UTF8, "application/json");
+            var response = this.client.SendAsync(request).Result;
+            Pizzas.Remove(this.PizzasDeleteItem);
         }
     }
 }
