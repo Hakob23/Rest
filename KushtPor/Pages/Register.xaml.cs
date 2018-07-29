@@ -35,10 +35,26 @@ namespace KushtPor.Pages
             user.UserName = this.UserName.Text;
             user.Email = this.EmailName.Text;
             user.Password = this.PassName.Password;
-            user.Role = "restaurant";
+            if (Checkbox.IsChecked == true)
+            {
+                user.Role = "restaurant";
+            }
+            else
+            {
+                user.Role = "user";
+            }
             var httpResponse = apiClient.RegisterUser(user);
-
-            this.NavigationService.Navigate(new Pages.Verify());
+            if (httpResponse.IsSuccessStatusCode)
+            {
+                this.NavigationService.Navigate(new Pages.Verify());
+            }
+            else
+            {
+                MessageBox.Show("User with same username is already registered or user with sam email is already registered.", "Wrong Input", MessageBoxButton.OK);
+                UserName.Text = "";
+                EmailName.Text = "";
+                PassName.Password = "";
+            }
             //this.NavigationService.Navigate(new Pages.Menues());
         }
 

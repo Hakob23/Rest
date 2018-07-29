@@ -1,8 +1,10 @@
 ﻿using KushtPor.Commands;
+using Newtonsoft.Json;
 using System;
 using System.Collections.ObjectModel;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Text;
 
 namespace KushtPor.ViewModels
 {
@@ -11,6 +13,10 @@ namespace KushtPor.ViewModels
     /// </summary>
     class AlcoholDrinkViewModel 
     {
+        public AlcoholDrink AlcoholDrinkDeleteItem { get; set; }
+
+        public AlcoholDrink Drink { get; set; }
+
         // List from where gets data
         public ObservableCollection<AlcoholDrink> Alcohols { get; set; }
 
@@ -115,10 +121,12 @@ namespace KushtPor.ViewModels
             }
 
             Add = new RelayCommand(() => AddAlcoholAsync(), o => true);
+            Delete = new RelayCommand(() => DeleteAlcohol(), o => true);
         }
 
         public async System.Threading.Tasks.Task AddAlcoholAsync()
         {
+           
             var alcohol = new AlcoholDrink
             {
                 Name = AddName,
@@ -136,14 +144,13 @@ namespace KushtPor.ViewModels
             }
         }
 
-        //public void DeleteAlcohol()
-        //{
-        //    var pizza = new Pizza();
-        //    pizza.Id = Id;
-        //    pizza.Price = Price;
-        //    pizza.Name = Name;
-        //    pizza.Diametr = Diametr;
-        //}
+        public void DeleteAlcohol()
+        {
+            var request = new HttpRequestMessage(HttpMethod.Delete, $"api/alcoholdrinks");
+            request.Content = new StringContent(JsonConvert.SerializeObject(AlcoholDrinkDeleteItem), Encoding.UTF8, "application/json");
+            var response = this.client.SendAsync(request).Result;
+            Alcohols.Remove(this.AlcoholDrinkDeleteItem);
+        }
 
 
     }

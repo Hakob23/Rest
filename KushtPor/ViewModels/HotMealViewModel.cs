@@ -1,13 +1,17 @@
 ﻿using KushtPor.Commands;
+using Newtonsoft.Json;
 using System;
 using System.Collections.ObjectModel;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Text;
 
 namespace KushtPor.ViewModels
 {
     class HotMealViewModel 
     {
+        public HotMeal HotMealsDeleteItem { get; set; }
+
         // List from where gets data
         public ObservableCollection<HotMeal> Meals { get; set; }
 
@@ -99,6 +103,7 @@ namespace KushtPor.ViewModels
             }
 
             Add = new RelayCommand(() => AddHotMealAsync(), o => true);
+            Delete = new RelayCommand(() => DeleteHotMealAsync(), o => true);
         }
 
         public async System.Threading.Tasks.Task AddHotMealAsync()
@@ -117,6 +122,14 @@ namespace KushtPor.ViewModels
             {
                 Meals.Add(meals);
             }
+        }
+
+        public void DeleteHotMealAsync()
+        {
+            var request = new HttpRequestMessage(HttpMethod.Delete, $"api/hotmeals");
+            request.Content = new StringContent(JsonConvert.SerializeObject(HotMealsDeleteItem), Encoding.UTF8, "application/json");
+            var response = this.client.SendAsync(request).Result;
+            Meals.Remove(this.HotMealsDeleteItem);
         }
     }
 }
