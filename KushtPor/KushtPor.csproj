@@ -127,14 +127,23 @@
     <Compile Include="Pages\Burgers.xaml.cs">
       <DependentUpon>Burgers.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\BurgersForUser.xaml.cs">
+      <DependentUpon>BurgersForUser.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Drinks.xaml.cs">
       <DependentUpon>Drinks.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\DrinksForUser.xaml.cs">
+      <DependentUpon>DrinksForUser.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\EnterId.xaml.cs">
       <DependentUpon>EnterId.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\HotMeals.xaml.cs">
       <DependentUpon>HotMeals.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\HotMealsForUser.xaml.cs">
+      <DependentUpon>HotMealsForUser.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Menues.xaml.cs">
       <DependentUpon>Menues.xaml</DependentUpon>
@@ -145,17 +154,26 @@
     <Compile Include="Pages\Pizzas.xaml.cs">
       <DependentUpon>Pizzas.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\PizzasForUser.xaml.cs">
+      <DependentUpon>PizzasForUser.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Register.xaml.cs">
       <DependentUpon>Register.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Salads.xaml.cs">
       <DependentUpon>Salads.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\SaladsForUser.xaml.cs">
+      <DependentUpon>SaladsForUser.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\SignIn.xaml.cs">
       <DependentUpon>SignIn.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Soups.xaml.cs">
       <DependentUpon>Soups.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SoupsForUser.xaml.cs">
+      <DependentUpon>SoupsForUser.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\UserSelectPage.xaml.cs">
       <DependentUpon>UserSelectPage.xaml</DependentUpon>
@@ -165,13 +183,19 @@
     </Compile>
     <Compile Include="ViewModels\AlcoholDrinkForUserViewModel.cs" />
     <Compile Include="ViewModels\AlcoholDrinkViewModel.cs" />
+    <Compile Include="ViewModels\BurgersForUserViewModel.cs" />
     <Compile Include="ViewModels\BurgerViewModel.cs" />
+    <Compile Include="ViewModels\DrinksForUserViewModel.cs" />
     <Compile Include="ViewModels\DrinkViewModel.cs" />
+    <Compile Include="ViewModels\HotMealsForUserViewModel.cs" />
     <Compile Include="ViewModels\HotMealViewModel.cs" />
+    <Compile Include="ViewModels\PizzasForUserViewModel.cs" />
     <Compile Include="ViewModels\PizzaViewModel.cs" />
     <Compile Include="ViewModels\RegistrationViewModel.cs" />
+    <Compile Include="ViewModels\SaladsForUserViewModel.cs" />
     <Compile Include="ViewModels\SaladViewModel.cs" />
     <Compile Include="ViewModels\SideMenuControlViewModel.cs" />
+    <Compile Include="ViewModels\SoupsForUserViewModel.cs" />
     <Compile Include="ViewModels\SoupViewModel.cs" />
     <Compile Include="ViewModels\UserSelectPageViewModel.cs" />
     <Compile Include="Windows\WindowResizer.cs" />
@@ -211,9 +235,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Pages\BurgersForUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\Drinks.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\DrinksForUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\EnterId.xaml">
       <SubType>Designer</SubType>
@@ -222,6 +254,10 @@
     <Page Include="Pages\HotMeals.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\HotMealsForUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\Menues.xaml">
       <SubType>Designer</SubType>
@@ -235,6 +271,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Pages\PizzasForUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\Register.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -243,6 +283,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Pages\SaladsForUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\SignIn.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -250,6 +294,10 @@
     <Page Include="Pages\Soups.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\SoupsForUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\UserSelectPage.xaml">
       <SubType>Designer</SubType>
