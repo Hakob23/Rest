@@ -9,49 +9,52 @@ namespace KushtPor.Control
     public partial class SideMenuControlForUser : UserControl
     {
 
-        public delegate void MyEventHandler(string name);
+        public delegate void MyEventHandler(string name, string restName);
 
         public event MyEventHandler OnNavigateParentReady;
+
+        private SideMenuControlViewModel viewModel;
 
         public SideMenuControlForUser()
         {
             InitializeComponent();
-            this.DataContext = new SideMenuControlViewModel();
+            viewModel = new SideMenuControlViewModel();
+            this.DataContext = viewModel;
         }
 
         private void AlcoholDrinks_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-            OnNavigateParentReady("AlcoholDrinks");
+            OnNavigateParentReady("AlcoholDrinksForUser", viewModel.Selected.UserName);
         }
 
         private void Burgers_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-
+            OnNavigateParentReady("BurgersForUser", viewModel.Selected.UserName);
         }
 
         private void Drinks_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-
+            OnNavigateParentReady("DrinksForUser", viewModel.Selected.UserName);
         }
 
         private void HotMeals_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-
+            OnNavigateParentReady("HotMealsForUser", viewModel.Selected.UserName);
         }
 
         private void Pizzas_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-
+            OnNavigateParentReady("PizzasForUser", viewModel.Selected.UserName);
         }
 
         private void Salads_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-
+            OnNavigateParentReady("SaladsForUser", viewModel.Selected.UserName);
         }
 
         private void Soups_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-
+            OnNavigateParentReady("SoupsForUser", viewModel.Selected.UserName);
         }
     }
 }

@@ -19,36 +19,36 @@ namespace KushtPor.Pages
         }
 
         // username its not that username need to correct
-        private void MyControl_OnNavigateParentReady(string name)
+        private void MyControl_OnNavigateParentReady(string name, string restName)
         {
             switch (name)
             {
-                case "AlcoholDrinks":
-                    secondFrame.Navigate(new Pages.AlcoholDrinks(accessToken, username));
+                case "AlcoholDrinksForUser":
+                    secondFrame.Navigate(new Pages.AlcoholDrinksForUser(accessToken, restName, 0));
                     break;
 
-                case "Burgers":
-                    secondFrame.Navigate(new Pages.Burgers(accessToken, username));
+                case "BurgersForUser":
+                    secondFrame.Navigate(new Pages.Burgers(accessToken, restName));
                     break;
 
-                case "Drinks":
-                    secondFrame.Navigate(new Pages.Drinks(accessToken, username));
+                case "DrinksForUser":
+                    secondFrame.Navigate(new Pages.Drinks(accessToken, restName));
                     break;
 
-                case "HotMeals":
-                    secondFrame.Navigate(new Pages.HotMeals(accessToken, username));
+                case "HotMealsForUser":
+                    secondFrame.Navigate(new Pages.HotMeals(accessToken, restName));
                     break;
 
-                case "Pizzas":
-                    secondFrame.Navigate(new Pages.Pizzas(accessToken, username));
+                case "PizzasForUser":
+                    secondFrame.Navigate(new Pages.Pizzas(accessToken, restName));
                     break;
 
-                case "Salads":
-                    secondFrame.Navigate(new Pages.Salads(accessToken, username));
+                case "SaladsForUser":
+                    secondFrame.Navigate(new Pages.Salads(accessToken, restName));
                     break;
 
-                case "Soups":
-                    secondFrame.Navigate(new Pages.Soups(accessToken, username));
+                case "SoupsForUser":
+                    secondFrame.Navigate(new Pages.Soups(accessToken, restName));
                     break;
             }
         }

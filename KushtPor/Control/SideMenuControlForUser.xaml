@@ -19,7 +19,7 @@
                         <RowDefinition Height="*"></RowDefinition>
                     </Grid.RowDefinitions>
 
-                    <ComboBox ItemsSource="{Binding ComboBoxItems}" DisplayMemberPath="UserName" Grid.Row="0" Height="33">
+                    <ComboBox x:Name="restaurant" SelectedValuePath="UserName" SelectedItem="{Binding Selected, Mode=TwoWay}" ItemsSource="{Binding ComboBoxItems}" DisplayMemberPath="UserName" Grid.Row="0" Height="33">
                         
                     </ComboBox>
 

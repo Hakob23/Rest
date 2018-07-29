@@ -10,6 +10,8 @@ namespace KushtPor.ViewModels
     {
         public ObservableCollection<RestName> ComboBoxItems { get; set; }
 
+        public RestName Selected { get; set; } = new RestName();
+
         public SideMenuControlViewModel()
         {
             // create http client instance
