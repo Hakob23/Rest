@@ -1,4 +1,5 @@
 ﻿using KushtPor.Commands;
+using KushtPor.Models;
 using System;
 using System.Collections.ObjectModel;
 using System.Net.Http;
@@ -8,6 +9,10 @@ namespace KushtPor.ViewModels
 {
     public class HotMealsForUserViewModel
     {
+        public delegate void MyEventHandler(Order ord);
+
+        public static event MyEventHandler OrdEventHotMeal;
+
         public HotMeal HotMealsOrderItem { get; set; }
 
         // List from where gets data
@@ -96,7 +101,14 @@ namespace KushtPor.ViewModels
 
         public async System.Threading.Tasks.Task OrderHotMealAsync()
         {
-           
+            var ord = new Order();
+            ord.TableId = this.tableId;
+            ord.OrderCategory = "Hot Meal";
+            ord.Quantity = 1;
+            ord.Restaurant = this.username;
+            ord.MealId = HotMealsOrderItem.Id;
+            ord.Messege = this.Messege;
+            OrdEventHotMeal(ord);
         }
     }
 }

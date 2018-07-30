@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:KushtPor.Pages"
       xmlns:local1="clr-namespace:KushtPor.Control"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="450" d:DesignWidth="1000"
       Title="MenuForOrder">
 
     <Border Background="{StaticResource WordBlueBrush}">
@@ -19,6 +19,7 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="300" />
                 <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="300" />
             </Grid.ColumnDefinitions>
 
             <!-- Side Menu -->
@@ -28,7 +29,9 @@
 
             <Frame Grid.Column="1" x:Name="secondFrame"  />
 
-
+            <local1:OrdersControl Grid.Column="2" x:Name="Orders">
+                
+            </local1:OrdersControl>
         </Grid>
     </Border>
 </Page>

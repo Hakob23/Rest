@@ -24,6 +24,7 @@ namespace KushtPor.Pages
 
             InitializeComponent();
             this.menuWithoutTop.OnNavigateParentReady2 += MyControl_OnNavigateParentReady;
+            
         }
         
         private void MyControl_OnNavigateParentReady(string name)

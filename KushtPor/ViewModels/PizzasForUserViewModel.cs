@@ -1,17 +1,19 @@
 ﻿using KushtPor.Commands;
+using KushtPor.Models;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace KushtPor.ViewModels
 {
     public class PizzasForUserViewModel
     {
+        public delegate void MyEventHandler(Order ord);
+
+        public static event MyEventHandler OrdEventPizzas;
+
         public Pizza PizzasOrderItem { get; set; }
 
         // List from where gets data
@@ -105,7 +107,14 @@ namespace KushtPor.ViewModels
 
         public async Task OrderPizzaAsync()
         {
-           
+            var ord = new Order();
+            ord.TableId = this.tableId;
+            ord.OrderCategory = "Pizza";
+            ord.Quantity = 1;
+            ord.Restaurant = this.username;
+            ord.MealId = PizzasOrderItem.Id;
+            ord.Messege = this.Messege;
+            OrdEventPizzas(ord);
         }
 
     }

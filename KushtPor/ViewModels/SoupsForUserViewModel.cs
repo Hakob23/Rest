@@ -1,4 +1,5 @@
 ﻿using KushtPor.Commands;
+using KushtPor.Models;
 using System;
 using System.Collections.ObjectModel;
 using System.Net.Http;
@@ -9,6 +10,10 @@ namespace KushtPor.ViewModels
 {
     public class SoupsForUserViewModel
     {
+        public delegate void MyEventHandler(Order ord);
+
+        public static event MyEventHandler OrdEventSoups;
+
         public Soup SoupsOrderItem { get; set; }
 
         // List from where gets data
@@ -112,7 +117,14 @@ namespace KushtPor.ViewModels
 
         public async Task OrderSoupAsync()
         {
-
+            var ord = new Order();
+            ord.TableId = this.tableId;
+            ord.OrderCategory = "Soup";
+            ord.Quantity = 1;
+            ord.Restaurant = this.username;
+            ord.MealId = SoupsOrderItem.Id;
+            ord.Messege = this.Messege;
+            OrdEventSoups(ord);
         }
     }
 }
