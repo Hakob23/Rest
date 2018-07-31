@@ -23,6 +23,42 @@ namespace KushtPor.Pages
             this.accessToken = accessToken;
 
             InitializeComponent();
+            this.menuWithoutTop.OnNavigateParentReady2 += MyControl_OnNavigateParentReady;
+            
+        }
+        
+        private void MyControl_OnNavigateParentReady(string name)
+        {
+            switch (name)
+            {
+                case "AlcoholDrinksForUser":
+                    secondFrame.Navigate(new Pages.AlcoholDrinksForUser(accessToken, this.restaurantName, tableId));
+                    break;
+
+                case "BurgersForUser":
+                    secondFrame.Navigate(new Pages.BurgersForUser(accessToken, this.restaurantName, tableId));
+                    break;
+
+                case "DrinksForUser":
+                    secondFrame.Navigate(new Pages.DrinksForUser(accessToken, this.restaurantName, tableId));
+                    break;
+
+                case "HotMealsForUser":
+                    secondFrame.Navigate(new Pages.HotMealsForUser(accessToken, this.restaurantName, tableId));
+                    break;
+
+                case "PizzasForUser":
+                    secondFrame.Navigate(new Pages.PizzasForUser(accessToken, this.restaurantName, tableId));
+                    break;
+
+                case "SaladsForUser":
+                    secondFrame.Navigate(new Pages.SaladsForUser(accessToken, this.restaurantName, tableId));
+                    break;
+
+                case "SoupsForUser":
+                    secondFrame.Navigate(new Pages.SoupsForUser(accessToken, this.restaurantName, tableId));
+                    break;
+            }
         }
     }
 }

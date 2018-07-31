@@ -12,7 +12,7 @@
         <DataTemplate x:Key="SaladsTamplate">
             <StackPanel>
 
-                <TextBlock Visibility="Collapsed" Text="{Binding Id}" 
+                <TextBlock Text="{Binding Id}" 
                                    FontSize="{StaticResource FontSizeLarge}" 
                                    FontFamily="{StaticResource LatoRegular}"
                                    Foreground="{StaticResource WordBlueBrush}" />

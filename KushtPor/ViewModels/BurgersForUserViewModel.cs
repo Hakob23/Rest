@@ -1,4 +1,5 @@
 ﻿using KushtPor.Commands;
+using KushtPor.Models;
 using System;
 using System.Collections.ObjectModel;
 using System.Net.Http;
@@ -9,6 +10,10 @@ namespace KushtPor.ViewModels
 {
     public class BurgersForUserViewModel
     {
+        public delegate void MyEventHandler(Order ord);
+
+        public static event MyEventHandler OrdEventBurg;
+
         public Burger BurgerOrderItem { get; set; }
 
         // List from where gets data
@@ -94,7 +99,14 @@ namespace KushtPor.ViewModels
 
         public async Task OrderBurgerAsync()
         {
-        
+            var ord = new Order();
+            ord.TableId = this.tableId;
+            ord.OrderCategory = "Burger";
+            ord.Quantity = 1;
+            ord.Restaurant = this.username;
+            ord.MealId = BurgerOrderItem.Id;
+            ord.Messege = this.Messege;
+            OrdEventBurg(ord);
         }
 
     }
