@@ -52,14 +52,6 @@ namespace KushtPor
             OnNavigateParentReady("Soups");
         }
 
-        private void MenuButton_Click(object sender, RoutedEventArgs e)
-        {
-            this.Visibility = Visibility.Collapsed;
-        }
-
-        private void OrderButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
+       
     }
 }

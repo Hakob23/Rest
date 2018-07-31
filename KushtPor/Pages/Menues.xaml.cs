@@ -1,6 +1,5 @@
 ﻿using System.Windows.Controls;
 
-
 namespace KushtPor.Pages
 {
     /// <summary>
@@ -61,6 +60,19 @@ namespace KushtPor.Pages
                     break;
             }
 
+        }
+
+        private void OrderButton_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            this.menu.Visibility = System.Windows.Visibility.Collapsed;
+            this.order.Visibility = System.Windows.Visibility.Visible;
+            secondFrame.Navigate(new Pages.Tables(accesToken, userName));
+        }
+
+        private void MenuButton_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            this.menu.Visibility = System.Windows.Visibility.Visible;
+            this.order.Visibility = System.Windows.Visibility.Collapsed;
         }
     }
 }

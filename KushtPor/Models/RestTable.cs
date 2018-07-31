@@ -2,7 +2,7 @@
 {
     public class RestTable
     {
-        public string restaurantName { get; set; }
+        public string RestaurantName { get; set; }
 
         public int Id { get; set; }
 

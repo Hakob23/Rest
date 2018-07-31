@@ -10,27 +10,6 @@
     <UserControl.Template>
         <ControlTemplate TargetType="UserControl">
             <Border Background="{StaticResource BackgroundLightBrush}">
-
-                <!-- Content -->
-                <Grid>
-
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="auto"></RowDefinition>
-                        <RowDefinition Height="*"></RowDefinition>
-                    </Grid.RowDefinitions>
-
-                    <Grid Height="50" Background="{StaticResource WordBlueBrush}">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"></ColumnDefinition>
-                            <ColumnDefinition Width="*"></ColumnDefinition>
-                        </Grid.ColumnDefinitions>
-
-
-                        <Button x:Name="MenuButton" Click="MenuButton_Click" Grid.Column="0" Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomeMenuIcon}"></Button>
-                        <Button x:Name="OrderButton" Click="OrderButton_Click" Grid.Column="1" Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomeTableIcon}"></Button>
-
-                    </Grid>
-
                     <ScrollViewer Grid.Row="1">
                         <StackPanel>
                             <Button x:Name="AlcoholDrinks" Content="AlcoholDrinks" Click="AlcoholDrinks_Click"></Button>
@@ -42,9 +21,7 @@
                             <Button x:Name="Soups" Content="Soups" Click="Soups_Click"></Button>
                         </StackPanel>
                     </ScrollViewer>
-                </Grid>
             </Border>
-
         </ControlTemplate>
     </UserControl.Template>
 </UserControl>

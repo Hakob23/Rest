@@ -50,8 +50,8 @@ namespace RestaurantsAddAndOrder.Controllers
                 });
         }
 
-        [HttpGet("{restaurantName}/{id}")]
-        public IActionResult Get(string restaurantName, int id)
+        [HttpGet("{restaurantName}")]
+        public IActionResult Get(string restaurantName)
         {
             var result = this.spExecuter.ExecuteSp<Restaurant>(
                "GetTables",
@@ -67,7 +67,7 @@ namespace RestaurantsAddAndOrder.Controllers
         }
 
         [HttpGet("{tableId}")]
-        public IActionResult Get(string tableId)
+        public IActionResult Get(int tableId)
         {
             var result = this.spExecuter.ExecuteEntitySp<Restaurant>(
                "GetRestaurantbyTableId",

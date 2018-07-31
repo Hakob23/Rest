@@ -22,12 +22,28 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <!-- Side Menu -->
-            <local:SideMenuControl Grid.Column="0" x:Name="menu">
-               
-            </local:SideMenuControl>
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="100"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
 
-            <Frame Grid.Column="1" x:Name="secondFrame"  />
+                <StackPanel Orientation="Horizontal" Grid.Row="0">
+                    <Button x:Name="MenuButton" Click="MenuButton_Click"  Grid.Column="0" Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomeMenuIcon}" Width="150"></Button>
+                    <Button x:Name="OrderButton" Click="OrderButton_Click"  Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomeTableIcon}" Width="150"/>
+                </StackPanel>
+
+                <!-- Side Menu -->
+                <local:SideMenuControl Grid.Row="1" x:Name="menu">
+
+                </local:SideMenuControl>
+
+                <local:SideOrdersControl Grid.Row="1" x:Name="order" Visibility="Collapsed">
+                    
+                </local:SideOrdersControl>
+            </Grid>
+
+            <Frame Grid.Column="1" x:Name="secondFrame"/>
 
 
         </Grid>
