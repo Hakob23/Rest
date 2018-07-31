@@ -97,6 +97,9 @@
     <Compile Include="Commands\CommandHandler.cs" />
     <Compile Include="Commands\DeleteCommand.cs" />
     <Compile Include="Commands\RelayCommand.cs" />
+    <Compile Include="Control\OrderMenu.xaml.cs">
+      <DependentUpon>OrderMenu.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Control\SideMenuControl.xaml.cs">
       <DependentUpon>SideMenuControl.xaml</DependentUpon>
     </Compile>
@@ -199,6 +202,10 @@
     <Compile Include="ViewModels\SoupViewModel.cs" />
     <Compile Include="ViewModels\UserSelectPageViewModel.cs" />
     <Compile Include="Windows\WindowResizer.cs" />
+    <Page Include="Control\OrderMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Control\SideMenuControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

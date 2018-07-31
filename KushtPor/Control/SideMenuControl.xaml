@@ -26,8 +26,8 @@
                         </Grid.ColumnDefinitions>
 
 
-                        <Button Grid.Column="0" Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomeMenuIcon}"></Button>
-                        <Button Grid.Column="1" Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomeTableIcon}"></Button>
+                        <Button x:Name="MenuButton" Click="MenuButton_Click" Grid.Column="0" Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomeMenuIcon}"></Button>
+                        <Button x:Name="OrderButton" Click="OrderButton_Click" Grid.Column="1" Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomeTableIcon}"></Button>
 
                     </Grid>
 

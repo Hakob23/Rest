@@ -25,7 +25,7 @@ namespace KushtPor.Pages
 
             InitializeComponent();
             this.menu.OnNavigateParentReady += MyControl_OnNavigateParentReady;
-            //secondFrame.Navigate(new Pages.Login());
+            
         }
 
         private void MyControl_OnNavigateParentReady(string name)
