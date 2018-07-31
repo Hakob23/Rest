@@ -1,13 +1,19 @@
 ﻿using KushtPor.Commands;
+using KushtPor.Models;
 using System;
 using System.Collections.ObjectModel;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Threading.Tasks;
 
 namespace KushtPor.ViewModels
 {
     public class AlcoholDrinkForUserViewModel
     {
+        public delegate void MyEventHandler(Order ord);
+
+        public static event MyEventHandler OrdEventAD;
+
         public AlcoholDrink AlcoholDrinkOrderItem { get; set; }
 
         public AlcoholDrink Drink { get; set; }
@@ -75,6 +81,7 @@ namespace KushtPor.ViewModels
             // username
             this.username = username;
 
+            this.tableId = tableId;
             // create http client instance
             client = new HttpClient();
 
@@ -95,13 +102,20 @@ namespace KushtPor.ViewModels
                 Alcohols = response.Content.ReadAsAsync<ObservableCollection<AlcoholDrink>>().Result;
             }
 
-            Order = new RelayCommand(() => AddOrderAsync(), o => true);
+            Order = new RelayCommand(() => AddOrder(), o => true);
            
         }
 
-        public async System.Threading.Tasks.Task AddOrderAsync()
+        public async Task AddOrder()
         {
-            
+            var ord = new Order();
+            ord.TableId = this.tableId;
+            ord.OrderCategory = "AlcoholDrinks";
+            ord.Quantity = 1;
+            ord.Restaurant = this.username;
+            ord.MealId = AlcoholDrinkOrderItem.Id;
+            ord.Messege = this.Messege;
+            OrdEventAD(ord);
         }
         
     }

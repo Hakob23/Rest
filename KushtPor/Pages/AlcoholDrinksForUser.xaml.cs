@@ -23,6 +23,7 @@ namespace KushtPor.Pages
             InitializeComponent();
             List.ItemsSource = viewModel.Alcohols;
             this.DataContext = viewModel;
+            
         }
     }
 }

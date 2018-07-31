@@ -56,7 +56,7 @@
                             <Button Content="Next" Click="Button_Next" HorizontalAlignment="Center"  />
 
                             <!-- Checkbox -->
-                            <CheckBox x:Name="Checkbox" IsThreeState="False" IsChecked="True" Height="30" Content="Check if you want to register as Restaurant" />
+                            <CheckBox x:Name="Checkbox" FontSize="{StaticResource FontSizeSmall}"  Margin="10" HorizontalAlignment="Center" IsThreeState="False" IsChecked="True" Height="30" Content="Check if you want to register as Restaurant" />
                             
                         </StackPanel>
 

@@ -33,5 +33,13 @@ namespace KushtPor.ViewModels
                 ComboBoxItems = response.Content.ReadAsAsync<ObservableCollection<RestName>>().Result;
             }
         }
+
+        public SideMenuControlViewModel(string restName)
+        {
+            var rest = new RestName();
+            rest.UserName = restName;
+            ComboBoxItems.Clear();
+            ComboBoxItems.Add(rest);
+        }
     }
 }

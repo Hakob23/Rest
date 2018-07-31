@@ -1,12 +1,11 @@
-﻿<UserControl x:Class="KushtPor.SideMenuControl"
+﻿<UserControl x:Class="KushtPor.Control.SideMenuWithoutTopButtons"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:KushtPor"
+             xmlns:local="clr-namespace:KushtPor.Control"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
-
+             d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Template>
         <ControlTemplate TargetType="UserControl">
             <Border Background="{StaticResource BackgroundLightBrush}">
@@ -18,18 +17,6 @@
                         <RowDefinition Height="auto"></RowDefinition>
                         <RowDefinition Height="*"></RowDefinition>
                     </Grid.RowDefinitions>
-
-                    <Grid Height="50" Background="{StaticResource WordBlueBrush}">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"></ColumnDefinition>
-                            <ColumnDefinition Width="*"></ColumnDefinition>
-                        </Grid.ColumnDefinitions>
-
-
-                        <Button x:Name="MenuButton" Click="MenuButton_Click" Grid.Column="0" Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomeMenuIcon}"></Button>
-                        <Button x:Name="OrderButton" Click="OrderButton_Click" Grid.Column="1" Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomeTableIcon}"></Button>
-
-                    </Grid>
 
                     <ScrollViewer Grid.Row="1">
                         <StackPanel>

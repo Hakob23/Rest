@@ -20,7 +20,7 @@ namespace RestaurantsAddAndOrder.Controllers
         {
             var cnnStringBuilder = new SqlConnectionStringBuilder
             {
-                DataSource = @"MAXIM-PC\SQLSERVER",
+                DataSource = @"ARTHUR-PC\SQLEXPRESS",
                 InitialCatalog = "RestaurantsTables",
                 IntegratedSecurity = true
             };

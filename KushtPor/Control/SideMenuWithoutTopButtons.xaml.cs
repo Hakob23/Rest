@@ -1,65 +1,55 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 
-namespace KushtPor
+namespace KushtPor.Control
 {
     /// <summary>
-    /// Interaction logic for SideMenuControl.xaml
+    /// Interaction logic for SideMenuWithoutTopButtons.xaml
     /// </summary>
-    public partial class SideMenuControl : UserControl
+    public partial class SideMenuWithoutTopButtons : UserControl
     {
         public delegate void MyEventHandler(string name);
 
-        public event MyEventHandler OnNavigateParentReady;
+        public event MyEventHandler OnNavigateParentReady2;
 
-        public SideMenuControl()
+        public SideMenuWithoutTopButtons()
         {
             InitializeComponent();
         }
 
         private void AlcoholDrinks_Click(object sender, RoutedEventArgs e)
         {
-            OnNavigateParentReady("AlcoholDrinks");
+            OnNavigateParentReady2("AlcoholDrinksForUser");
         }
 
         private void Burgers_Click(object sender, RoutedEventArgs e)
         {
-            OnNavigateParentReady("Burgers");
+            OnNavigateParentReady2("BurgersForUser");
         }
 
         private void Drinks_Click(object sender, RoutedEventArgs e)
         {
-            OnNavigateParentReady("Drinks");
+            OnNavigateParentReady2("DrinksForUser");
         }
 
         private void HotMeals_Click(object sender, RoutedEventArgs e)
         {
-            OnNavigateParentReady("HotMeals");
+            OnNavigateParentReady2("HotMealsForUser");
         }
 
         private void Pizzas_Click(object sender, RoutedEventArgs e)
         {
-            OnNavigateParentReady("Pizzas");
+            OnNavigateParentReady2("PizzasForUser");
         }
 
         private void Salads_Click(object sender, RoutedEventArgs e)
         {
-            OnNavigateParentReady("Salads");
+            OnNavigateParentReady2("SaladsForUser");
         }
 
         private void Soups_Click(object sender, RoutedEventArgs e)
         {
-            OnNavigateParentReady("Soups");
-        }
-
-        private void MenuButton_Click(object sender, RoutedEventArgs e)
-        {
-            this.Visibility = Visibility.Collapsed;
-        }
-
-        private void OrderButton_Click(object sender, RoutedEventArgs e)
-        {
-
+            OnNavigateParentReady2("SoupsForUser");
         }
     }
 }
