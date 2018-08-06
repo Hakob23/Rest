@@ -1,0 +1,131 @@
+﻿<Page x:Class="KushtPor.Pages.Tables"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:KushtPor.Pages"
+      xmlns:toolkit="http://schemas.microsoft.com/netfx/2009/xaml/presentation"
+      xmlns:local1="clr-namespace:KushtPor.Control"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Tables">
+    
+    <Page.Resources>
+        <DataTemplate x:Key="BurgersTamplate">
+            <StackPanel>
+                <Label Content="Order Category"></Label>
+                <TextBlock Text="{Binding OrderCategory}" 
+                                   FontSize="{StaticResource FontSizeLarge}" 
+                                   FontFamily="{StaticResource LatoRegular}"
+                                   Foreground="{StaticResource WordBlueBrush}" />
+
+                <Label Content="Meal Id"></Label>
+                <TextBlock Text="{Binding MealId}" 
+                                   FontSize="{StaticResource FontSizeLarge}" 
+                                   FontFamily="{StaticResource LatoRegular}"
+                                   Foreground="{StaticResource WordBlueBrush}" />
+
+                <Label Content="Quantity"></Label>
+                <TextBlock Text="{Binding Quantity}" 
+                                   FontSize="{StaticResource FontSizeLarge}" 
+                                   FontFamily="{StaticResource LatoRegular}"
+                                   Foreground="{StaticResource WordBlueBrush}" />
+
+                <Label Content="Messege"></Label>
+                <TextBlock Text="{Binding Messege}" 
+                                   FontSize="{StaticResource FontSizeLarge}" 
+                                   FontFamily="{StaticResource LatoRegular}"
+                                   Foreground="{StaticResource WordBlueBrush}" />
+                <Label Content="Phone"></Label>
+                <TextBlock Text="{Binding Address}" 
+                                   FontSize="{StaticResource FontSizeLarge}" 
+                                   FontFamily="{StaticResource LatoRegular}"
+                                   Foreground="{StaticResource WordBlueBrush}" />
+
+            </StackPanel>
+        </DataTemplate>
+    </Page.Resources>
+
+    <Border Background="{StaticResource WordBlueBrush}">
+        <Grid ShowGridLines="True">
+            <!-- Blue background image -->
+            <Grid.Background>
+                <ImageBrush TileMode="Tile" ViewportUnits="Absolute" Viewport="0 0 500 500" ImageSource="/Images/Backgraunds/meals.jpg" />
+            </Grid.Background>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <local1:TableOrdersControl Grid.Row="0" x:Name="Orders" Grid.Column="0">
+
+                    </local1:TableOrdersControl>
+                    <Grid Grid.Row="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+
+                        <ListView Grid.Row="0" x:Name="List" ItemsSource="{Binding Orders, Mode=TwoWay}" SelectedItem="{Binding SelectedOrder,Mode=TwoWay}" ScrollViewer.HorizontalScrollBarVisibility="Hidden">
+                            <ListView.View >
+                                <GridView>
+                                    <GridViewColumn Width="700" CellTemplate="{StaticResource BurgersTamplate}">
+
+                                    </GridViewColumn>
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
+                        <StackPanel Grid.Row="1" Orientation="Horizontal">
+                            <TextBox Text="{Binding Check, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Tag="Check"/>
+                            <Button Command="{Binding DeleteOrder}" Content="DeleteOrder" Padding="0,0,0,0"  Margin="10,0,0,0"/>
+                        </StackPanel>
+                        
+                        </Grid>
+                    
+                </Grid>
+            </Grid>
+            
+            <Grid Grid.Column="1">
+                
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+
+                <ListBox Grid.Row="0" ItemsSource="{Binding Tables, Mode=TwoWay}" SelectedItem="{Binding SelectedTable}" Margin="0,0,-12,0" >
+                    <ListBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <toolkit:WrapPanel x:Name="wrapPanel" Width="700" />
+                        </ItemsPanelTemplate>
+                    </ListBox.ItemsPanel>
+
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.Background>
+                                    <ImageBrush ImageSource="/Images/Backgraunds/table.png"></ImageBrush>
+                                </Grid.Background>
+                                <StackPanel Orientation="Horizontal" Margin="0,0,0,17">
+                                    <TextBlock FontWeight="Bold" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center" Height="200" Width="200" Margin="12,0,9,0" Text="{Binding Id}" />
+                                </StackPanel>
+                            </Grid>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+
+                <StackPanel Grid.Column="1" Grid.Row="1" Margin="0" Orientation="Horizontal" Background="Transparent">
+                    <Button Command="{Binding Add}" Content="Add" Padding="20 15" Margin="50,0,0,0"/>
+                    <Button Command="{Binding Delete}" Content="Delete" Padding="20 15" Margin="15,0,0,0" />
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Border>
+</Page>

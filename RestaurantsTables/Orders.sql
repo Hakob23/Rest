@@ -6,5 +6,7 @@
     [OrderCategory] NVARCHAR(50) NOT NULL, 
     [MealId] INT NOT NULL, 
     [Quantity] INT NOT NULL, 
-    [Messege] NVARCHAR(MAX) NULL
+    [Messege] NVARCHAR(MAX) NULL, 
+    [Address] NVARCHAR(50) NULL, 
+    [Price] FLOAT NOT NULL
 )

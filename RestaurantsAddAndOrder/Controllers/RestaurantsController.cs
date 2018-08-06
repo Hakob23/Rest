@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
 using DatabaseAccess;
 using Microsoft.AspNetCore.Mvc;
 using RestaurantsAddAndOrder.Models;
@@ -39,6 +37,21 @@ namespace RestaurantsAddAndOrder.Controllers
 
         }
 
+
+        [HttpPost("{tableId}")]
+        public void Post([FromBody]Restaurant table)
+        {
+            // adding user to database using spExecuter library
+            this.spExecuter.ExecuteSpNonQuery(
+                 "AddTableWithId",
+                 new[]
+                 {
+                    new KeyValuePair<string, object>("Id", 0),
+                    new KeyValuePair<string, object>("RestaurantName", table.RestaurantName)
+                 });
+
+        }
+
         [HttpDelete]
         public void Delete([FromBody]Restaurant rest)
         {
@@ -50,8 +63,8 @@ namespace RestaurantsAddAndOrder.Controllers
                 });
         }
 
-        [HttpGet("{restaurantName}/{id}")]
-        public IActionResult Get(string restaurantName, int id)
+        [HttpGet("{restaurantName}/{Id}")]
+        public IActionResult Get(string restaurantName, int Id)
         {
             var result = this.spExecuter.ExecuteSp<Restaurant>(
                "GetTables",

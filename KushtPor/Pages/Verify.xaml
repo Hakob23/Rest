@@ -31,7 +31,7 @@
                 
                 <StackPanel> 
 
-                    <TextBlock     Text="Your Mail Is Send" 
+                    <TextBlock     Text="Your Mail Is Sent" 
                                    Background="{StaticResource BackgroundLightBrush}"
                                    FontSize="{StaticResource FontSizeLarge}" 
                                    FontFamily="{StaticResource LatoThin}"

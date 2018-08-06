@@ -13,7 +13,6 @@ namespace KushtPor.Control
         {
             viewModel = new OrdersControlViewModel();
             InitializeComponent();
-            List.ItemsSource = viewModel.Orders;
             this.DataContext = viewModel;
         }
     }

@@ -51,5 +51,10 @@ namespace KushtPor
         {
             OnNavigateParentReady("Soups");
         }
+
+        private void Table_Click(object sender, RoutedEventArgs e)
+        {
+            OnNavigateParentReady("Table");
+        }
     }
 }

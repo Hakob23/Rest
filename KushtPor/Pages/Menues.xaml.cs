@@ -59,8 +59,10 @@ namespace KushtPor.Pages
                 case "Soups":
                     secondFrame.Navigate(new Pages.Soups(accesToken, userName));
                     break;
+                case "Table":
+                    this.NavigationService.Navigate(new Pages.Tables(accesToken, userName));
+                    break;
             }
-
         }
     }
 }

@@ -34,5 +34,15 @@
         /// Messege
         /// </summary>
         public string Messege { get; set; }
+
+        /// <summary>
+        /// Address
+        /// </summary>
+        public string Address { get; set; }
+       
+        /// <summary>
+        /// Price
+        /// </summary>
+        public double Price { get; set; }
     }
 }

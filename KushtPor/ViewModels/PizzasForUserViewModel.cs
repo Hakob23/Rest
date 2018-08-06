@@ -114,6 +114,7 @@ namespace KushtPor.ViewModels
             ord.Restaurant = this.username;
             ord.MealId = PizzasOrderItem.Id;
             ord.Messege = this.Messege;
+            ord.Price = this.PizzasOrderItem.Price;
             OrdEventPizzas(ord);
         }
 

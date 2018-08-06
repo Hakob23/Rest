@@ -43,7 +43,7 @@ namespace KushtPor.Pages
             if (response.IsSuccessStatusCode)
             {
                 var restaurantName = await response.Content.ReadAsAsync<RestTable>();
-                this.NavigationService.Navigate(new MenuForOrder(username, restaurantName.restaurantName, restaurantName.Id, accessToken));
+                this.NavigationService.Navigate(new MenuForOrder(username, restaurantName.RestaurantName, restaurantName.Id, accessToken));
             }
             else
             {

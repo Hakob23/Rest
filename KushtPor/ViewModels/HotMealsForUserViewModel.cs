@@ -108,6 +108,7 @@ namespace KushtPor.ViewModels
             ord.Restaurant = this.username;
             ord.MealId = HotMealsOrderItem.Id;
             ord.Messege = this.Messege;
+            ord.Price = this.HotMealsOrderItem.Price;
             OrdEventHotMeal(ord);
         }
     }

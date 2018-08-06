@@ -122,13 +122,9 @@ namespace RegistrationApi.Controllers
         /// <param name="ActivationCode">activation code</param>
         public void SendVerificationLinkEmail(string Email, string ActivationCode)
         {
-            // creating verification url
-            var verifyUrl = "/api/verify/" + ActivationCode;
-            
-            // creating verification link
-            var link = Request.Scheme + "://" + Request.Host.ToString() + verifyUrl;
+           
 
-            // email sender mail address
+           // email sender mail address
             var fromEmail = new MailAddress("maxim.karapetyan@gmail.com");
             
             // to email address
@@ -141,7 +137,7 @@ namespace RegistrationApi.Controllers
             // messege body
             string body = "<br/><br/>We are excited to tell you that your retaurant account " +
                 "is successfully created. Please click on the below link to verify your account <br/><br/>" +
-                "<a href = '" + link + "'>" + link + " </a>";
+                "<a href = '" + ActivationCode + "'>" + ActivationCode + " </a>";
 
             // smtp client for send messege
             var smtp = new SmtpClient

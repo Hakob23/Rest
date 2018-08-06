@@ -69,6 +69,8 @@
     <Build Include="StoredProcedures\DeleteOrder.sql" />
     <Build Include="StoredProcedures\UpdateOrderQuantity.sql" />
     <Build Include="StoredProcedures\GetRestaurantbyTableId.sql" />
+    <Build Include="StoredProcedures\GetOrderTableId.sql" />
+    <Build Include="StoredProcedures\AddTableWithId.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="RestaurantsTables.refactorlog" />

@@ -106,6 +106,7 @@ namespace KushtPor.ViewModels
             ord.Restaurant = this.username;
             ord.MealId = BurgerOrderItem.Id;
             ord.Messege = this.Messege;
+            ord.Price = this.BurgerOrderItem.Price;
             OrdEventBurg(ord);
         }
 

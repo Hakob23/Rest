@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:KushtPor.Control"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="300">
+             d:DesignHeight="450" d:DesignWidth="500">
     
     <UserControl.Resources>
         <DataTemplate x:Key="OrdersTamplate">
@@ -33,7 +33,12 @@
                                    FontSize="{StaticResource FontSizeLarge}" 
                                    FontFamily="{StaticResource LatoRegular}"
                                    Foreground="{StaticResource WordBlueBrush}" />
-                
+                <Label Content="Price for one"/>
+                <TextBlock Text="{Binding Price}" 
+                                   FontSize="{StaticResource FontSizeLarge}" 
+                                   FontFamily="{StaticResource LatoRegular}"
+                                   Foreground="{StaticResource WordBlueBrush}" />
+
                 <Label Content="Quantity"></Label>
                 <TextBlock Text="{Binding Quantity}" 
                                    FontSize="{StaticResource FontSizeLarge}" 
@@ -56,8 +61,8 @@
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="auto"></RowDefinition>
         </Grid.RowDefinitions>
-        <ListView Grid.Row="0" x:Name="List" SelectedItem="{Binding DelOrder,Mode=TwoWay}" ScrollViewer.HorizontalScrollBarVisibility="Hidden">
-            <ListView.View >
+        <ListView ItemsSource="{Binding Orders, Mode=TwoWay}" Grid.Row="0" x:Name="List" SelectedItem="{Binding DelOrder,Mode=TwoWay}" ScrollViewer.HorizontalScrollBarVisibility="Hidden">
+            <ListView.View>
                 <GridView>
                     <GridViewColumn Width="700" CellTemplate="{StaticResource OrdersTamplate}">
 
@@ -66,9 +71,17 @@
             </ListView.View>
         </ListView>
 
-        <StackPanel Grid.Row="1" Margin="15" Orientation="Horizontal" Background="Transparent">
-            <Button Command="{Binding Order}" Content="Order" Padding="20 15" Margin="10,0,0,0"/>
-            <Button Command="{Binding Delete}" Content="Delete" Padding="20 15" Margin="10,0,0,0" />
-        </StackPanel>
-    </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBox Grid.Column="0" Text="{Binding Address, Mode=TwoWay}" AcceptsReturn="True" TextWrapping="Wrap" x:Name="Address" Tag="Phone" Margin="20,0,0,0" />
+            <Button Grid.Column="1" Command="{Binding Order}" Content="Order" Padding="20 15" Margin="10,0,0,0"/>
+            <Button Grid.Column="2" Command="{Binding Delete}" Content="Delete" Padding="20 15" Margin="10,0,0,0" />
+            <TextBox Grid.Column="3" IsReadOnly="True" Text="{Binding Bill, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Tag="Bill" Margin="10,0,0,0"/>
+        </Grid>
+     </Grid>
 </UserControl>

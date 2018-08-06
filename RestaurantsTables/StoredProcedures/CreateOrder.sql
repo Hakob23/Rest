@@ -4,7 +4,9 @@
 	@OrderCategory nvarchar(50),
 	@MealId int,
 	@Quantity int,
-	@Messege nvarchar(Max) = null
+	@Messege nvarchar(Max) = null,
+	@Address nvarchar(Max) = null,
+	@Price	int
 AS
-	Insert into dbo.Orders values(@TableId, @Restaurant, @OrderCategory, @MealId, @Quantity, @Messege)
+	Insert into dbo.Orders values(@TableId, @Restaurant, @OrderCategory, @MealId, @Quantity, @Messege, @Address,@Price)
 RETURN 0
